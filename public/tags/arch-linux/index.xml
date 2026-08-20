@@ -1,0 +1,35 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lotfi Hamadene – Arch-Linux</title>
+    <link>http://localhost:1313/tags/arch-linux/</link>
+    <description>Recent content in Arch-Linux on Lotfi Hamadene</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-FR</language>
+    <lastBuildDate>Sat, 15 Aug 2026 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="http://localhost:1313/tags/arch-linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Arch Linux n&#39;est pas réservé aux élitistes</title>
+      <link>http://localhost:1313/opinions/arch-linux-nest-pas-que-pour-les-elitistes/</link>
+      <pubDate>Sat, 15 Aug 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/opinions/arch-linux-nest-pas-que-pour-les-elitistes/</guid>
+      <description>
+        
+        
+        &lt;p&gt;« Arch, c&amp;rsquo;est pour ceux qui aiment se compliquer la vie. » J&amp;rsquo;ai entendu cette phrase des dizaines de fois, et chaque fois elle me fait un peu grincer des dents, parce qu&amp;rsquo;elle confond deux choses très différentes : la difficulté et l&amp;rsquo;exigence.&lt;/p&gt;
+&lt;p&gt;Arch Linux n&amp;rsquo;est pas difficile parce qu&amp;rsquo;elle serait mal conçue ou volontairement hostile. Elle est exigeante parce qu&amp;rsquo;elle refuse de prendre des décisions à la place de l&amp;rsquo;utilisateur : pas de configuration par défaut imposée, pas de service activé sans qu&amp;rsquo;on l&amp;rsquo;ait demandé, pas de surcouche graphique qui masque ce qui se passe réellement. Le fameux principe KISS de la distribution ne veut pas dire « simple à utiliser », il veut dire « simple à comprendre », ce qui est très différent.&lt;/p&gt;
+&lt;p&gt;Le vrai obstacle, ce n&amp;rsquo;est pas l&amp;rsquo;installation — le wiki Arch est probablement la meilleure documentation technique de tout l&amp;rsquo;écosystème Linux, toutes distributions confondues, et sert de référence même à des utilisateurs Debian ou Fedora. L&amp;rsquo;obstacle, c&amp;rsquo;est l&amp;rsquo;investissement en temps qu&amp;rsquo;on accepte de faire au début pour comprendre chaque brique qu&amp;rsquo;on installe.&lt;/p&gt;
+&lt;p&gt;Je ne recommanderai jamais Arch à quelqu&amp;rsquo;un qui veut un système qui « marche tout seul » dès le premier jour. Mais l&amp;rsquo;idée qu&amp;rsquo;elle serait réservée à une élite technique me semble fausse : c&amp;rsquo;est avant tout une question de curiosité et de patience, pas de niveau. J&amp;rsquo;ai vu des débutants complets apprendre plus sur le fonctionnement de Linux en une semaine d&amp;rsquo;installation Arch qu&amp;rsquo;en un an d&amp;rsquo;utilisation d&amp;rsquo;une distribution qui fait tout à leur place.&lt;/p&gt;
+      </description>
+    </item>
+    
+  </channel>
+</rss>

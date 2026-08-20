@@ -1,0 +1,35 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lotfi Hamadene – Appimage</title>
+    <link>http://localhost:1313/tags/appimage/</link>
+    <description>Recent content in Appimage on Lotfi Hamadene</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-FR</language>
+    <lastBuildDate>Fri, 05 Jun 2026 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="http://localhost:1313/tags/appimage/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Flatpak, Snap, AppImage : le chaos des formats universels</title>
+      <link>http://localhost:1313/opinions/flatpak-snap-appimage-le-chaos-des-formats/</link>
+      <pubDate>Fri, 05 Jun 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/opinions/flatpak-snap-appimage-le-chaos-des-formats/</guid>
+      <description>
+        
+        
+        &lt;p&gt;On nous promettait, avec les formats de paquets universels, la fin du morcellement entre distributions. Une application, un fichier, n&amp;rsquo;importe quelle distribution. Sur le papier, magnifique. Dans les faits, on a surtout ajouté une couche de complexité au-dessus de l&amp;rsquo;ancienne.&lt;/p&gt;
+&lt;p&gt;Flatpak s&amp;rsquo;est imposé sur le bureau grâce à Flathub et à un bon compromis entre isolation et intégration, mais chaque application embarque ses propres runtimes, ce qui gonfle l&amp;rsquo;espace disque utilisé et complique le débogage quand quelque chose ne fonctionne pas comme prévu. Snap fait un pari similaire côté Canonical, avec en prime une intégration parfois trop appuyée dans Ubuntu, ce qui a fini par agacer une partie de la communauté. AppImage, de son côté, séduit par sa simplicité — un fichier exécutable, aucune installation — mais laisse à l&amp;rsquo;utilisateur la charge des mises à jour et de l&amp;rsquo;intégration au bureau, ce qui n&amp;rsquo;est pas rien pour un public non technique.&lt;/p&gt;
+&lt;p&gt;Résultat : au lieu d&amp;rsquo;un standard unique, on a maintenant trois écosystèmes qui coexistent, chacun avec ses forces, et un utilisateur qui doit encore choisir. La fragmentation qu&amp;rsquo;on voulait éliminer entre distributions s&amp;rsquo;est simplement déplacée d&amp;rsquo;un cran plus haut.&lt;/p&gt;
+&lt;p&gt;Je ne crois pas qu&amp;rsquo;un des trois formats « gagnera » à court terme. Je pense plutôt qu&amp;rsquo;on va continuer à vivre avec cette coexistence, et que le vrai progrès viendra plutôt d&amp;rsquo;une meilleure interopérabilité entre eux que d&amp;rsquo;une hypothétique unification.&lt;/p&gt;
+      </description>
+    </item>
+    
+  </channel>
+</rss>

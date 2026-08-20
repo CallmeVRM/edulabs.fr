@@ -1,0 +1,100 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lotfi Hamadene – Systèmes d&#39;init alternatifs</title>
+    <link>http://localhost:1313/decouvertes/projets-open-source/init-systems-alternatifs/</link>
+    <description>Recent content in Systèmes d&#39;init alternatifs on Lotfi Hamadene</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-FR</language>
+    
+	  <atom:link href="http://localhost:1313/decouvertes/projets-open-source/init-systems-alternatifs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>runit : simplicité et supervision de processus</title>
+      <link>http://localhost:1313/decouvertes/projets-open-source/init-systems-alternatifs/runit/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/decouvertes/projets-open-source/init-systems-alternatifs/runit/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;Présentation&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;présentation&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#pr%c3%a9sentation&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;runit est un système d&amp;rsquo;init et de supervision de processus né du constat que les scripts d&amp;rsquo;init traditionnels (SysV) étaient devenus fragiles et difficiles à raisonner. Son fonctionnement repose sur une idée simple : chaque service est un petit script shell exécuté en avant-plan et surveillé en permanence par un processus superviseur qui le relance s&amp;rsquo;il s&amp;rsquo;arrête.&lt;/p&gt;
+&lt;h2&gt;Ce qui est intéressant&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;ce-qui-est-intéressant&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#ce-qui-est-int%c3%a9ressant&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Une base de code volontairement réduite, entièrement lisible en une soirée pour qui veut la comprendre&lt;/li&gt;
+&lt;li&gt;Chaque service tourne sous surveillance continue, avec redémarrage automatique en cas d&amp;rsquo;arrêt inattendu&lt;/li&gt;
+&lt;li&gt;Le démarrage du système se décompose en trois étapes claires (stage 1, 2, 3), sans dépendances implicites cachées&lt;/li&gt;
+&lt;li&gt;Les journaux de service peuvent être gérés simplement en chaînant le processus à un journal dédié&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Cas d&amp;rsquo;usage&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;cas-dusage&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#cas-dusage&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Adapté à qui veut un démarrage système entièrement transparent, ou à l&amp;rsquo;administration de services applicatifs sous supervision. Un service se déclare avec un simple script &lt;code&gt;run&lt;/code&gt; :&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;#!/bin/sh
+exec mon-programme --option&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copier le code&#34;
+    aria-label=&#34;Copier le code&#34;
+    data-copied-label=&#34;Copié !&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;placé dans son propre répertoire de service.&lt;/p&gt;
+&lt;h2&gt;Avis en bref&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;avis-en-bref&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#avis-en-bref&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;runit ne cherche pas à rivaliser en fonctionnalités avec systemd, et c&amp;rsquo;est précisément sa force : on sait toujours ce qui se passe, sans avoir besoin de consulter une documentation épaisse pour comprendre le démarrage du système.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>s6 et s6-rc : la suite logique</title>
+      <link>http://localhost:1313/decouvertes/projets-open-source/init-systems-alternatifs/s6-et-s6-rc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/decouvertes/projets-open-source/init-systems-alternatifs/s6-et-s6-rc/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;Présentation&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;présentation&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#pr%c3%a9sentation&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;s6 pousse l&amp;rsquo;idée de runit encore plus loin, avec une attention presque obsessionnelle portée à la robustesse et à la correction des cas limites : gestion propre des signaux, absence de conditions de concurrence dans le démarrage et l&amp;rsquo;arrêt des services, et une séparation nette entre la supervision de processus (s6) et la gestion des dépendances entre services (s6-rc).&lt;/p&gt;
+&lt;h2&gt;Ce qui est intéressant&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;ce-qui-est-intéressant&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#ce-qui-est-int%c3%a9ressant&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Une gestion explicite des dépendances entre services via s6-rc, avec un ordre de démarrage et d&amp;rsquo;arrêt calculé plutôt que déduit implicitement&lt;/li&gt;
+&lt;li&gt;Des primitives de bas niveau (s6-svscan, s6-supervise) pensées pour être composées plutôt qu&amp;rsquo;utilisées telles quelles&lt;/li&gt;
+&lt;li&gt;Une attention documentée aux conditions de concurrence lors des transitions d&amp;rsquo;état, un point souvent négligé ailleurs&lt;/li&gt;
+&lt;li&gt;Utilisé comme brique de supervision dans des distributions comme Obarun ou dans des images de conteneurs minimalistes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Cas d&amp;rsquo;usage&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;cas-dusage&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#cas-dusage&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Pertinent pour qui construit un système ou une image de conteneur où la fiabilité du démarrage compte plus que la simplicité de configuration. La compilation d&amp;rsquo;une base de services se fait par exemple avec :&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;s6-rc-compile compiled/ source/&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copier le code&#34;
+    aria-label=&#34;Copier le code&#34;
+    data-copied-label=&#34;Copié !&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2&gt;Avis en bref&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;avis-en-bref&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#avis-en-bref&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;s6 demande un investissement d&amp;rsquo;apprentissage plus important que runit, mais pour qui construit une infrastructure où chaque détail du cycle de vie des processus compte, c&amp;rsquo;est un des projets les plus rigoureux du domaine.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

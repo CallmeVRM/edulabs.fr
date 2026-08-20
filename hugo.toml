@@ -1,0 +1,69 @@
+baseURL = 'https://edulabs.fr'
+locale = 'fr-FR'
+defaultContentLanguage = 'fr'
+title = 'Lotfi Hamadene'
+
+[module]
+  [[module.imports]]
+    path = "github.com/imfing/hextra"
+
+[[menu.main]]
+  identifier = "troubleshooting"
+  name = "Troubleshooting"
+  pageRef = "/troubleshooting"
+  weight = 1
+
+[[menu.main]]
+  identifier = "research"
+  name = "Research"
+  pageRef = "/research"
+  weight = 2
+
+[[menu.main]]
+  identifier = "docs"
+  name = "Docs"
+  pageRef = "/docs"
+  weight = 3
+
+[[menu.main]]
+  identifier = "decouvertes"
+  name = "Découvertes"
+  pageRef = "/decouvertes"
+  weight = 4
+
+[[menu.main]]
+  identifier = "opinions"
+  name = "Opinions"
+  pageRef = "/opinions"
+  weight = 5
+
+[[menu.main]]
+  name = "Search"
+  weight = 6
+  [menu.main.params]
+    type = "search"
+
+[params]
+  description = "Notes, retours d'expérience et découvertes autour de Linux."
+
+  [params.theme]
+    default = "system"
+    displayToggle = true
+
+  [params.navbar]
+    displayTitle = true
+    displayLogo = false
+
+  [params.footer]
+    enable = true
+    displayCopyright = true
+    displayPoweredBy = true
+
+  [params.search]
+    enable = true
+    type = "flexsearch"
+
+  [params.blog.list]
+    displayTags = true
+    sortBy = "date"
+    sortOrder = "desc"

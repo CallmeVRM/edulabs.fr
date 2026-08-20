@@ -1,0 +1,36 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lotfi Hamadene – Systemd</title>
+    <link>http://localhost:1313/tags/systemd/</link>
+    <description>Recent content in Systemd on Lotfi Hamadene</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-FR</language>
+    <lastBuildDate>Tue, 10 Feb 2026 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="http://localhost:1313/tags/systemd/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>systemd, le débat qui ne meurt jamais</title>
+      <link>http://localhost:1313/opinions/systemd-le-debat-qui-ne-meurt-jamais/</link>
+      <pubDate>Tue, 10 Feb 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/opinions/systemd-le-debat-qui-ne-meurt-jamais/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Il y a des sujets qu&amp;rsquo;on ne peut plus aborder sereinement sur un forum Linux. systemd en fait partie depuis plus de dix ans, et je commence à comprendre pourquoi le débat ne s&amp;rsquo;éteint pas : les deux camps ont raison, chacun sur un point différent.&lt;/p&gt;
+&lt;p&gt;D&amp;rsquo;un côté, les pragmatiques : systemd démarre plus vite, gère proprement les dépendances entre services, journalise tout au même endroit et propose des primitives (sockets, timers, cgroups) qu&amp;rsquo;on aurait dû avoir depuis longtemps. Sur un serveur qu&amp;rsquo;on administre à dix, ce confort n&amp;rsquo;est pas négociable.&lt;/p&gt;
+&lt;p&gt;De l&amp;rsquo;autre, les puristes UNIX : un PID 1 qui absorbe la gestion des logs, du réseau, du temps et des points de montage, ça viole un principe qu&amp;rsquo;on a mis quarante ans à faire comprendre à tout le monde — un outil, une responsabilité. Et honnêtement, &lt;code&gt;journalctl&lt;/code&gt; reste plus pénible à parcourir qu&amp;rsquo;un bon vieux fichier texte avec &lt;code&gt;grep&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Ce que je retiens après des années à administrer les deux mondes : le vrai problème n&amp;rsquo;est pas systemd lui-même, c&amp;rsquo;est l&amp;rsquo;absence d&amp;rsquo;alternative crédible qui aurait pu tirer la gestion des services vers le haut sans absorber le reste. runit et s6 prouvent qu&amp;rsquo;on peut faire un init minimaliste et fiable, mais ils n&amp;rsquo;ont jamais eu la surface d&amp;rsquo;adoption nécessaire pour peser dans la discussion.&lt;/p&gt;
+&lt;p&gt;Je continuerai à utiliser systemd sur mes machines de tous les jours parce que l&amp;rsquo;écosystème s&amp;rsquo;est construit autour, mais je regarde toujours avec un peu de nostalgie les distributions qui ont fait un autre choix.&lt;/p&gt;
+      </description>
+    </item>
+    
+  </channel>
+</rss>
