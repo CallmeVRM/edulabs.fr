@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//home/vrm/go/pkg/mod/github.com/imfing/hextra@v0.12.3/**)",
+      "Bash(hugo --minify)",
+      "Bash(pkill -f \"hugo server\")",
+      "Bash(nohup hugo server -D --port 1313)",
+      "Read(//tmp/**)",
+      "Bash(hugo server *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://127.0.0.1:1313/)",
+      "Bash(curl -s http://127.0.0.1:1313/)",
+      "Bash(rm -f public/css/compiled/main.min.*.css public/fr.search.min.*.js public/js/main-head.min.*.js public/js/main.min.*.js *)",
+      "Bash(hugo)",
+      "Bash(git rm *)",
+      "Bash(git push *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)"
+    ],
+    "additionalDirectories": [
+      "/home/vrm/edulabs-2026-prod/hugo/edulabs.fr/public/css/compiled"
+    ]
+  }
+}
