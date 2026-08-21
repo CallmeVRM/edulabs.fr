@@ -2,9 +2,9 @@
 title: Accueil
 ---
 
-# Lotfi Hamadene
+# Lotfi's Corner !
 
-Bienvenue sur mon espace personnel consacré à Linux : dépannages vécus, petites recherches techniques, documentation de référence, découvertes du moment et quelques avis tranchés.
+Bienvenue sur mon espace personnel consacré à plusieurs choses : dépannages vécus, petites recherches techniques, documentation de référence, découvertes du moment et quelques avis.
 
 <!--more-->
 
