@@ -8,4 +8,5 @@ Les bases de l'administration quotidienne d'un serveur Linux : gestion des compt
 {{< cards >}}
   {{< card link="utilisateurs-permissions" title="Utilisateurs & permissions" >}}
   {{< card link="gestion-paquets" title="Gestion des paquets" >}}
+  {{< card link="sauvegardes" title="Sauvegardes" >}}
 {{< /cards >}}

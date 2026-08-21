@@ -1,0 +1,212 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lotfi Hamadene – Sauvegardes</title>
+    <link>https://edulabs.fr/docs/administration/sauvegardes/</link>
+    <description>Recent content in Sauvegardes on Lotfi Hamadene</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-FR</language>
+    
+	  <atom:link href="https://edulabs.fr/docs/administration/sauvegardes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Sauvegarder avec Restic</title>
+      <link>https://edulabs.fr/docs/administration/sauvegardes/sauvegarder-avec-restic/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://edulabs.fr/docs/administration/sauvegardes/sauvegarder-avec-restic/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;Objectif&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;objectif&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#objectif&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Ce guide met en place des sauvegardes chiffrées, dédupliquées et incrémentales avec &lt;a href=&#34;https://restic.net/&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Restic&lt;/a&gt;, vers un dépôt local ou distant (SFTP, S3, Backblaze B2&amp;hellip;).&lt;/p&gt;
+&lt;h2&gt;Prérequis&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;prérequis&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#pr%c3%a9requis&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;restic&lt;/code&gt; installé (&lt;code&gt;apt install restic&lt;/code&gt; ou binaire statique)&lt;/li&gt;
+&lt;li&gt;Un espace de stockage cible (disque externe, serveur SFTP, bucket S3&amp;hellip;)&lt;/li&gt;
+&lt;li&gt;Un mot de passe de dépôt à conserver précieusement&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-red-200 hx:bg-red-100 hx:text-red-900 hx:dark:border-red-200/30 hx:dark:bg-red-900/30 hx:dark:text-red-200&#34;&gt;
+  &lt;div class=&#34;hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2&#34;&gt;&lt;svg height=1.2em class=&#34;hx:inline-block hx:align-middle&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636&#34;/&gt;&lt;/svg&gt;&lt;/div&gt;
+
+  &lt;div class=&#34;hx:w-full hx:min-w-0 hx:leading-7&#34;&gt;
+    &lt;div class=&#34;hx:mt-6 hx:leading-7 hx:first:mt-0&#34;&gt;Le mot de passe du dépôt n&amp;rsquo;est stocké nulle part par Restic. En cas de perte, les données sauvegardées sont &lt;strong&gt;définitivement inaccessibles&lt;/strong&gt;, y compris pour vous.&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2&gt;Étapes&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;étapes&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%c3%a9tapes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class=&#34;hextra-steps hx:ml-4 hx:mb-12 hx:ltr:border-l hx:rtl:border-r hx:border-gray-200 hx:ltr:pl-6 hx:rtl:pr-6 hx:dark:border-neutral-800 [counter-reset:step]&#34;&gt;
+
+### Initialiser le dépôt
+
+```bash
+export RESTIC_REPOSITORY=/mnt/backup/restic-repo
+export RESTIC_PASSWORD=&#34;un-mot-de-passe-long-et-unique&#34;
+restic init
+```
+
+### Lancer une première sauvegarde
+
+```bash
+restic backup /etc /home /var/www
+```
+
+Restic ne transfère que les blocs de données nouveaux ou modifiés depuis le dernier instantané (`snapshot`), grâce à un découpage en chunks à taille variable. Une deuxième sauvegarde du même arbre est donc généralement très rapide.
+
+### Vérifier les instantanés existants
+
+```bash
+restic snapshots
+```
+
+### Restaurer un fichier ou une arborescence
+
+```bash
+restic restore latest --target /tmp/restauration --include /etc/nginx
+```
+
+&lt;/div&gt;
+
+&lt;h2&gt;Politique de rétention&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;politique-de-rétention&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#politique-de-r%c3%a9tention&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Sans nettoyage, le dépôt grossit indéfiniment. La commande &lt;code&gt;forget&lt;/code&gt; associée à &lt;code&gt;prune&lt;/code&gt; applique une politique de rétention puis libère l&amp;rsquo;espace disque correspondant :&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;restic forget --keep-daily &lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt; --keep-weekly &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; --keep-monthly &lt;span style=&#34;color:#ae81ff&#34;&gt;6&lt;/span&gt; --prune&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copier le code&#34;
+    aria-label=&#34;Copier le code&#34;
+    data-copied-label=&#34;Copié !&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200&#34;&gt;
+  &lt;div class=&#34;hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2&#34;&gt;&lt;svg height=1.2em class=&#34;hx:inline-block hx:align-middle&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z&#34;/&gt;&lt;/svg&gt;&lt;/div&gt;
+
+  &lt;div class=&#34;hx:w-full hx:min-w-0 hx:leading-7&#34;&gt;
+    &lt;div class=&#34;hx:mt-6 hx:leading-7 hx:first:mt-0&#34;&gt;&lt;code&gt;forget&lt;/code&gt; sans &lt;code&gt;--prune&lt;/code&gt; ne fait que marquer les instantanés obsolètes : les données ne sont réellement supprimées du dépôt qu&amp;rsquo;au passage de &lt;code&gt;prune&lt;/code&gt;, qui peut être lancé séparément si l&amp;rsquo;opération est coûteuse en I/O.&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2&gt;Vérification&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;vérification&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#v%c3%a9rification&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Contrôlez régulièrement l&amp;rsquo;intégrité du dépôt, idéalement après chaque changement de support de stockage :&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;restic check --read-data-subset&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;10%&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copier le code&#34;
+    aria-label=&#34;Copier le code&#34;
+    data-copied-label=&#34;Copié !&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Une vérification complète (&lt;code&gt;--read-data-subset=100%&lt;/code&gt; ou sans l&amp;rsquo;option) relit l&amp;rsquo;intégralité des données stockées et peut être longue sur un dépôt volumineux ; un sondage partiel régulier est un bon compromis pour détecter une corruption silencieuse du support.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Planifier avec systemd timers</title>
+      <link>https://edulabs.fr/docs/administration/sauvegardes/planifier-avec-systemd-timers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://edulabs.fr/docs/administration/sauvegardes/planifier-avec-systemd-timers/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;Objectif&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;objectif&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#objectif&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Remplacer une entrée cron par un couple &lt;code&gt;service&lt;/code&gt; + &lt;code&gt;timer&lt;/code&gt; systemd, pour bénéficier de la journalisation dans &lt;code&gt;journald&lt;/code&gt;, de la gestion des dépendances et du rattrapage automatique (&lt;code&gt;Persistent=true&lt;/code&gt;) après une extinction de la machine.&lt;/p&gt;
+&lt;h2&gt;Prérequis&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;prérequis&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#pr%c3%a9requis&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Accès &lt;code&gt;root&lt;/code&gt; ou &lt;code&gt;sudo&lt;/code&gt; pour créer des unités dans &lt;code&gt;/etc/systemd/system/&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Un script ou une commande de sauvegarde déjà fonctionnelle (voir &lt;a href=&#34;https://edulabs.fr/docs/administration/sauvegardes/sauvegarder-avec-restic/&#34;&gt;Sauvegarder avec Restic&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Étapes&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;étapes&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%c3%a9tapes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class=&#34;hextra-steps hx:ml-4 hx:mb-12 hx:ltr:border-l hx:rtl:border-r hx:border-gray-200 hx:ltr:pl-6 hx:rtl:pr-6 hx:dark:border-neutral-800 [counter-reset:step]&#34;&gt;
+
+### Créer le service
+
+`/etc/systemd/system/backup-restic.service` :
+
+```ini
+[Unit]
+Description=Sauvegarde Restic
+
+[Service]
+Type=oneshot
+EnvironmentFile=/etc/restic/backup.env
+ExecStart=/usr/bin/restic backup /etc /home /var/www
+```
+
+Le service est de type `oneshot` : il exécute la commande puis se termine, contrairement à un service qui tournerait en continu. Les identifiants sensibles (mot de passe du dépôt, clés d&#39;accès) sont isolés dans un fichier d&#39;environnement dédié plutôt qu&#39;écrits en clair dans l&#39;unité.
+
+### Créer le timer associé
+
+`/etc/systemd/system/backup-restic.timer` :
+
+```ini
+[Unit]
+Description=Planification de la sauvegarde Restic
+
+[Timer]
+OnCalendar=*-*-* 02:30:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+```
+
+`Persistent=true` déclenche l&#39;exécution au prochain démarrage si la machine était éteinte à l&#39;heure prévue, ce que `cron` ne fait pas nativement.
+
+### Activer et démarrer le timer
+
+```bash
+systemctl daemon-reload
+systemctl enable --now backup-restic.timer
+```
+
+&lt;/div&gt;
+
+&lt;h2&gt;Vérification&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;vérification&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#v%c3%a9rification&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;systemctl list-timers backup-restic.timer
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;journalctl -u backup-restic.service --since &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;-7 days&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copier le code&#34;
+    aria-label=&#34;Copier le code&#34;
+    data-copied-label=&#34;Copié !&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;list-timers&lt;/code&gt; affiche la prochaine date de déclenchement calculée ainsi que la date de la dernière exécution. En cas d&amp;rsquo;échec du service, &lt;code&gt;journalctl&lt;/code&gt; contient la sortie complète de &lt;code&gt;restic&lt;/code&gt;, y compris les éventuels messages d&amp;rsquo;erreur réseau ou de dépôt verrouillé.&lt;/p&gt;
+&lt;div class=&#34;hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-amber-200 hx:bg-amber-100 hx:text-amber-900 hx:dark:border-amber-200/30 hx:dark:bg-amber-900/30 hx:dark:text-amber-200&#34;&gt;
+  &lt;div class=&#34;hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2&#34;&gt;&lt;svg height=1.2em class=&#34;hx:inline-block hx:align-middle&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z&#34;/&gt;&lt;/svg&gt;&lt;/div&gt;
+
+  &lt;div class=&#34;hx:w-full hx:min-w-0 hx:leading-7&#34;&gt;
+    &lt;div class=&#34;hx:mt-6 hx:leading-7 hx:first:mt-0&#34;&gt;Un &lt;code&gt;restic backup&lt;/code&gt; interrompu brutalement (coupure secteur, &lt;code&gt;OOM killer&lt;/code&gt;) peut laisser un verrou (&lt;code&gt;lock&lt;/code&gt;) orphelin dans le dépôt. Si une exécution suivante échoue avec &lt;code&gt;unable to create lock&lt;/code&gt;, vérifiez qu&amp;rsquo;aucun processus &lt;code&gt;restic&lt;/code&gt; n&amp;rsquo;est réellement actif puis levez le verrou avec &lt;code&gt;restic unlock&lt;/code&gt;.&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

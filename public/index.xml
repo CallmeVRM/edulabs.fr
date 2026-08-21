@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lotfi Hamadene – Accueil</title>
-    <link>http://localhost:1313/</link>
+    <link>https://edulabs.fr/</link>
     <description>Recent content in Accueil on Lotfi Hamadene</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-FR</language>
     <lastBuildDate>Sat, 15 Aug 2026 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://edulabs.fr/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Arch Linux n&#39;est pas réservé aux élitistes</title>
-      <link>http://localhost:1313/opinions/arch-linux-nest-pas-que-pour-les-elitistes/</link>
+      <link>https://edulabs.fr/opinions/arch-linux-nest-pas-que-pour-les-elitistes/</link>
       <pubDate>Sat, 15 Aug 2026 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/opinions/arch-linux-nest-pas-que-pour-les-elitistes/</guid>
+      <guid>https://edulabs.fr/opinions/arch-linux-nest-pas-que-pour-les-elitistes/</guid>
       <description>
         
         
@@ -32,10 +32,10 @@
     
     <item>
       <title>Le cloud nous a-t-il fait oublier l&#39;administration système ?</title>
-      <link>http://localhost:1313/opinions/le-cloud-nous-a-fait-oublier-ladministration-systeme/</link>
+      <link>https://edulabs.fr/opinions/le-cloud-nous-a-fait-oublier-ladministration-systeme/</link>
       <pubDate>Sun, 12 Jul 2026 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/opinions/le-cloud-nous-a-fait-oublier-ladministration-systeme/</guid>
+      <guid>https://edulabs.fr/opinions/le-cloud-nous-a-fait-oublier-ladministration-systeme/</guid>
       <description>
         
         
@@ -48,10 +48,10 @@
     
     <item>
       <title>Flatpak, Snap, AppImage : le chaos des formats universels</title>
-      <link>http://localhost:1313/opinions/flatpak-snap-appimage-le-chaos-des-formats/</link>
+      <link>https://edulabs.fr/opinions/flatpak-snap-appimage-le-chaos-des-formats/</link>
       <pubDate>Fri, 05 Jun 2026 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/opinions/flatpak-snap-appimage-le-chaos-des-formats/</guid>
+      <guid>https://edulabs.fr/opinions/flatpak-snap-appimage-le-chaos-des-formats/</guid>
       <description>
         
         
@@ -64,10 +64,10 @@
     
     <item>
       <title>Wayland est-il vraiment prêt pour tout le monde ?</title>
-      <link>http://localhost:1313/opinions/wayland-est-il-vraiment-pret/</link>
+      <link>https://edulabs.fr/opinions/wayland-est-il-vraiment-pret/</link>
       <pubDate>Thu, 30 Apr 2026 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/opinions/wayland-est-il-vraiment-pret/</guid>
+      <guid>https://edulabs.fr/opinions/wayland-est-il-vraiment-pret/</guid>
       <description>
         
         
@@ -80,10 +80,10 @@
     
     <item>
       <title>Pourquoi j&#39;ai quitté Ubuntu pour Debian</title>
-      <link>http://localhost:1313/opinions/pourquoi-jai-quitte-ubuntu-pour-debian/</link>
+      <link>https://edulabs.fr/opinions/pourquoi-jai-quitte-ubuntu-pour-debian/</link>
       <pubDate>Sun, 22 Mar 2026 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/opinions/pourquoi-jai-quitte-ubuntu-pour-debian/</guid>
+      <guid>https://edulabs.fr/opinions/pourquoi-jai-quitte-ubuntu-pour-debian/</guid>
       <description>
         
         
@@ -96,10 +96,10 @@
     
     <item>
       <title>systemd, le débat qui ne meurt jamais</title>
-      <link>http://localhost:1313/opinions/systemd-le-debat-qui-ne-meurt-jamais/</link>
+      <link>https://edulabs.fr/opinions/systemd-le-debat-qui-ne-meurt-jamais/</link>
       <pubDate>Tue, 10 Feb 2026 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/opinions/systemd-le-debat-qui-ne-meurt-jamais/</guid>
+      <guid>https://edulabs.fr/opinions/systemd-le-debat-qui-ne-meurt-jamais/</guid>
       <description>
         
         

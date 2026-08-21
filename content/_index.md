@@ -2,18 +2,50 @@
 title: Accueil
 ---
 
-# Lotfi's Corner !
+{{< hextra/hero-badge >}}
+  👋 Notes d'un passionné de Linux
+{{< /hextra/hero-badge >}}
 
-Bienvenue sur mon espace personnel consacré à plusieurs choses : dépannages vécus, petites recherches techniques, documentation de référence, découvertes du moment et quelques avis.
+{{< hextra/hero-headline style="margin-top: 1.5rem;" >}}
+  Dépannages, recherches et documentation&nbsp;Linux
+{{< /hextra/hero-headline >}}
 
-<!--more-->
+{{< hextra/hero-subtitle style="margin-top: 1.5rem;" >}}
+  Pannes réellement vécues, explorations du noyau, procédures de référence
+  et quelques avis tranchés — sans blabla superflu.
+{{< /hextra/hero-subtitle >}}
 
-Ce site est organisé en cinq espaces :
+{{< hextra/hero-button text="Parcourir la doc" link="docs" style="margin-top: 2rem;" >}}
 
-{{< cards >}}
-  {{< card link="troubleshooting" title="Troubleshooting" icon="exclamation" subtitle="Pannes rencontrées, diagnostics et résolutions, classés par domaine." >}}
-  {{< card link="research" title="Research" icon="beaker" subtitle="Explorations techniques plus poussées sur le noyau, le stockage et la sécurité." >}}
-  {{< card link="docs" title="Docs" icon="document-text" subtitle="Documentation de référence, procédures et configurations types." >}}
-  {{< card link="decouvertes" title="Découvertes" icon="sparkles" subtitle="Distributions, outils et projets qui valent le détour." >}}
-  {{< card link="opinions" title="Opinions" icon="chat-alt" subtitle="Billets et prises de position, au format blog." >}}
-{{< /cards >}}
+{{< hextra/feature-grid cols="3" style="margin-top: 4rem;" >}}
+  {{< hextra/feature-card
+    title="Troubleshooting"
+    icon="exclamation"
+    subtitle="Pannes rencontrées, diagnostics et résolutions, classées par domaine."
+    link="troubleshooting"
+  >}}
+  {{< hextra/feature-card
+    title="Research"
+    icon="beaker"
+    subtitle="Explorations techniques plus poussées sur le noyau, le stockage et la sécurité."
+    link="research"
+  >}}
+  {{< hextra/feature-card
+    title="Docs"
+    icon="document-text"
+    subtitle="Documentation de référence, procédures et configurations types."
+    link="docs"
+  >}}
+  {{< hextra/feature-card
+    title="Découvertes"
+    icon="sparkles"
+    subtitle="Distributions, outils et projets qui valent le détour."
+    link="decouvertes"
+  >}}
+  {{< hextra/feature-card
+    title="Opinions"
+    icon="chat-alt"
+    subtitle="Billets et prises de position, au format blog."
+    link="opinions"
+  >}}
+{{< /hextra/feature-grid >}}

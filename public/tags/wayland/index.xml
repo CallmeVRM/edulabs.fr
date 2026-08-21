@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lotfi Hamadene – Wayland</title>
-    <link>http://localhost:1313/tags/wayland/</link>
+    <link>https://edulabs.fr/tags/wayland/</link>
     <description>Recent content in Wayland on Lotfi Hamadene</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-FR</language>
     <lastBuildDate>Thu, 30 Apr 2026 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="http://localhost:1313/tags/wayland/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://edulabs.fr/tags/wayland/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,10 +17,10 @@
     
     <item>
       <title>Wayland est-il vraiment prêt pour tout le monde ?</title>
-      <link>http://localhost:1313/opinions/wayland-est-il-vraiment-pret/</link>
+      <link>https://edulabs.fr/opinions/wayland-est-il-vraiment-pret/</link>
       <pubDate>Thu, 30 Apr 2026 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/opinions/wayland-est-il-vraiment-pret/</guid>
+      <guid>https://edulabs.fr/opinions/wayland-est-il-vraiment-pret/</guid>
       <description>
         
         
