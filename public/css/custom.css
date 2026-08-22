@@ -1,17 +1,23 @@
-/* Site look & feel: more spacious, wider, docs-style reading experience. */
+/* Site look & feel: more spacious, wider, docs-style reading experience.
+   Tuned against the real kubernetes.io/docs stylesheet (Docsy/Bootstrap):
+   container ~1320px, base line-height 1.5, accent blue #326ce5. */
 
 :root {
   --hextra-max-content-width: 76rem;
+  /* Nudge the default Hextra blue toward Kubernetes' own #326ce5. */
+  --primary-hue: 221deg;
+  --primary-saturation: 78%;
+  --primary-lightness: 60%;
 }
 
-/* Airier typography: bigger base size, generous line-height, calmer measure. */
+/* Airier typography: slightly larger base size, generous line-height. */
 .content {
   font-size: 1.0625rem;
-  line-height: 1.75;
+  line-height: 1.65;
 }
 
 .content p {
-  line-height: 1.75;
+  line-height: 1.65;
   margin-top: 1.5rem;
 }
 

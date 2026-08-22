@@ -7,6 +7,6 @@ MicroOS est une distribution Linux immuable, conçue pour les environnements de 
 
 
 {{< cards >}}
-  {{< card link="4G_mode" title="MicroOS en mode 4G" >}}
+  {{< card link="4g_mode" title="MicroOS en mode 4G" >}}
   {{< card link="wrapper_nft" title="Wrapper nftables" >}}
 {{< /cards >}}

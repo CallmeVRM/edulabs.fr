@@ -3,7 +3,9 @@
    container ~1320px, base line-height 1.5, accent blue #326ce5. */
 
 :root {
-  --hextra-max-content-width: 76rem;
+  /* Hextra hardcodes this to 72rem regardless of params.page.width — override
+     it to match so the article body actually uses the wide layout. */
+  --hextra-max-content-width: 90rem;
   /* Nudge the default Hextra blue toward Kubernetes' own #326ce5. */
   --primary-hue: 221deg;
   --primary-saturation: 78%;
@@ -86,4 +88,30 @@ main article {
 .hextra-sidebar-container a {
   padding-top: 0.375rem;
   padding-bottom: 0.375rem;
+}
+
+/* A few small polish touches. */
+.content a {
+  transition: color 0.15s ease;
+}
+
+.content h1 {
+  position: relative;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid hsl(var(--primary-hue) var(--primary-saturation) var(--primary-lightness) / 0.25);
+}
+
+.hextra-card {
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.hextra-card:hover {
+  transform: translateY(-2px);
+}
+
+/* Give the homepage card grid a bit more room to breathe. */
+.hextra-cards {
+  gap: 1.25rem;
 }
