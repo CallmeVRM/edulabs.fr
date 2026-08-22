@@ -34,8 +34,8 @@ layout: hextra-home
 </h2>
 </div>
 
-<div class="hx:w-full">
-{{< cards cols="3" >}}
+<div class="hx:w-full home-cards">
+{{< cards cols="1" >}}
   {{< card link="troubleshooting" title="Troubleshooting" icon="exclamation" subtitle="Pannes rencontrées, diagnostics et résolutions, classées par domaine." >}}
   {{< card link="research" title="Research" icon="beaker" subtitle="Explorations techniques plus poussées sur le noyau, le stockage et la sécurité." >}}
   {{< card link="docs" title="Docs" icon="document-text" subtitle="Documentation de référence, procédures et configurations types." >}}

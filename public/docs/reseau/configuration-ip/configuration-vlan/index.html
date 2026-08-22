@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" dir="ltr"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1318&amp;path=livereload" data-no-instant defer></script>
+<html lang="fr" dir="ltr"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1319&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="robots" content="noindex, nofollow" />
   <link rel="icon shortcut" href="/favicon.ico" sizes="32x32" />
@@ -10,7 +10,7 @@
 <link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
 <title>Configurer un VLAN sur une interface – Lotfi Hamadene</title>
   <meta name="description" content="Objectif Segmenter le trafic réseau en créant une interface virtuelle taguée (VLAN 802.1Q) au-dessus d’une interface physique, afin d’isoler différents flux (production, administration, invités…) sur un même câblage.
-Prérequis Un commutateur configuré pour transporter le tag VLAN souhaité sur le port concerné (mode trunk) Module noyau 8021q chargé Droits sudo Étapes Charger le module VLAN si nécessaire. Créer l’interface VLAN au-dessus de l’interface physique en précisant l’identifiant. Attribuer une adresse IP à cette nouvelle interface. Activer l’interface. sudo modprobe 8021q sudo ip link add link eth0 name eth0.20 type vlan id 20 sudo ip addr add 10.0.20.5/24 dev eth0.20 sudo ip link set eth0.20 up Ici, eth0.20 reçoit le trafic tagué avec l’identifiant VLAN 20 depuis l’interface physique eth0, qui doit rester elle-même active. Pour rendre la configuration persistante après un redémarrage, il est préférable de la déclarer dans Netplan ou dans le gestionnaire réseau de la distribution plutôt que de répéter ces commandes manuellement." /><link rel="canonical" href="http://localhost:1318/docs/reseau/configuration-ip/configuration-vlan/" itemprop="url" />
+Prérequis Un commutateur configuré pour transporter le tag VLAN souhaité sur le port concerné (mode trunk) Module noyau 8021q chargé Droits sudo Étapes Charger le module VLAN si nécessaire. Créer l’interface VLAN au-dessus de l’interface physique en précisant l’identifiant. Attribuer une adresse IP à cette nouvelle interface. Activer l’interface. sudo modprobe 8021q sudo ip link add link eth0 name eth0.20 type vlan id 20 sudo ip addr add 10.0.20.5/24 dev eth0.20 sudo ip link set eth0.20 up Ici, eth0.20 reçoit le trafic tagué avec l’identifiant VLAN 20 depuis l’interface physique eth0, qui doit rester elle-même active. Pour rendre la configuration persistante après un redémarrage, il est préférable de la déclarer dans Netplan ou dans le gestionnaire réseau de la distribution plutôt que de répéter ces commandes manuellement." /><link rel="canonical" href="http://localhost:1319/docs/reseau/configuration-ip/configuration-vlan/" itemprop="url" />
 
 <meta property="og:title" content="Configurer un VLAN sur une interface">
 <meta
@@ -52,7 +52,7 @@ Ici, eth0.20 reçoit le trafic tagué avec l&rsquo;identifiant VLAN 20 depuis l&
   content="
     article
   ">
-<meta property="og:url" content="http://localhost:1318/docs/reseau/configuration-ip/configuration-vlan/"><meta property="article:section" content="docs">
+<meta property="og:url" content="http://localhost:1319/docs/reseau/configuration-ip/configuration-vlan/"><meta property="article:section" content="docs">
 
 
 

@@ -39,9 +39,9 @@
      on la libère pour obtenir une vraie pleine largeur. */
   --hextra-max-content-width: 100%;
 
-  /* Largeur de la barre latérale (le thème code hx:md:w-64 = 16rem en dur ;
-     élargi pour que les titres longs ne soient plus tronqués). */
-  --sidebar-width: 19rem;
+  /* Largeur de la barre latérale (le thème code hx:md:w-64 = 16rem en dur).
+     19rem réglait la troncature, +20 % à la demande → 22.8rem. */
+  --sidebar-width: 22.8rem;
 }
 
 .dark {
@@ -105,11 +105,11 @@ tt {
   color: var(--c-text);
 }
 
-/* H1 en monospace : lecture « terminal », très lisible sur un titre court,
-   et ça donne le ton technique sans gêner le corps de texte. */
+/* H1 en sans, comme les autres titres. (Un temps en monospace pour le côté
+   « terminal » : trop lourd sur les titres longs, abandonné.) */
 .content h1 {
-  font-family: var(--font-mono);
-  font-size: 2.125rem;
+  font-family: var(--font-sans);
+  font-size: 2.25rem;
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: -0.02em;
@@ -307,8 +307,16 @@ main article {
    -------------------------------------------------------------------------- */
 
 /* Élargie : à trois niveaux d'imbrication, 16rem ne suffisait pas et les
-   titres longs se faisaient rogner par l'overflow-hidden du conteneur. */
+   titres longs se faisaient rogner par l'overflow-hidden du conteneur.
+   Palier intermédiaire sur tablette : à 768px, 22.8rem ne laisserait que
+   ~400px au contenu. La largeur pleine ne s'applique qu'à partir de 1024px. */
 @media (min-width: 768px) {
+  .hextra-sidebar-container {
+    width: 18rem;
+  }
+}
+
+@media (min-width: 1024px) {
   .hextra-sidebar-container {
     width: var(--sidebar-width);
   }
@@ -397,6 +405,16 @@ main article {
 
 .hextra-card-subtitle {
   line-height: 1.55;
+}
+
+/* Accueil : cartes empilées à la verticale et centrées dans la page.
+   La grille du thème (auto-fill / minmax 250px) créerait sinon plusieurs
+   colonnes dès qu'il y a de la place — d'où le 1fr explicite. */
+.home-cards .hextra-cards {
+  grid-template-columns: 1fr;
+  max-width: 44rem;
+  margin-inline: auto;
+  gap: 0.875rem;
 }
 
 /* --------------------------------------------------------------------------

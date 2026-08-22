@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lotfi Hamadene – Shells alternatifs</title>
-    <link>http://localhost:1318/decouvertes/projets-open-source/shells-alternatifs/</link>
+    <link>http://localhost:1319/decouvertes/projets-open-source/shells-alternatifs/</link>
     <description>Recent content in Shells alternatifs on Lotfi Hamadene</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-FR</language>
     
-	  <atom:link href="http://localhost:1318/decouvertes/projets-open-source/shells-alternatifs/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:1319/decouvertes/projets-open-source/shells-alternatifs/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>fish : un shell pensé pour l&#39;utilisateur</title>
-      <link>http://localhost:1318/decouvertes/projets-open-source/shells-alternatifs/fish-shell/</link>
+      <link>http://localhost:1319/decouvertes/projets-open-source/shells-alternatifs/fish-shell/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/decouvertes/projets-open-source/shells-alternatifs/fish-shell/</guid>
+      <guid>http://localhost:1319/decouvertes/projets-open-source/shells-alternatifs/fish-shell/</guid>
       <description>
         
         
@@ -58,10 +58,10 @@
     
     <item>
       <title>Nushell : quand le shell devient structuré</title>
-      <link>http://localhost:1318/decouvertes/projets-open-source/shells-alternatifs/nushell/</link>
+      <link>http://localhost:1319/decouvertes/projets-open-source/shells-alternatifs/nushell/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/decouvertes/projets-open-source/shells-alternatifs/nushell/</guid>
+      <guid>http://localhost:1319/decouvertes/projets-open-source/shells-alternatifs/nushell/</guid>
       <description>
         
         

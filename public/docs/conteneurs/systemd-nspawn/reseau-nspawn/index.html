@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" dir="ltr"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1318&amp;path=livereload" data-no-instant defer></script>
+<html lang="fr" dir="ltr"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1319&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="robots" content="noindex, nofollow" />
   <link rel="icon shortcut" href="/favicon.ico" sizes="32x32" />
@@ -10,7 +10,7 @@
 <link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
 <title>Configurer le réseau d&#39;un conteneur nspawn – Lotfi Hamadene</title>
   <meta name="description" content="Objectif Par défaut, un conteneur systemd-nspawn partage l’espace réseau de l’hôte, ce qui n’est pas toujours souhaitable. Ce guide montre comment lui attribuer une interface réseau virtuelle dédiée, isolée de celle de l’hôte.
-Prérequis Conteneur déjà créé (voir la page « Créer un conteneur léger avec systemd-nspawn ») Droits root sur l’hôte Le module bridge du noyau disponible si vous souhaitez relier le conteneur à un pont existant Étapes Démarrer le conteneur avec une interface réseau virtuelle privée (paire veth). Configurer l’interface côté hôte pour lui donner accès au réseau. Attribuer une adresse IP à l’interface côté conteneur. Rendre la configuration persistante dans le fichier de service du conteneur. sudo systemd-nspawn -D /var/lib/machines/monconteneur --network-veth sudo ip addr add 10.10.10.1/24 dev ve-monconteneur sudo ip link set ve-monconteneur up Dans le conteneur, il faut ensuite configurer l’interface host0 (nom donné automatiquement côté conteneur à l’autre extrémité de la paire veth) :" /><link rel="canonical" href="http://localhost:1318/docs/conteneurs/systemd-nspawn/reseau-nspawn/" itemprop="url" />
+Prérequis Conteneur déjà créé (voir la page « Créer un conteneur léger avec systemd-nspawn ») Droits root sur l’hôte Le module bridge du noyau disponible si vous souhaitez relier le conteneur à un pont existant Étapes Démarrer le conteneur avec une interface réseau virtuelle privée (paire veth). Configurer l’interface côté hôte pour lui donner accès au réseau. Attribuer une adresse IP à l’interface côté conteneur. Rendre la configuration persistante dans le fichier de service du conteneur. sudo systemd-nspawn -D /var/lib/machines/monconteneur --network-veth sudo ip addr add 10.10.10.1/24 dev ve-monconteneur sudo ip link set ve-monconteneur up Dans le conteneur, il faut ensuite configurer l’interface host0 (nom donné automatiquement côté conteneur à l’autre extrémité de la paire veth) :" /><link rel="canonical" href="http://localhost:1319/docs/conteneurs/systemd-nspawn/reseau-nspawn/" itemprop="url" />
 
 <meta property="og:title" content="Configurer le réseau d&#39;un conteneur nspawn">
 <meta
@@ -51,7 +51,7 @@ Dans le conteneur, il faut ensuite configurer l&rsquo;interface host0 (nom donn�
   content="
     article
   ">
-<meta property="og:url" content="http://localhost:1318/docs/conteneurs/systemd-nspawn/reseau-nspawn/"><meta property="article:section" content="docs">
+<meta property="og:url" content="http://localhost:1319/docs/conteneurs/systemd-nspawn/reseau-nspawn/"><meta property="article:section" content="docs">
 
 
 

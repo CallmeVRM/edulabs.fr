@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lotfi Hamadene – Modules de sécurité (LSM)</title>
-    <link>http://localhost:1318/research/securite/lsm/</link>
+    <link>http://localhost:1319/research/securite/lsm/</link>
     <description>Recent content in Modules de sécurité (LSM) on Lotfi Hamadene</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-FR</language>
     
-	  <atom:link href="http://localhost:1318/research/securite/lsm/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:1319/research/securite/lsm/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>SELinux contre AppArmor : deux modèles de confinement</title>
-      <link>http://localhost:1318/research/securite/lsm/selinux-vs-apparmor/</link>
+      <link>http://localhost:1319/research/securite/lsm/selinux-vs-apparmor/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/research/securite/lsm/selinux-vs-apparmor/</guid>
+      <guid>http://localhost:1319/research/securite/lsm/selinux-vs-apparmor/</guid>
       <description>
         
         
@@ -61,10 +61,10 @@
     
     <item>
       <title>Isolation par namespaces : jusqu&#39;où aller ?</title>
-      <link>http://localhost:1318/research/securite/lsm/durcissement-namespaces/</link>
+      <link>http://localhost:1319/research/securite/lsm/durcissement-namespaces/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/research/securite/lsm/durcissement-namespaces/</guid>
+      <guid>http://localhost:1319/research/securite/lsm/durcissement-namespaces/</guid>
       <description>
         
         

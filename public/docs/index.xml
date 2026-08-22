@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lotfi Hamadene – Docs</title>
-    <link>http://localhost:1318/docs/</link>
+    <link>http://localhost:1319/docs/</link>
     <description>Recent content in Docs on Lotfi Hamadene</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-FR</language>
     
-	  <atom:link href="http://localhost:1318/docs/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:1319/docs/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Alpine Linux : légèreté et musl</title>
-      <link>http://localhost:1318/decouvertes/distributions/minimalistes/alpine-linux/</link>
+      <link>http://localhost:1319/decouvertes/distributions/minimalistes/alpine-linux/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/decouvertes/distributions/minimalistes/alpine-linux/</guid>
+      <guid>http://localhost:1319/decouvertes/distributions/minimalistes/alpine-linux/</guid>
       <description>
         
         
@@ -57,10 +57,10 @@
     
     <item>
       <title>CFS contre EEVDF : deux philosophies d&#39;ordonnancement</title>
-      <link>http://localhost:1318/research/noyau-linux/ordonnanceur/cfs-vs-eevdf/</link>
+      <link>http://localhost:1319/research/noyau-linux/ordonnanceur/cfs-vs-eevdf/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/research/noyau-linux/ordonnanceur/cfs-vs-eevdf/</guid>
+      <guid>http://localhost:1319/research/noyau-linux/ordonnanceur/cfs-vs-eevdf/</guid>
       <description>
         
         
@@ -100,10 +100,10 @@
     
     <item>
       <title>Comprendre le cache ARC de ZFS</title>
-      <link>http://localhost:1318/research/systemes-fichiers/zfs/arc-cache-zfs/</link>
+      <link>http://localhost:1319/research/systemes-fichiers/zfs/arc-cache-zfs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/research/systemes-fichiers/zfs/arc-cache-zfs/</guid>
+      <guid>http://localhost:1319/research/systemes-fichiers/zfs/arc-cache-zfs/</guid>
       <description>
         
         
@@ -145,10 +145,10 @@
     
     <item>
       <title>Configurer une adresse IP statique</title>
-      <link>http://localhost:1318/docs/reseau/configuration-ip/adresse-ip-statique/</link>
+      <link>http://localhost:1319/docs/reseau/configuration-ip/adresse-ip-statique/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/docs/reseau/configuration-ip/adresse-ip-statique/</guid>
+      <guid>http://localhost:1319/docs/reseau/configuration-ip/adresse-ip-statique/</guid>
       <description>
         
         
@@ -232,10 +232,10 @@
     
     <item>
       <title>Créer et configurer un nouvel utilisateur</title>
-      <link>http://localhost:1318/docs/administration/utilisateurs-permissions/creer-un-utilisateur/</link>
+      <link>http://localhost:1319/docs/administration/utilisateurs-permissions/creer-un-utilisateur/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/docs/administration/utilisateurs-permissions/creer-un-utilisateur/</guid>
+      <guid>http://localhost:1319/docs/administration/utilisateurs-permissions/creer-un-utilisateur/</guid>
       <description>
         
         
@@ -296,10 +296,10 @@
     
     <item>
       <title>Créer un conteneur léger avec systemd-nspawn</title>
-      <link>http://localhost:1318/docs/conteneurs/systemd-nspawn/creer-un-conteneur-nspawn/</link>
+      <link>http://localhost:1319/docs/conteneurs/systemd-nspawn/creer-un-conteneur-nspawn/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/docs/conteneurs/systemd-nspawn/creer-un-conteneur-nspawn/</guid>
+      <guid>http://localhost:1319/docs/conteneurs/systemd-nspawn/creer-un-conteneur-nspawn/</guid>
       <description>
         
         
@@ -360,10 +360,10 @@
     
     <item>
       <title>Disque plein alors que l&#39;espace semble disponible</title>
-      <link>http://localhost:1318/troubleshooting/stockage/disques/disque-plein-espace-fantome/</link>
+      <link>http://localhost:1319/troubleshooting/stockage/disques/disque-plein-espace-fantome/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/troubleshooting/stockage/disques/disque-plein-espace-fantome/</guid>
+      <guid>http://localhost:1319/troubleshooting/stockage/disques/disque-plein-espace-fantome/</guid>
       <description>
         
         
@@ -403,10 +403,10 @@
     
     <item>
       <title>Écrire des règles de base avec nftables</title>
-      <link>http://localhost:1318/docs/reseau/pare-feu/nftables-regles-de-base/</link>
+      <link>http://localhost:1319/docs/reseau/pare-feu/nftables-regles-de-base/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/docs/reseau/pare-feu/nftables-regles-de-base/</guid>
+      <guid>http://localhost:1319/docs/reseau/pare-feu/nftables-regles-de-base/</guid>
       <description>
         
         
@@ -467,10 +467,10 @@
     
     <item>
       <title>Fedora Silverblue : une base immuable au quotidien</title>
-      <link>http://localhost:1318/decouvertes/distributions/immuables/fedora-silverblue/</link>
+      <link>http://localhost:1319/decouvertes/distributions/immuables/fedora-silverblue/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/decouvertes/distributions/immuables/fedora-silverblue/</guid>
+      <guid>http://localhost:1319/decouvertes/distributions/immuables/fedora-silverblue/</guid>
       <description>
         
         
@@ -508,10 +508,10 @@
     
     <item>
       <title>fish : un shell pensé pour l&#39;utilisateur</title>
-      <link>http://localhost:1318/decouvertes/projets-open-source/shells-alternatifs/fish-shell/</link>
+      <link>http://localhost:1319/decouvertes/projets-open-source/shells-alternatifs/fish-shell/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/decouvertes/projets-open-source/shells-alternatifs/fish-shell/</guid>
+      <guid>http://localhost:1319/decouvertes/projets-open-source/shells-alternatifs/fish-shell/</guid>
       <description>
         
         
@@ -550,10 +550,10 @@
     
     <item>
       <title>GRUB ne présente plus son menu au démarrage</title>
-      <link>http://localhost:1318/troubleshooting/systeme/boot/grub-narrive-pas-au-menu/</link>
+      <link>http://localhost:1319/troubleshooting/systeme/boot/grub-narrive-pas-au-menu/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/troubleshooting/systeme/boot/grub-narrive-pas-au-menu/</guid>
+      <guid>http://localhost:1319/troubleshooting/systeme/boot/grub-narrive-pas-au-menu/</guid>
       <description>
         
         
@@ -593,10 +593,10 @@
     
     <item>
       <title>Impact du paramètre swappiness sur les performances</title>
-      <link>http://localhost:1318/research/noyau-linux/gestion-memoire/impact-swappiness/</link>
+      <link>http://localhost:1319/research/noyau-linux/gestion-memoire/impact-swappiness/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/research/noyau-linux/gestion-memoire/impact-swappiness/</guid>
+      <guid>http://localhost:1319/research/noyau-linux/gestion-memoire/impact-swappiness/</guid>
       <description>
         
         
@@ -638,10 +638,10 @@
     
     <item>
       <title>Installer Docker sur une distribution Linux</title>
-      <link>http://localhost:1318/docs/conteneurs/docker/installer-docker/</link>
+      <link>http://localhost:1319/docs/conteneurs/docker/installer-docker/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/docs/conteneurs/docker/installer-docker/</guid>
+      <guid>http://localhost:1319/docs/conteneurs/docker/installer-docker/</guid>
       <description>
         
         
@@ -705,10 +705,10 @@
     
     <item>
       <title>Résolution DNS anormalement lente</title>
-      <link>http://localhost:1318/troubleshooting/reseau/dns/resolution-dns-lente/</link>
+      <link>http://localhost:1319/troubleshooting/reseau/dns/resolution-dns-lente/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/troubleshooting/reseau/dns/resolution-dns-lente/</guid>
+      <guid>http://localhost:1319/troubleshooting/reseau/dns/resolution-dns-lente/</guid>
       <description>
         
         
@@ -748,10 +748,10 @@
     
     <item>
       <title>ripgrep et fd : la recherche réinventée</title>
-      <link>http://localhost:1318/decouvertes/outils-cli/remplacements-modernes/ripgrep-et-fd/</link>
+      <link>http://localhost:1319/decouvertes/outils-cli/remplacements-modernes/ripgrep-et-fd/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/decouvertes/outils-cli/remplacements-modernes/ripgrep-et-fd/</guid>
+      <guid>http://localhost:1319/decouvertes/outils-cli/remplacements-modernes/ripgrep-et-fd/</guid>
       <description>
         
         
@@ -788,10 +788,10 @@
     
     <item>
       <title>runit : simplicité et supervision de processus</title>
-      <link>http://localhost:1318/decouvertes/projets-open-source/init-systems-alternatifs/runit/</link>
+      <link>http://localhost:1319/decouvertes/projets-open-source/init-systems-alternatifs/runit/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/decouvertes/projets-open-source/init-systems-alternatifs/runit/</guid>
+      <guid>http://localhost:1319/decouvertes/projets-open-source/init-systems-alternatifs/runit/</guid>
       <description>
         
         
@@ -830,10 +830,10 @@ exec mon-programme --option&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#
     
     <item>
       <title>Sauvegarder avec Restic</title>
-      <link>http://localhost:1318/docs/administration/sauvegardes/sauvegarder-avec-restic/</link>
+      <link>http://localhost:1319/docs/administration/sauvegardes/sauvegarder-avec-restic/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/docs/administration/sauvegardes/sauvegarder-avec-restic/</guid>
+      <guid>http://localhost:1319/docs/administration/sauvegardes/sauvegarder-avec-restic/</guid>
       <description>
         
         
@@ -933,10 +933,10 @@ restic restore latest --target /tmp/restauration --include /etc/nginx
     
     <item>
       <title>SELinux contre AppArmor : deux modèles de confinement</title>
-      <link>http://localhost:1318/research/securite/lsm/selinux-vs-apparmor/</link>
+      <link>http://localhost:1319/research/securite/lsm/selinux-vs-apparmor/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/research/securite/lsm/selinux-vs-apparmor/</guid>
+      <guid>http://localhost:1319/research/securite/lsm/selinux-vs-apparmor/</guid>
       <description>
         
         
@@ -978,10 +978,10 @@ restic restore latest --target /tmp/restauration --include /etc/nginx
     
     <item>
       <title>Snapshots Btrfs : granularité et coût réel</title>
-      <link>http://localhost:1318/research/systemes-fichiers/btrfs/snapshots-btrfs-en-pratique/</link>
+      <link>http://localhost:1319/research/systemes-fichiers/btrfs/snapshots-btrfs-en-pratique/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/research/systemes-fichiers/btrfs/snapshots-btrfs-en-pratique/</guid>
+      <guid>http://localhost:1319/research/systemes-fichiers/btrfs/snapshots-btrfs-en-pratique/</guid>
       <description>
         
         
@@ -1024,10 +1024,10 @@ restic restore latest --target /tmp/restauration --include /etc/nginx
     
     <item>
       <title>tmux contre Zellij : deux approches du multiplexage</title>
-      <link>http://localhost:1318/decouvertes/outils-cli/multiplexeurs-terminal/tmux-vs-zellij/</link>
+      <link>http://localhost:1319/decouvertes/outils-cli/multiplexeurs-terminal/tmux-vs-zellij/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/decouvertes/outils-cli/multiplexeurs-terminal/tmux-vs-zellij/</guid>
+      <guid>http://localhost:1319/decouvertes/outils-cli/multiplexeurs-terminal/tmux-vs-zellij/</guid>
       <description>
         
         
@@ -1065,10 +1065,10 @@ restic restore latest --target /tmp/restauration --include /etc/nginx
     
     <item>
       <title>Tracer un système en production avec eBPF</title>
-      <link>http://localhost:1318/research/securite/observabilite-noyau/ebpf-tracing-en-production/</link>
+      <link>http://localhost:1319/research/securite/observabilite-noyau/ebpf-tracing-en-production/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/research/securite/observabilite-noyau/ebpf-tracing-en-production/</guid>
+      <guid>http://localhost:1319/research/securite/observabilite-noyau/ebpf-tracing-en-production/</guid>
       <description>
         
         
@@ -1108,10 +1108,10 @@ restic restore latest --target /tmp/restauration --include /etc/nginx
     
     <item>
       <title>Un service systemd redémarre en boucle</title>
-      <link>http://localhost:1318/troubleshooting/systeme/services-systemd/service-en-echec-boucle/</link>
+      <link>http://localhost:1319/troubleshooting/systeme/services-systemd/service-en-echec-boucle/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/troubleshooting/systeme/services-systemd/service-en-echec-boucle/</guid>
+      <guid>http://localhost:1319/troubleshooting/systeme/services-systemd/service-en-echec-boucle/</guid>
       <description>
         
         
@@ -1151,10 +1151,10 @@ restic restore latest --target /tmp/restauration --include /etc/nginx
     
     <item>
       <title>Un volume logique LVM n&#39;est plus détecté au démarrage</title>
-      <link>http://localhost:1318/troubleshooting/stockage/lvm-raid/volume-lvm-introuvable/</link>
+      <link>http://localhost:1319/troubleshooting/stockage/lvm-raid/volume-lvm-introuvable/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/troubleshooting/stockage/lvm-raid/volume-lvm-introuvable/</guid>
+      <guid>http://localhost:1319/troubleshooting/stockage/lvm-raid/volume-lvm-introuvable/</guid>
       <description>
         
         
@@ -1194,10 +1194,10 @@ restic restore latest --target /tmp/restauration --include /etc/nginx
     
     <item>
       <title>Une interface réseau reste à l&#39;état DOWN</title>
-      <link>http://localhost:1318/troubleshooting/reseau/interfaces/interface-down/</link>
+      <link>http://localhost:1319/troubleshooting/reseau/interfaces/interface-down/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/troubleshooting/reseau/interfaces/interface-down/</guid>
+      <guid>http://localhost:1319/troubleshooting/reseau/interfaces/interface-down/</guid>
       <description>
         
         
@@ -1237,10 +1237,10 @@ restic restore latest --target /tmp/restauration --include /etc/nginx
     
     <item>
       <title>Utiliser APT au quotidien</title>
-      <link>http://localhost:1318/docs/administration/gestion-paquets/utiliser-apt/</link>
+      <link>http://localhost:1319/docs/administration/gestion-paquets/utiliser-apt/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/docs/administration/gestion-paquets/utiliser-apt/</guid>
+      <guid>http://localhost:1319/docs/administration/gestion-paquets/utiliser-apt/</guid>
       <description>
         
         
@@ -1303,10 +1303,10 @@ restic restore latest --target /tmp/restauration --include /etc/nginx
     
     <item>
       <title>bat et eza : cat et ls modernisés</title>
-      <link>http://localhost:1318/decouvertes/outils-cli/remplacements-modernes/bat-et-eza/</link>
+      <link>http://localhost:1319/decouvertes/outils-cli/remplacements-modernes/bat-et-eza/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/decouvertes/outils-cli/remplacements-modernes/bat-et-eza/</guid>
+      <guid>http://localhost:1319/decouvertes/outils-cli/remplacements-modernes/bat-et-eza/</guid>
       <description>
         
         
@@ -1344,10 +1344,10 @@ alias ls=&amp;#34;eza --icons --git&amp;#34;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt
     
     <item>
       <title>Cache DNS corrompu après une mise à jour</title>
-      <link>http://localhost:1318/troubleshooting/reseau/dns/cache-dns-corrompu/</link>
+      <link>http://localhost:1319/troubleshooting/reseau/dns/cache-dns-corrompu/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/troubleshooting/reseau/dns/cache-dns-corrompu/</guid>
+      <guid>http://localhost:1319/troubleshooting/reseau/dns/cache-dns-corrompu/</guid>
       <description>
         
         
@@ -1387,10 +1387,10 @@ alias ls=&amp;#34;eza --icons --git&amp;#34;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt
     
     <item>
       <title>Configurer le réseau d&#39;un conteneur nspawn</title>
-      <link>http://localhost:1318/docs/conteneurs/systemd-nspawn/reseau-nspawn/</link>
+      <link>http://localhost:1319/docs/conteneurs/systemd-nspawn/reseau-nspawn/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/docs/conteneurs/systemd-nspawn/reseau-nspawn/</guid>
+      <guid>http://localhost:1319/docs/conteneurs/systemd-nspawn/reseau-nspawn/</guid>
       <description>
         
         
@@ -1467,10 +1467,10 @@ alias ls=&amp;#34;eza --icons --git&amp;#34;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt
     
     <item>
       <title>Configurer un VLAN sur une interface</title>
-      <link>http://localhost:1318/docs/reseau/configuration-ip/configuration-vlan/</link>
+      <link>http://localhost:1319/docs/reseau/configuration-ip/configuration-vlan/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/docs/reseau/configuration-ip/configuration-vlan/</guid>
+      <guid>http://localhost:1319/docs/reseau/configuration-ip/configuration-vlan/</guid>
       <description>
         
         
@@ -1552,10 +1552,10 @@ alias ls=&amp;#34;eza --icons --git&amp;#34;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt
     
     <item>
       <title>Conflit d&#39;adresse IP sur le réseau local</title>
-      <link>http://localhost:1318/troubleshooting/reseau/interfaces/conflit-adresse-ip/</link>
+      <link>http://localhost:1319/troubleshooting/reseau/interfaces/conflit-adresse-ip/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/troubleshooting/reseau/interfaces/conflit-adresse-ip/</guid>
+      <guid>http://localhost:1319/troubleshooting/reseau/interfaces/conflit-adresse-ip/</guid>
       <description>
         
         
@@ -1595,10 +1595,10 @@ alias ls=&amp;#34;eza --icons --git&amp;#34;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt
     
     <item>
       <title>Détection de secteurs défectueux via SMART</title>
-      <link>http://localhost:1318/troubleshooting/stockage/disques/secteurs-defectueux-smart/</link>
+      <link>http://localhost:1319/troubleshooting/stockage/disques/secteurs-defectueux-smart/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/troubleshooting/stockage/disques/secteurs-defectueux-smart/</guid>
+      <guid>http://localhost:1319/troubleshooting/stockage/disques/secteurs-defectueux-smart/</guid>
       <description>
         
         
@@ -1638,10 +1638,10 @@ alias ls=&amp;#34;eza --icons --git&amp;#34;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt
     
     <item>
       <title>Écrire un premier fichier docker-compose.yml</title>
-      <link>http://localhost:1318/docs/conteneurs/docker/ecrire-un-compose/</link>
+      <link>http://localhost:1319/docs/conteneurs/docker/ecrire-un-compose/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/docs/conteneurs/docker/ecrire-un-compose/</guid>
+      <guid>http://localhost:1319/docs/conteneurs/docker/ecrire-un-compose/</guid>
       <description>
         
         
@@ -1732,10 +1732,10 @@ alias ls=&amp;#34;eza --icons --git&amp;#34;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt
     
     <item>
       <title>Générer des flamegraphs avec perf</title>
-      <link>http://localhost:1318/research/securite/observabilite-noyau/perf-et-flamegraphs/</link>
+      <link>http://localhost:1319/research/securite/observabilite-noyau/perf-et-flamegraphs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/research/securite/observabilite-noyau/perf-et-flamegraphs/</guid>
+      <guid>http://localhost:1319/research/securite/observabilite-noyau/perf-et-flamegraphs/</guid>
       <description>
         
         
@@ -1778,10 +1778,10 @@ alias ls=&amp;#34;eza --icons --git&amp;#34;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt
     
     <item>
       <title>Gérer les permissions avancées avec les ACL</title>
-      <link>http://localhost:1318/docs/administration/utilisateurs-permissions/gerer-les-permissions-acl/</link>
+      <link>http://localhost:1319/docs/administration/utilisateurs-permissions/gerer-les-permissions-acl/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/docs/administration/utilisateurs-permissions/gerer-les-permissions-acl/</guid>
+      <guid>http://localhost:1319/docs/administration/utilisateurs-permissions/gerer-les-permissions-acl/</guid>
       <description>
         
         
@@ -1842,10 +1842,10 @@ alias ls=&amp;#34;eza --icons --git&amp;#34;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt
     
     <item>
       <title>Isolation par namespaces : jusqu&#39;où aller ?</title>
-      <link>http://localhost:1318/research/securite/lsm/durcissement-namespaces/</link>
+      <link>http://localhost:1319/research/securite/lsm/durcissement-namespaces/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/research/securite/lsm/durcissement-namespaces/</guid>
+      <guid>http://localhost:1319/research/securite/lsm/durcissement-namespaces/</guid>
       <description>
         
         
@@ -1887,10 +1887,10 @@ alias ls=&amp;#34;eza --icons --git&amp;#34;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt
     
     <item>
       <title>Kernel panic juste après le chargement du noyau</title>
-      <link>http://localhost:1318/troubleshooting/systeme/boot/kernel-panic-au-boot/</link>
+      <link>http://localhost:1319/troubleshooting/systeme/boot/kernel-panic-au-boot/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/troubleshooting/systeme/boot/kernel-panic-au-boot/</guid>
+      <guid>http://localhost:1319/troubleshooting/systeme/boot/kernel-panic-au-boot/</guid>
       <description>
         
         
@@ -1930,10 +1930,10 @@ alias ls=&amp;#34;eza --icons --git&amp;#34;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt
     
     <item>
       <title>MicroOS en mode 4G</title>
-      <link>http://localhost:1318/docs/os-immuable/opensuse-microos/4g-mode/</link>
+      <link>http://localhost:1319/docs/os-immuable/opensuse-microos/4g-mode/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/docs/os-immuable/opensuse-microos/4g-mode/</guid>
+      <guid>http://localhost:1319/docs/os-immuable/opensuse-microos/4g-mode/</guid>
       <description>
         
         
@@ -1947,10 +1947,10 @@ alias ls=&amp;#34;eza --icons --git&amp;#34;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt
     
     <item>
       <title>NixOS et la configuration déclarative</title>
-      <link>http://localhost:1318/decouvertes/distributions/immuables/nixos-declaratif/</link>
+      <link>http://localhost:1319/decouvertes/distributions/immuables/nixos-declaratif/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/decouvertes/distributions/immuables/nixos-declaratif/</guid>
+      <guid>http://localhost:1319/decouvertes/distributions/immuables/nixos-declaratif/</guid>
       <description>
         
         
@@ -1988,10 +1988,10 @@ alias ls=&amp;#34;eza --icons --git&amp;#34;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt
     
     <item>
       <title>Nushell : quand le shell devient structuré</title>
-      <link>http://localhost:1318/decouvertes/projets-open-source/shells-alternatifs/nushell/</link>
+      <link>http://localhost:1319/decouvertes/projets-open-source/shells-alternatifs/nushell/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/decouvertes/projets-open-source/shells-alternatifs/nushell/</guid>
+      <guid>http://localhost:1319/decouvertes/projets-open-source/shells-alternatifs/nushell/</guid>
       <description>
         
         
@@ -2028,10 +2028,10 @@ alias ls=&amp;#34;eza --icons --git&amp;#34;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt
     
     <item>
       <title>Planifier avec systemd timers</title>
-      <link>http://localhost:1318/docs/administration/sauvegardes/planifier-avec-systemd-timers/</link>
+      <link>http://localhost:1319/docs/administration/sauvegardes/planifier-avec-systemd-timers/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/docs/administration/sauvegardes/planifier-avec-systemd-timers/</guid>
+      <guid>http://localhost:1319/docs/administration/sauvegardes/planifier-avec-systemd-timers/</guid>
       <description>
         
         
@@ -2040,7 +2040,7 @@ alias ls=&amp;#34;eza --icons --git&amp;#34;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt
 &lt;h2&gt;Prérequis&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;prérequis&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#pr%c3%a9requis&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;Accès &lt;code&gt;root&lt;/code&gt; ou &lt;code&gt;sudo&lt;/code&gt; pour créer des unités dans &lt;code&gt;/etc/systemd/system/&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Un script ou une commande de sauvegarde déjà fonctionnelle (voir &lt;a href=&#34;http://localhost:1318/docs/administration/sauvegardes/sauvegarder-avec-restic/&#34;&gt;Sauvegarder avec Restic&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Un script ou une commande de sauvegarde déjà fonctionnelle (voir &lt;a href=&#34;http://localhost:1319/docs/administration/sauvegardes/sauvegarder-avec-restic/&#34;&gt;Sauvegarder avec Restic&lt;/a&gt;)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Étapes&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;étapes&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#%c3%a9tapes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class=&#34;hextra-steps hx:ml-4 hx:mb-12 hx:ltr:border-l hx:rtl:border-r hx:border-gray-200 hx:ltr:pl-6 hx:rtl:pr-6 hx:dark:border-neutral-800 [counter-reset:step]&#34;&gt;
@@ -2119,10 +2119,10 @@ systemctl enable --now backup-restic.timer
     
     <item>
       <title>RAID natif Btrfs : promesses et limites actuelles</title>
-      <link>http://localhost:1318/research/systemes-fichiers/btrfs/raid-btrfs-natif/</link>
+      <link>http://localhost:1319/research/systemes-fichiers/btrfs/raid-btrfs-natif/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/research/systemes-fichiers/btrfs/raid-btrfs-natif/</guid>
+      <guid>http://localhost:1319/research/systemes-fichiers/btrfs/raid-btrfs-natif/</guid>
       <description>
         
         
@@ -2164,10 +2164,10 @@ systemctl enable --now backup-restic.timer
     
     <item>
       <title>Réduire la latence avec PREEMPT_RT</title>
-      <link>http://localhost:1318/research/noyau-linux/ordonnanceur/latence-temps-reel-preempt-rt/</link>
+      <link>http://localhost:1319/research/noyau-linux/ordonnanceur/latence-temps-reel-preempt-rt/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/research/noyau-linux/ordonnanceur/latence-temps-reel-preempt-rt/</guid>
+      <guid>http://localhost:1319/research/noyau-linux/ordonnanceur/latence-temps-reel-preempt-rt/</guid>
       <description>
         
         
@@ -2210,10 +2210,10 @@ systemctl enable --now backup-restic.timer
     
     <item>
       <title>s6 et s6-rc : la suite logique</title>
-      <link>http://localhost:1318/decouvertes/projets-open-source/init-systems-alternatifs/s6-et-s6-rc/</link>
+      <link>http://localhost:1319/decouvertes/projets-open-source/init-systems-alternatifs/s6-et-s6-rc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/decouvertes/projets-open-source/init-systems-alternatifs/s6-et-s6-rc/</guid>
+      <guid>http://localhost:1319/decouvertes/projets-open-source/init-systems-alternatifs/s6-et-s6-rc/</guid>
       <description>
         
         
@@ -2250,10 +2250,10 @@ systemctl enable --now backup-restic.timer
     
     <item>
       <title>screen est-il encore utile en 2026 ?</title>
-      <link>http://localhost:1318/decouvertes/outils-cli/multiplexeurs-terminal/screen-toujours-utile/</link>
+      <link>http://localhost:1319/decouvertes/outils-cli/multiplexeurs-terminal/screen-toujours-utile/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/decouvertes/outils-cli/multiplexeurs-terminal/screen-toujours-utile/</guid>
+      <guid>http://localhost:1319/decouvertes/outils-cli/multiplexeurs-terminal/screen-toujours-utile/</guid>
       <description>
         
         
@@ -2291,10 +2291,10 @@ systemctl enable --now backup-restic.timer
     
     <item>
       <title>Tableau RAID logiciel bloqué en mode dégradé</title>
-      <link>http://localhost:1318/troubleshooting/stockage/lvm-raid/raid-en-mode-degrade/</link>
+      <link>http://localhost:1319/troubleshooting/stockage/lvm-raid/raid-en-mode-degrade/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/troubleshooting/stockage/lvm-raid/raid-en-mode-degrade/</guid>
+      <guid>http://localhost:1319/troubleshooting/stockage/lvm-raid/raid-en-mode-degrade/</guid>
       <description>
         
         
@@ -2334,10 +2334,10 @@ systemctl enable --now backup-restic.timer
     
     <item>
       <title>Transparent Huge Pages : bénéfices et effets de bord</title>
-      <link>http://localhost:1318/research/noyau-linux/gestion-memoire/transparent-huge-pages/</link>
+      <link>http://localhost:1319/research/noyau-linux/gestion-memoire/transparent-huge-pages/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/research/noyau-linux/gestion-memoire/transparent-huge-pages/</guid>
+      <guid>http://localhost:1319/research/noyau-linux/gestion-memoire/transparent-huge-pages/</guid>
       <description>
         
         
@@ -2380,10 +2380,10 @@ systemctl enable --now backup-restic.timer
     
     <item>
       <title>UFW pour configurer un pare-feu rapidement</title>
-      <link>http://localhost:1318/docs/reseau/pare-feu/ufw-pour-les-presses/</link>
+      <link>http://localhost:1319/docs/reseau/pare-feu/ufw-pour-les-presses/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/docs/reseau/pare-feu/ufw-pour-les-presses/</guid>
+      <guid>http://localhost:1319/docs/reseau/pare-feu/ufw-pour-les-presses/</guid>
       <description>
         
         
@@ -2446,10 +2446,10 @@ systemctl enable --now backup-restic.timer
     
     <item>
       <title>Une unité systemd expire (timeout) au démarrage</title>
-      <link>http://localhost:1318/troubleshooting/systeme/services-systemd/unite-systemd-timeout/</link>
+      <link>http://localhost:1319/troubleshooting/systeme/services-systemd/unite-systemd-timeout/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/troubleshooting/systeme/services-systemd/unite-systemd-timeout/</guid>
+      <guid>http://localhost:1319/troubleshooting/systeme/services-systemd/unite-systemd-timeout/</guid>
       <description>
         
         
@@ -2489,10 +2489,10 @@ systemctl enable --now backup-restic.timer
     
     <item>
       <title>Utiliser DNF et Pacman</title>
-      <link>http://localhost:1318/docs/administration/gestion-paquets/utiliser-dnf-et-pacman/</link>
+      <link>http://localhost:1319/docs/administration/gestion-paquets/utiliser-dnf-et-pacman/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/docs/administration/gestion-paquets/utiliser-dnf-et-pacman/</guid>
+      <guid>http://localhost:1319/docs/administration/gestion-paquets/utiliser-dnf-et-pacman/</guid>
       <description>
         
         
@@ -2580,10 +2580,10 @@ systemctl enable --now backup-restic.timer
     
     <item>
       <title>Void Linux et son init runit</title>
-      <link>http://localhost:1318/decouvertes/distributions/minimalistes/void-linux/</link>
+      <link>http://localhost:1319/decouvertes/distributions/minimalistes/void-linux/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/decouvertes/distributions/minimalistes/void-linux/</guid>
+      <guid>http://localhost:1319/decouvertes/distributions/minimalistes/void-linux/</guid>
       <description>
         
         

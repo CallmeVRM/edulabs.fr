@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lotfi Hamadene – Init</title>
-    <link>http://localhost:1318/tags/init/</link>
+    <link>http://localhost:1319/tags/init/</link>
     <description>Recent content in Init on Lotfi Hamadene</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-FR</language>
     <lastBuildDate>Tue, 10 Feb 2026 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="http://localhost:1318/tags/init/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:1319/tags/init/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,10 +17,10 @@
     
     <item>
       <title>systemd, le débat qui ne meurt jamais</title>
-      <link>http://localhost:1318/opinions/systemd-le-debat-qui-ne-meurt-jamais/</link>
+      <link>http://localhost:1319/opinions/systemd-le-debat-qui-ne-meurt-jamais/</link>
       <pubDate>Tue, 10 Feb 2026 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/opinions/systemd-le-debat-qui-ne-meurt-jamais/</guid>
+      <guid>http://localhost:1319/opinions/systemd-le-debat-qui-ne-meurt-jamais/</guid>
       <description>
         
         

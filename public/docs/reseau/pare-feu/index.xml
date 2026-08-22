@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lotfi Hamadene – Pare-feu</title>
-    <link>http://localhost:1318/docs/reseau/pare-feu/</link>
+    <link>http://localhost:1319/docs/reseau/pare-feu/</link>
     <description>Recent content in Pare-feu on Lotfi Hamadene</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-FR</language>
     
-	  <atom:link href="http://localhost:1318/docs/reseau/pare-feu/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:1319/docs/reseau/pare-feu/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Écrire des règles de base avec nftables</title>
-      <link>http://localhost:1318/docs/reseau/pare-feu/nftables-regles-de-base/</link>
+      <link>http://localhost:1319/docs/reseau/pare-feu/nftables-regles-de-base/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/docs/reseau/pare-feu/nftables-regles-de-base/</guid>
+      <guid>http://localhost:1319/docs/reseau/pare-feu/nftables-regles-de-base/</guid>
       <description>
         
         
@@ -80,10 +80,10 @@
     
     <item>
       <title>UFW pour configurer un pare-feu rapidement</title>
-      <link>http://localhost:1318/docs/reseau/pare-feu/ufw-pour-les-presses/</link>
+      <link>http://localhost:1319/docs/reseau/pare-feu/ufw-pour-les-presses/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1318/docs/reseau/pare-feu/ufw-pour-les-presses/</guid>
+      <guid>http://localhost:1319/docs/reseau/pare-feu/ufw-pour-les-presses/</guid>
       <description>
         
         
