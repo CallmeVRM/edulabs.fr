@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lotfi Hamadene – ZFS</title>
-    <link>http://localhost:1321/research/systemes-fichiers/zfs/</link>
+    <link>http://localhost:1322/research/systemes-fichiers/zfs/</link>
     <description>Recent content in ZFS on Lotfi Hamadene</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-FR</language>
     
-	  <atom:link href="http://localhost:1321/research/systemes-fichiers/zfs/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:1322/research/systemes-fichiers/zfs/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Comprendre le cache ARC de ZFS</title>
-      <link>http://localhost:1321/research/systemes-fichiers/zfs/arc-cache-zfs/</link>
+      <link>http://localhost:1322/research/systemes-fichiers/zfs/arc-cache-zfs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1321/research/systemes-fichiers/zfs/arc-cache-zfs/</guid>
+      <guid>http://localhost:1322/research/systemes-fichiers/zfs/arc-cache-zfs/</guid>
       <description>
         
         
@@ -61,10 +61,10 @@
     
     <item>
       <title>ZFS et Btrfs : comparatif pour un usage serveur</title>
-      <link>http://localhost:1321/research/systemes-fichiers/zfs/zfs-vs-btrfs/</link>
+      <link>http://localhost:1322/research/systemes-fichiers/zfs/zfs-vs-btrfs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1321/research/systemes-fichiers/zfs/zfs-vs-btrfs/</guid>
+      <guid>http://localhost:1322/research/systemes-fichiers/zfs/zfs-vs-btrfs/</guid>
       <description>
         
         

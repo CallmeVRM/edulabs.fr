@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" dir="ltr"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1321&amp;path=livereload" data-no-instant defer></script>
+<html lang="fr" dir="ltr"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1322&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="robots" content="noindex, nofollow" />
   <link rel="icon shortcut" href="/favicon.ico" sizes="32x32" />
@@ -10,7 +10,7 @@
 <link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
 <title>Écrire des règles de base avec nftables – Lotfi Hamadene</title>
   <meta name="description" content="Objectif nftables est le successeur d’iptables sur les noyaux Linux récents. Ce guide montre comment créer une table, une chaîne de filtrage et quelques règles simples pour autoriser le trafic essentiel tout en bloquant le reste par défaut.
-Prérequis Noyau Linux 3.13 ou supérieur avec le sous-système nftables activé Paquet nftables installé Droits root, car une règle mal écrite peut couper l’accès distant à la machine Étapes Créer une table dédiée au filtrage IPv4/IPv6. Ajouter une chaîne d’entrée avec une politique par défaut de rejet. Autoriser le trafic déjà établi, le loopback et le SSH. Charger la configuration. sudo nft add table inet filtre sudo nft add chain inet filtre entree { type filter hook input priority 0 \; policy drop \; } sudo nft add rule inet filtre entree ct state established,related accept sudo nft add rule inet filtre entree iif lo accept sudo nft add rule inet filtre entree tcp dport 22 accept Il est fortement recommandé de tester ces règles via une connexion console ou un accès physique avant de les appliquer sur une machine distante accessible uniquement par SSH, au cas où une erreur de syntaxe bloquerait le port 22. Pour rendre la configuration persistante, il faut l’écrire dans /etc/nftables.conf et activer le service nftables au démarrage." /><link rel="canonical" href="http://localhost:1321/docs/reseau/pare-feu/nftables-regles-de-base/" itemprop="url" />
+Prérequis Noyau Linux 3.13 ou supérieur avec le sous-système nftables activé Paquet nftables installé Droits root, car une règle mal écrite peut couper l’accès distant à la machine Étapes Créer une table dédiée au filtrage IPv4/IPv6. Ajouter une chaîne d’entrée avec une politique par défaut de rejet. Autoriser le trafic déjà établi, le loopback et le SSH. Charger la configuration. sudo nft add table inet filtre sudo nft add chain inet filtre entree { type filter hook input priority 0 \; policy drop \; } sudo nft add rule inet filtre entree ct state established,related accept sudo nft add rule inet filtre entree iif lo accept sudo nft add rule inet filtre entree tcp dport 22 accept Il est fortement recommandé de tester ces règles via une connexion console ou un accès physique avant de les appliquer sur une machine distante accessible uniquement par SSH, au cas où une erreur de syntaxe bloquerait le port 22. Pour rendre la configuration persistante, il faut l’écrire dans /etc/nftables.conf et activer le service nftables au démarrage." /><link rel="canonical" href="http://localhost:1322/docs/reseau/pare-feu/nftables-regles-de-base/" itemprop="url" />
 
 <meta property="og:title" content="Écrire des règles de base avec nftables">
 <meta
@@ -53,7 +53,7 @@ Il est fortement recommandé de tester ces règles via une connexion console ou 
   content="
     article
   ">
-<meta property="og:url" content="http://localhost:1321/docs/reseau/pare-feu/nftables-regles-de-base/"><meta property="article:section" content="docs">
+<meta property="og:url" content="http://localhost:1322/docs/reseau/pare-feu/nftables-regles-de-base/"><meta property="article:section" content="docs">
 
 
 

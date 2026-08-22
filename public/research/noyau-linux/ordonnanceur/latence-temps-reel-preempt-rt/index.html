@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" dir="ltr"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1321&amp;path=livereload" data-no-instant defer></script>
+<html lang="fr" dir="ltr"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1322&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="robots" content="noindex, nofollow" />
   <link rel="icon shortcut" href="/favicon.ico" sizes="32x32" />
@@ -10,7 +10,7 @@
 <link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
 <title>Réduire la latence avec PREEMPT_RT – Lotfi Hamadene</title>
   <meta name="description" content="Contexte Le patch PREEMPT_RT, fusionné dans le noyau mainline à partir de la version 6.12, transforme Linux en système capable de garanties temps réel dur. Cette note documente une première prise en main sur un banc de test, dans l’optique d’évaluer si l’infrastructure actuelle pourrait bénéficier d’un basculement vers ce mode pour des charges sensibles à la jitter.
-Analyse technique PREEMPT_RT rend préemptibles la quasi-totalité des sections critiques du noyau, y compris une bonne partie de ce qui était protégé par des spinlocks classiques. Concrètement, les spinlocks deviennent des mutex “rt” qui peuvent céder le CPU, et les gestionnaires d’interruption sont convertis en threads noyau (threaded irqs) ordonnancés comme des tâches normales, avec une priorité configurable." /><link rel="canonical" href="http://localhost:1321/research/noyau-linux/ordonnanceur/latence-temps-reel-preempt-rt/" itemprop="url" />
+Analyse technique PREEMPT_RT rend préemptibles la quasi-totalité des sections critiques du noyau, y compris une bonne partie de ce qui était protégé par des spinlocks classiques. Concrètement, les spinlocks deviennent des mutex “rt” qui peuvent céder le CPU, et les gestionnaires d’interruption sont convertis en threads noyau (threaded irqs) ordonnancés comme des tâches normales, avec une priorité configurable." /><link rel="canonical" href="http://localhost:1322/research/noyau-linux/ordonnanceur/latence-temps-reel-preempt-rt/" itemprop="url" />
 
 <meta property="og:title" content="Réduire la latence avec PREEMPT_RT">
 <meta
@@ -28,7 +28,7 @@ Analyse technique
   content="
     article
   ">
-<meta property="og:url" content="http://localhost:1321/research/noyau-linux/ordonnanceur/latence-temps-reel-preempt-rt/"><meta property="article:section" content="research">
+<meta property="og:url" content="http://localhost:1322/research/noyau-linux/ordonnanceur/latence-temps-reel-preempt-rt/"><meta property="article:section" content="research">
 
 
 

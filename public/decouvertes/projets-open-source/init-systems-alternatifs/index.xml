@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lotfi Hamadene – Systèmes d&#39;init alternatifs</title>
-    <link>http://localhost:1321/decouvertes/projets-open-source/init-systems-alternatifs/</link>
+    <link>http://localhost:1322/decouvertes/projets-open-source/init-systems-alternatifs/</link>
     <description>Recent content in Systèmes d&#39;init alternatifs on Lotfi Hamadene</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-FR</language>
     
-	  <atom:link href="http://localhost:1321/decouvertes/projets-open-source/init-systems-alternatifs/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:1322/decouvertes/projets-open-source/init-systems-alternatifs/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>runit : simplicité et supervision de processus</title>
-      <link>http://localhost:1321/decouvertes/projets-open-source/init-systems-alternatifs/runit/</link>
+      <link>http://localhost:1322/decouvertes/projets-open-source/init-systems-alternatifs/runit/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1321/decouvertes/projets-open-source/init-systems-alternatifs/runit/</guid>
+      <guid>http://localhost:1322/decouvertes/projets-open-source/init-systems-alternatifs/runit/</guid>
       <description>
         
         
@@ -58,10 +58,10 @@ exec mon-programme --option&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#
     
     <item>
       <title>s6 et s6-rc : la suite logique</title>
-      <link>http://localhost:1321/decouvertes/projets-open-source/init-systems-alternatifs/s6-et-s6-rc/</link>
+      <link>http://localhost:1322/decouvertes/projets-open-source/init-systems-alternatifs/s6-et-s6-rc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1321/decouvertes/projets-open-source/init-systems-alternatifs/s6-et-s6-rc/</guid>
+      <guid>http://localhost:1322/decouvertes/projets-open-source/init-systems-alternatifs/s6-et-s6-rc/</guid>
       <description>
         
         

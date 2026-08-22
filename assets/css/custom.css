@@ -348,6 +348,13 @@ main article {
   gap: 0;
 }
 
+/* Suppression du filet vertical des niveaux imbriqués : le thème le dessine
+   en ::before sur les <ul> (before:w-px + before:bg-gray-200). L'indentation
+   (ml-3 pl-3) est conservée, elle suffit à marquer la hiérarchie. */
+.hextra-sidebar-container ul::before {
+  display: none;
+}
+
 /* NB : ne pas rajouter d'indentation sur .hextra-sidebar-children — le thème
    la gère déjà (ltr:ml-3 ltr:pl-3 + filet vertical en ::before). En ajouter
    volait ~1,1rem par niveau et provoquait la troncature. */
@@ -404,6 +411,18 @@ main article {
 .hextra-card-icon {
   font-weight: 600;
   letter-spacing: -0.011em;
+}
+
+/* Alignement du texte des cartes : le thème met l'icône et le titre sur la
+   même ligne (flex + gap-2), ce qui décale le titre de 2rem par rapport au
+   sous-titre — les deux n'étaient pas alignés à gauche. On empile l'icône
+   au-dessus du titre : titre et sous-titre partagent alors le même bord
+   gauche (px-4), et le texte garde toute la largeur de la carte (pas de
+   risque de troncature par le line-clamp-3 du thème).
+   :has(svg) => ne s'applique qu'aux cartes qui ont réellement une icône. */
+.hextra-card-icon:has(svg) {
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .hextra-card-subtitle {

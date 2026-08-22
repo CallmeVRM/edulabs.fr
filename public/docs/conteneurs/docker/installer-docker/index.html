@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" dir="ltr"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1321&amp;path=livereload" data-no-instant defer></script>
+<html lang="fr" dir="ltr"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1322&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="robots" content="noindex, nofollow" />
   <link rel="icon shortcut" href="/favicon.ico" sizes="32x32" />
@@ -10,7 +10,7 @@
 <link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
 <title>Installer Docker sur une distribution Linux – Lotfi Hamadene</title>
   <meta name="description" content="Objectif Installer le moteur Docker (Docker Engine) à partir du dépôt officiel plutôt que depuis les paquets génériques de la distribution, afin de disposer d’une version récente et des composants Compose associés.
-Prérequis Distribution basée sur Debian/Ubuntu (adaptable à Fedora/CentOS via leurs dépôts respectifs) Droits sudo Accès réseau sortant vers download.docker.com Étapes Installer les dépendances nécessaires à l’ajout d’un dépôt via HTTPS. Ajouter la clé GPG et le dépôt officiel Docker. Installer le moteur Docker ainsi que le plugin Compose. Ajouter son utilisateur au groupe docker pour éviter de préfixer chaque commande avec sudo. sudo apt install ca-certificates curl gnupg sudo install -m 0755 -d /etc/apt/keyrings curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg echo &#34;deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(. /etc/os-release &amp;&amp; echo &#34;$VERSION_CODENAME&#34;) stable&#34; | sudo tee /etc/apt/sources.list.d/docker.list sudo apt update sudo apt install docker-ce docker-ce-cli containerd.io docker-compose-plugin sudo usermod -aG docker $USER Après l’ajout au groupe docker, une déconnexion/reconnexion (ou newgrp docker) est nécessaire pour que le changement de groupe prenne effet dans la session courante." /><link rel="canonical" href="http://localhost:1321/docs/conteneurs/docker/installer-docker/" itemprop="url" />
+Prérequis Distribution basée sur Debian/Ubuntu (adaptable à Fedora/CentOS via leurs dépôts respectifs) Droits sudo Accès réseau sortant vers download.docker.com Étapes Installer les dépendances nécessaires à l’ajout d’un dépôt via HTTPS. Ajouter la clé GPG et le dépôt officiel Docker. Installer le moteur Docker ainsi que le plugin Compose. Ajouter son utilisateur au groupe docker pour éviter de préfixer chaque commande avec sudo. sudo apt install ca-certificates curl gnupg sudo install -m 0755 -d /etc/apt/keyrings curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg echo &#34;deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(. /etc/os-release &amp;&amp; echo &#34;$VERSION_CODENAME&#34;) stable&#34; | sudo tee /etc/apt/sources.list.d/docker.list sudo apt update sudo apt install docker-ce docker-ce-cli containerd.io docker-compose-plugin sudo usermod -aG docker $USER Après l’ajout au groupe docker, une déconnexion/reconnexion (ou newgrp docker) est nécessaire pour que le changement de groupe prenne effet dans la session courante." /><link rel="canonical" href="http://localhost:1322/docs/conteneurs/docker/installer-docker/" itemprop="url" />
 
 <meta property="og:title" content="Installer Docker sur une distribution Linux">
 <meta
@@ -55,7 +55,7 @@ Après l&rsquo;ajout au groupe docker, une déconnexion/reconnexion (ou newgrp d
   content="
     article
   ">
-<meta property="og:url" content="http://localhost:1321/docs/conteneurs/docker/installer-docker/"><meta property="article:section" content="docs">
+<meta property="og:url" content="http://localhost:1322/docs/conteneurs/docker/installer-docker/"><meta property="article:section" content="docs">
 
 
 
