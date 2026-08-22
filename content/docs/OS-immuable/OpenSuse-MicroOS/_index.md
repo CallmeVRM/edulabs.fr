@@ -1,6 +1,6 @@
 ---
-title: "OpenSUSE MicroOS"
-weight: 3
+title: "OpenSUSE-MicroOS"
+weight: 1
 ---
 
 MicroOS est une distribution Linux immuable, conçue pour les environnements de conteneurs et les systèmes embarqués. Elle offre une base stable et sécurisée, avec des mises à jour atomiques et un système de fichiers en lecture seule.

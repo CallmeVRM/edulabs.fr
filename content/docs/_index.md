@@ -14,4 +14,5 @@ Cet espace regroupe la documentation de référence et les guides pratiques pour
   {{< card link="administration" title="Administration système" >}}
   {{< card link="reseau" title="Réseau" >}}
   {{< card link="conteneurs" title="Conteneurs" >}}
+  {{< card link="OS-immuable" title="OS immuable" >}}
 {{< /cards >}}
