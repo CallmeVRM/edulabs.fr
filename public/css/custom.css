@@ -413,39 +413,70 @@ main article {
   letter-spacing: -0.011em;
 }
 
-/* Alignement du texte des cartes : le thème met l'icône et le titre sur la
-   même ligne (flex + gap-2), ce qui décale le titre de 2rem par rapport au
-   sous-titre — les deux n'étaient pas alignés à gauche. On empile l'icône
-   au-dessus du titre : titre et sous-titre partagent alors le même bord
-   gauche (px-4), et le texte garde toute la largeur de la carte (pas de
-   risque de troncature par le line-clamp-3 du thème).
-   :has(svg) => ne s'applique qu'aux cartes qui ont réellement une icône. */
-.hextra-card-icon:has(svg) {
-  flex-direction: column;
-  gap: 0.5rem;
-}
 
 .hextra-card-subtitle {
   line-height: 1.55;
 }
 
-/* Accueil : cartes en ligne, 3 par rangée, bloc centré et borné en largeur.
-   Flex plutôt que la grille du thème : avec 5 cartes, la dernière rangée est
-   incomplète — `justify-content: center` la centre au lieu de laisser un trou
-   à droite. Les cartes gardent toutes la même largeur.
-   58rem / 17rem / gap 1rem => 3 par rangée (3x17+2x1 = 53rem < 58rem,
-   une 4e ne rentrerait pas). */
+/* ---- Accueil : composition « 1 vedette + 4 » ----------------------------
+   5 sections tombent mal sur une grille régulière (3+2 ou 2+2+1 laissent
+   toujours une rangée orpheline). On assume le déséquilibre : la première
+   carte occupe toute la largeur, les 4 autres se rangent en 2x2. Résultat
+   plein, et la vedette accroche l'œil en haut de page. */
 .home-cards .hextra-cards {
-  display: flex !important;
-  flex-wrap: wrap;
-  justify-content: center;
-  max-width: 58rem;
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 60rem;
   margin-inline: auto;
   gap: 1rem;
 }
 
-.home-cards .hextra-card {
-  flex: 0 1 17rem;
+.home-cards .hextra-card:first-child {
+  grid-column: 1 / -1;
+}
+
+/* Icône sortie du flux et passée en couleur d'accent. Le thème la met en
+   ligne avec le titre (flex + gap-2), ce qui décalait le titre de 2rem par
+   rapport au sous-titre. En absolu, titre et description partagent le même
+   bord gauche : c'est le classique bloc icône + texte, bien aligné.
+   Le thème pose déjà `position: relative` sur .hextra-card. */
+/* `.hextra-card` en plus dans le sélecteur : il faut égaler la spécificité
+   de `.dark .hextra-card .hextra-card-icon svg` du thème (0,3,1), sinon
+   l'icône reprend son gris en mode sombre. */
+.home-cards .hextra-card .hextra-card-icon svg {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  width: 1.5rem;
+  color: var(--c-accent);
+  opacity: 0.9;
+}
+
+.home-cards .hextra-card-icon,
+.home-cards .hextra-card-subtitle {
+  padding-left: 3.5rem;
+}
+
+.home-cards .hextra-card-icon {
+  font-size: 1.0625rem;
+  padding-top: 1.125rem;
+}
+
+/* Vedette : titre un peu plus fort et fond légèrement teinté. */
+.home-cards .hextra-card:first-child .hextra-card-icon {
+  font-size: 1.1875rem;
+}
+
+.home-cards .hextra-card:first-child {
+  background-color: var(--c-surface);
+}
+
+/* Une colonne sous 640px : la vedette n'a plus de raison de se distinguer
+   par la largeur, seul le fond la démarque. */
+@media (max-width: 639px) {
+  .home-cards .hextra-cards {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* --------------------------------------------------------------------------

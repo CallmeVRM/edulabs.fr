@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lotfi Hamadene – Disques</title>
-    <link>http://localhost:1322/troubleshooting/stockage/disques/</link>
+    <link>http://localhost:1323/troubleshooting/stockage/disques/</link>
     <description>Recent content in Disques on Lotfi Hamadene</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-FR</language>
     
-	  <atom:link href="http://localhost:1322/troubleshooting/stockage/disques/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:1323/troubleshooting/stockage/disques/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Disque plein alors que l&#39;espace semble disponible</title>
-      <link>http://localhost:1322/troubleshooting/stockage/disques/disque-plein-espace-fantome/</link>
+      <link>http://localhost:1323/troubleshooting/stockage/disques/disque-plein-espace-fantome/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1322/troubleshooting/stockage/disques/disque-plein-espace-fantome/</guid>
+      <guid>http://localhost:1323/troubleshooting/stockage/disques/disque-plein-espace-fantome/</guid>
       <description>
         
         
@@ -59,10 +59,10 @@
     
     <item>
       <title>Détection de secteurs défectueux via SMART</title>
-      <link>http://localhost:1322/troubleshooting/stockage/disques/secteurs-defectueux-smart/</link>
+      <link>http://localhost:1323/troubleshooting/stockage/disques/secteurs-defectueux-smart/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1322/troubleshooting/stockage/disques/secteurs-defectueux-smart/</guid>
+      <guid>http://localhost:1323/troubleshooting/stockage/disques/secteurs-defectueux-smart/</guid>
       <description>
         
         

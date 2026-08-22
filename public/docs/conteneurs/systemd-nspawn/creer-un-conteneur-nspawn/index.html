@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" dir="ltr"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1322&amp;path=livereload" data-no-instant defer></script>
+<html lang="fr" dir="ltr"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1323&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="robots" content="noindex, nofollow" />
   <link rel="icon shortcut" href="/favicon.ico" sizes="32x32" />
@@ -10,7 +10,7 @@
 <link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
 <title>Créer un conteneur léger avec systemd-nspawn – Lotfi Hamadene</title>
   <meta name="description" content="Objectif systemd-nspawn permet de créer et démarrer un conteneur à partir d’une simple arborescence de fichiers, sans image intermédiaire ni démon supplémentaire, en s’appuyant uniquement sur les composants déjà fournis par systemd.
-Prérequis Paquet systemd-container installé Droits root Outil debootstrap (ou équivalent) pour préparer une arborescence minimale d’une distribution Étapes Créer un répertoire qui accueillera l’arborescence racine du conteneur. Installer un système minimal dans ce répertoire avec debootstrap. Démarrer un shell interactif dans le conteneur pour vérifier son bon fonctionnement. Enregistrer le conteneur comme une machine gérée par machinectl pour un démarrage persistant. sudo mkdir -p /var/lib/machines/monconteneur sudo debootstrap stable /var/lib/machines/monconteneur http://deb.debian.org/debian sudo systemd-nspawn -D /var/lib/machines/monconteneur sudo machinectl start monconteneur Une fois dans le shell interactif ouvert par systemd-nspawn -D, vous êtes root dans le conteneur et pouvez y installer des paquets ou configurer des services comme sur une machine classique. La commande machinectl start démarre le conteneur en arrière-plan comme un service systemd, ce qui permet de le superviser avec les outils habituels (systemctl, journalctl)." /><link rel="canonical" href="http://localhost:1322/docs/conteneurs/systemd-nspawn/creer-un-conteneur-nspawn/" itemprop="url" />
+Prérequis Paquet systemd-container installé Droits root Outil debootstrap (ou équivalent) pour préparer une arborescence minimale d’une distribution Étapes Créer un répertoire qui accueillera l’arborescence racine du conteneur. Installer un système minimal dans ce répertoire avec debootstrap. Démarrer un shell interactif dans le conteneur pour vérifier son bon fonctionnement. Enregistrer le conteneur comme une machine gérée par machinectl pour un démarrage persistant. sudo mkdir -p /var/lib/machines/monconteneur sudo debootstrap stable /var/lib/machines/monconteneur http://deb.debian.org/debian sudo systemd-nspawn -D /var/lib/machines/monconteneur sudo machinectl start monconteneur Une fois dans le shell interactif ouvert par systemd-nspawn -D, vous êtes root dans le conteneur et pouvez y installer des paquets ou configurer des services comme sur une machine classique. La commande machinectl start démarre le conteneur en arrière-plan comme un service systemd, ce qui permet de le superviser avec les outils habituels (systemctl, journalctl)." /><link rel="canonical" href="http://localhost:1323/docs/conteneurs/systemd-nspawn/creer-un-conteneur-nspawn/" itemprop="url" />
 
 <meta property="og:title" content="Créer un conteneur léger avec systemd-nspawn">
 <meta
@@ -52,7 +52,7 @@ Une fois dans le shell interactif ouvert par systemd-nspawn -D, vous êtes root 
   content="
     article
   ">
-<meta property="og:url" content="http://localhost:1322/docs/conteneurs/systemd-nspawn/creer-un-conteneur-nspawn/"><meta property="article:section" content="docs">
+<meta property="og:url" content="http://localhost:1323/docs/conteneurs/systemd-nspawn/creer-un-conteneur-nspawn/"><meta property="article:section" content="docs">
 
 
 

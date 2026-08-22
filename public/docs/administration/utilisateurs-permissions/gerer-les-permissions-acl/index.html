@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" dir="ltr"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1322&amp;path=livereload" data-no-instant defer></script>
+<html lang="fr" dir="ltr"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1323&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="robots" content="noindex, nofollow" />
   <link rel="icon shortcut" href="/favicon.ico" sizes="32x32" />
@@ -10,7 +10,7 @@
 <link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
 <title>Gérer les permissions avancées avec les ACL – Lotfi Hamadene</title>
   <meta name="description" content="Objectif Le modèle de permissions Unix classique (propriétaire/groupe/autres) devient rapidement limitant lorsque plusieurs utilisateurs ou groupes doivent accéder différemment à un même fichier. Les listes de contrôle d’accès (ACL) permettent d’attribuer des droits fins à des utilisateurs ou groupes spécifiques, en plus du modèle standard.
-Prérequis Paquet acl installé (apt install acl ou dnf install acl) Système de fichiers monté avec l’option acl (activée par défaut sous ext4 et XFS récents) Droits suffisants sur le fichier ou répertoire cible Étapes Vérifier les ACL déjà présentes sur un répertoire. Accorder un droit de lecture/écriture à un utilisateur précis, sans modifier le propriétaire. Définir une ACL par défaut pour que les nouveaux fichiers créés dans le répertoire héritent des mêmes droits. Retirer une entrée ACL si elle n’est plus nécessaire. getfacl /srv/projets/partage setfacl -m u:amartin:rwx /srv/projets/partage setfacl -d -m u:amartin:rwx /srv/projets/partage setfacl -x u:amartin /srv/projets/partage L’option -m modifie une entrée existante ou en ajoute une nouvelle, tandis que -d définit une ACL par défaut appliquée aux futurs fichiers et sous-répertoires. Notez que l’ajout d’une ACL fait apparaître un &#43; à la fin de la ligne de permissions dans la sortie de ls -l." /><link rel="canonical" href="http://localhost:1322/docs/administration/utilisateurs-permissions/gerer-les-permissions-acl/" itemprop="url" />
+Prérequis Paquet acl installé (apt install acl ou dnf install acl) Système de fichiers monté avec l’option acl (activée par défaut sous ext4 et XFS récents) Droits suffisants sur le fichier ou répertoire cible Étapes Vérifier les ACL déjà présentes sur un répertoire. Accorder un droit de lecture/écriture à un utilisateur précis, sans modifier le propriétaire. Définir une ACL par défaut pour que les nouveaux fichiers créés dans le répertoire héritent des mêmes droits. Retirer une entrée ACL si elle n’est plus nécessaire. getfacl /srv/projets/partage setfacl -m u:amartin:rwx /srv/projets/partage setfacl -d -m u:amartin:rwx /srv/projets/partage setfacl -x u:amartin /srv/projets/partage L’option -m modifie une entrée existante ou en ajoute une nouvelle, tandis que -d définit une ACL par défaut appliquée aux futurs fichiers et sous-répertoires. Notez que l’ajout d’une ACL fait apparaître un &#43; à la fin de la ligne de permissions dans la sortie de ls -l." /><link rel="canonical" href="http://localhost:1323/docs/administration/utilisateurs-permissions/gerer-les-permissions-acl/" itemprop="url" />
 
 <meta property="og:title" content="Gérer les permissions avancées avec les ACL">
 <meta
@@ -52,7 +52,7 @@ L&rsquo;option -m modifie une entrée existante ou en ajoute une nouvelle, tandi
   content="
     article
   ">
-<meta property="og:url" content="http://localhost:1322/docs/administration/utilisateurs-permissions/gerer-les-permissions-acl/"><meta property="article:section" content="docs">
+<meta property="og:url" content="http://localhost:1323/docs/administration/utilisateurs-permissions/gerer-les-permissions-acl/"><meta property="article:section" content="docs">
 
 
 

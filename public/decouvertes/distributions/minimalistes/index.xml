@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lotfi Hamadene – Distributions minimalistes</title>
-    <link>http://localhost:1322/decouvertes/distributions/minimalistes/</link>
+    <link>http://localhost:1323/decouvertes/distributions/minimalistes/</link>
     <description>Recent content in Distributions minimalistes on Lotfi Hamadene</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-FR</language>
     
-	  <atom:link href="http://localhost:1322/decouvertes/distributions/minimalistes/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:1323/decouvertes/distributions/minimalistes/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Alpine Linux : légèreté et musl</title>
-      <link>http://localhost:1322/decouvertes/distributions/minimalistes/alpine-linux/</link>
+      <link>http://localhost:1323/decouvertes/distributions/minimalistes/alpine-linux/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1322/decouvertes/distributions/minimalistes/alpine-linux/</guid>
+      <guid>http://localhost:1323/decouvertes/distributions/minimalistes/alpine-linux/</guid>
       <description>
         
         
@@ -57,10 +57,10 @@
     
     <item>
       <title>Void Linux et son init runit</title>
-      <link>http://localhost:1322/decouvertes/distributions/minimalistes/void-linux/</link>
+      <link>http://localhost:1323/decouvertes/distributions/minimalistes/void-linux/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1322/decouvertes/distributions/minimalistes/void-linux/</guid>
+      <guid>http://localhost:1323/decouvertes/distributions/minimalistes/void-linux/</guid>
       <description>
         
         
