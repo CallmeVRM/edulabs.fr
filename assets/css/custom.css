@@ -1,117 +1,424 @@
-/* Site look & feel: more spacious, wider, docs-style reading experience.
-   Tuned against the real kubernetes.io/docs stylesheet (Docsy/Bootstrap):
-   container ~1320px, base line-height 1.5, accent blue #326ce5. */
+/* ==========================================================================
+   edulabs.fr — surcouche de style sur le thème Hextra.
+   Objectif : docs large et aérée, typographie sobre, palette cohérente
+   en clair comme en sombre. Chargé après main.css (voir head.html).
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Tokens
+   -------------------------------------------------------------------------- */
 
 :root {
-  /* Hextra hardcodes this to 72rem regardless of params.page.width — override
-     it to match so the article body actually uses the wide layout. */
+  /* Teinte primaire consommée par Hextra pour dériver son échelle
+     --color-primary-50 … 900 (liens, états actifs, focus). */
+  --primary-hue: 224deg;
+  --primary-saturation: 76%;
+  --primary-lightness: 53%;
+
+  /* Palette de surface — gris légèrement bleutés, plus « technique »
+     qu'un gris neutre. */
+  --c-bg: #ffffff;
+  --c-surface: #f8fafc;
+  --c-surface-2: #f1f5f9;
+  --c-border: #e2e8f0;
+  --c-border-strong: #cbd5e1;
+  --c-text: #0f172a;
+  --c-text-muted: #52637a;
+  --c-accent: #1f5ad4;
+  --c-accent-soft: rgb(31 90 212 / 0.08);
+
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo,
+    Consolas, monospace;
+
+  /* Hextra fige cette largeur à 72rem quel que soit params.page.width :
+     on l'aligne sur la largeur de page pour que le contenu soit vraiment large. */
   --hextra-max-content-width: 90rem;
-  /* Nudge the default Hextra blue toward Kubernetes' own #326ce5. */
-  --primary-hue: 221deg;
-  --primary-saturation: 78%;
-  --primary-lightness: 60%;
 }
 
-/* Airier typography: slightly larger base size, generous line-height. */
+.dark {
+  --primary-hue: 217deg;
+  --primary-saturation: 91%;
+  --primary-lightness: 72%;
+
+  --c-bg: #0b0f19;
+  --c-surface: #111827;
+  --c-surface-2: #172033;
+  --c-border: #1f2b3e;
+  --c-border-strong: #2d3c55;
+  --c-text: #e6edf7;
+  --c-text-muted: #94a3b8;
+  --c-accent: #6fa3f5;
+  --c-accent-soft: rgb(111 163 245 / 0.12);
+}
+
+/* --------------------------------------------------------------------------
+   2. Base
+   -------------------------------------------------------------------------- */
+
+html {
+  font-family: var(--font-sans);
+  scroll-behavior: smooth;
+  /* Inter : « a » à un étage + ligatures contextuelles. */
+  font-feature-settings: "cv11", "ss01";
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background-color: var(--c-bg);
+  color: var(--c-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: var(--c-accent-soft);
+  color: var(--c-text);
+}
+
+code,
+kbd,
+pre,
+samp,
+tt {
+  font-family: var(--font-mono);
+  font-feature-settings: normal;
+}
+
+/* Ancrage sous la navbar collante lors d'un saut vers un titre. */
+:target {
+  scroll-margin-top: 5.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   3. Typographie du contenu
+   -------------------------------------------------------------------------- */
+
 .content {
-  font-size: 1.0625rem;
-  line-height: 1.65;
+  font-size: 1.0625rem; /* 17px */
+  line-height: 1.7;
+  color: var(--c-text);
 }
 
-.content p {
-  line-height: 1.65;
-  margin-top: 1.5rem;
+.content :is(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--font-sans);
+  letter-spacing: -0.021em;
+  text-wrap: balance;
 }
 
 .content h1 {
-  line-height: 1.2;
-  margin-bottom: 0.75rem;
+  font-size: 2.375rem;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+/* Chapeau : le premier paragraphe après le H1 sert d'introduction. */
+.content h1 + p {
+  font-size: 1.1875rem;
+  line-height: 1.6;
+  color: var(--c-text-muted);
+  margin-top: 1rem;
 }
 
 .content h2 {
-  margin-top: 3rem;
+  font-size: 1.75rem;
+  font-weight: 650;
+  line-height: 1.25;
+  margin-top: 3.5rem;
   padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--c-border);
 }
 
 .content h3 {
+  font-size: 1.3125rem;
+  font-weight: 600;
+  line-height: 1.35;
   margin-top: 2.5rem;
 }
 
-.content li {
-  line-height: 1.75;
+.content h4 {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  margin-top: 2rem;
 }
 
-/* More breathing room around the main article on wide screens. */
+.content p {
+  margin-top: 1.25rem;
+  line-height: 1.7;
+}
+
+.content :is(ul, ol) {
+  margin-top: 1.25rem;
+}
+
+.content li {
+  line-height: 1.7;
+  margin-top: 0.375rem;
+  margin-bottom: 0.375rem;
+}
+
+.content li::marker {
+  color: var(--c-text-muted);
+}
+
+/* Liens : soulignement discret qui se renforce au survol. */
+.content a {
+  color: var(--c-accent);
+  text-decoration-color: color-mix(in srgb, var(--c-accent) 35%, transparent);
+  text-underline-offset: 0.18em;
+  transition:
+    color 0.15s ease,
+    text-decoration-color 0.15s ease;
+}
+
+.content a:hover {
+  text-decoration-color: currentColor;
+}
+
+/* --------------------------------------------------------------------------
+   4. Code
+   -------------------------------------------------------------------------- */
+
+.content :where(code):not(:where(.hextra-code-block code, .not-prose *)) {
+  font-size: 0.875em;
+  padding: 0.15em 0.36em;
+  border-radius: 0.3rem;
+  background-color: var(--c-surface-2);
+  border: 1px solid var(--c-border);
+  color: var(--c-text);
+}
+
+.content a code {
+  color: inherit;
+}
+
+.hextra-code-block pre,
+.content :where(pre):not(:where(.not-prose *)) {
+  font-size: 0.875rem;
+  line-height: 1.65;
+  border-radius: 0.625rem;
+  border: 1px solid var(--c-border);
+  background-color: var(--c-surface);
+}
+
+.hextra-code-block pre code {
+  font-variant-ligatures: none;
+}
+
+/* --------------------------------------------------------------------------
+   5. Tableaux
+   -------------------------------------------------------------------------- */
+
+.content table {
+  font-size: 0.9375rem;
+  border: 1px solid var(--c-border);
+  border-collapse: collapse;
+  /* Ne PAS toucher à overflow ici : le thème pose `display:block` +
+     `overflow-x:auto` pour que les tableaux larges défilent sur mobile. */
+  /* Chiffres de même largeur : les colonnes numériques restent alignées. */
+  font-variant-numeric: tabular-nums;
+}
+
+.content table thead {
+  background-color: var(--c-surface-2);
+}
+
+.content table th {
+  font-weight: 600;
+  text-align: left;
+  padding: 0.625rem 0.875rem;
+  border: 0;
+  border-bottom: 1px solid var(--c-border-strong);
+}
+
+.content table td {
+  padding: 0.625rem 0.875rem;
+  border: 0;
+  border-top: 1px solid var(--c-border);
+}
+
+.content table tr {
+  border: 0;
+}
+
+/* --------------------------------------------------------------------------
+   6. Citations
+   -------------------------------------------------------------------------- */
+
+.content blockquote {
+  margin-top: 1.5rem;
+  padding: 0.25rem 0 0.25rem 1.125rem;
+  border-left: 3px solid var(--c-border-strong);
+  font-style: normal;
+  color: var(--c-text-muted);
+}
+
+.content hr {
+  border-color: var(--c-border);
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+/* --------------------------------------------------------------------------
+   7. Mise en page
+   -------------------------------------------------------------------------- */
+
 main article {
-  padding-top: 2rem;
-  padding-bottom: 4rem;
+  padding-top: 2.5rem;
+  padding-bottom: 5rem;
 }
 
 @media (min-width: 768px) {
   main article {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }
 
-/* Comfortable spacing on small screens instead of edge-to-edge text. */
+/* --------------------------------------------------------------------------
+   8. Navbar
+   -------------------------------------------------------------------------- */
+
+/* Le thème gère déjà le fond translucide + backdrop-blur ; on remplace juste
+   son ombre portée par un filet net, plus sobre. */
+.hextra-nav-container-blur {
+  box-shadow: none !important;
+  border-bottom: 1px solid var(--c-border);
+}
+
+.hextra-nav-container nav {
+  font-size: 0.9375rem;
+}
+
+/* --------------------------------------------------------------------------
+   9. Barre latérale
+   -------------------------------------------------------------------------- */
+
+.hextra-sidebar-container {
+  font-size: 0.9375rem;
+}
+
+.hextra-sidebar-container a {
+  padding-top: 0.4375rem;
+  padding-bottom: 0.4375rem;
+  border-radius: 0.375rem;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.hextra-sidebar-container li {
+  margin-top: 0.0625rem;
+}
+
+/* Niveaux imbriqués : filet vertical pour matérialiser la hiérarchie. */
+.hextra-sidebar-container .hextra-sidebar-children {
+  border-left: 1px solid var(--c-border);
+  margin-left: 0.75rem;
+  padding-left: 0.375rem;
+}
+
+/* --------------------------------------------------------------------------
+   10. Sommaire (TOC)
+   -------------------------------------------------------------------------- */
+
+.hextra-toc {
+  font-size: 0.875rem;
+}
+
+.hextra-toc a {
+  transition: color 0.15s ease;
+}
+
+/* --------------------------------------------------------------------------
+   11. Cartes
+   -------------------------------------------------------------------------- */
+
+.hextra-cards {
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.hextra-card {
+  border-color: var(--c-border);
+  border-radius: 0.75rem;
+  background-color: var(--c-bg);
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    transform 0.18s ease;
+}
+
+.hextra-card:hover {
+  border-color: color-mix(in srgb, var(--c-accent) 45%, var(--c-border));
+  box-shadow: 0 4px 16px -4px rgb(15 23 42 / 0.1);
+  transform: translateY(-2px);
+}
+
+.dark .hextra-card:hover {
+  box-shadow: 0 4px 16px -4px rgb(0 0 0 / 0.5);
+}
+
+.hextra-card-icon {
+  font-weight: 600;
+  letter-spacing: -0.011em;
+}
+
+.hextra-card-subtitle {
+  line-height: 1.55;
+}
+
+/* --------------------------------------------------------------------------
+   12. Pied de page
+   -------------------------------------------------------------------------- */
+
+.hextra-footer {
+  /* Le thème pose bg-gray-100 / dark:bg-neutral-900 : on repasse sur les
+     tokens de surface pour rester cohérent avec le reste de la page. */
+  background-color: var(--c-surface) !important;
+  border-top: 1px solid var(--c-border);
+  font-size: 0.875rem;
+  color: var(--c-text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   13. Mobile
+   -------------------------------------------------------------------------- */
+
 @media (max-width: 767px) {
   main article {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 1.125rem;
+    padding-right: 1.125rem;
+    padding-top: 1.75rem;
   }
 
   .content {
     font-size: 1rem;
-    line-height: 1.7;
+    line-height: 1.68;
   }
 
   .content h1 {
-    font-size: 1.75rem;
+    font-size: 1.875rem;
+  }
+
+  .content h1 + p {
+    font-size: 1.0625rem;
   }
 
   .content h2 {
     font-size: 1.375rem;
+    margin-top: 2.75rem;
   }
-}
 
-/* Code blocks get a touch more room to breathe. */
-.content pre {
-  line-height: 1.6;
-}
+  .content h3 {
+    font-size: 1.1875rem;
+    margin-top: 2rem;
+  }
 
-/* Sidebar: slightly roomier item spacing for easier scanning/tapping. */
-.hextra-sidebar-container li {
-  margin-top: 0.125rem;
-}
-
-.hextra-sidebar-container a {
-  padding-top: 0.375rem;
-  padding-bottom: 0.375rem;
-}
-
-/* A few small polish touches. */
-.content a {
-  transition: color 0.15s ease;
-}
-
-.content h1 {
-  position: relative;
-  padding-bottom: 0.75rem;
-  border-bottom: 2px solid hsl(var(--primary-hue) var(--primary-saturation) var(--primary-lightness) / 0.25);
-}
-
-.hextra-card {
-  transition:
-    transform 0.15s ease,
-    box-shadow 0.15s ease;
-}
-
-.hextra-card:hover {
-  transform: translateY(-2px);
-}
-
-/* Give the homepage card grid a bit more room to breathe. */
-.hextra-cards {
-  gap: 1.25rem;
+  /* La grille de cartes du thème (auto-fill / minmax 250px) passe déjà
+     d'elle-même à une colonne sous ~530px : rien à forcer ici. */
 }

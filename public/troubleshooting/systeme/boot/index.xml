@@ -1,59 +1,104 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lotfi Hamadene – Démarrage</title><link>https://edulabs.fr/troubleshooting/systeme/boot/</link><description>Recent content in Démarrage on Lotfi Hamadene</description><generator>Hugo -- gohugo.io</generator><language>fr-FR</language><atom:link href="https://edulabs.fr/troubleshooting/systeme/boot/index.xml" rel="self" type="application/rss+xml"/><item><title>GRUB ne présente plus son menu au démarrage</title><link>https://edulabs.fr/troubleshooting/systeme/boot/grub-narrive-pas-au-menu/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://edulabs.fr/troubleshooting/systeme/boot/grub-narrive-pas-au-menu/</guid><description>
-&lt;h2&gt;Symptômes&lt;span class="hx:absolute hx:-mt-20" id="symptômes"&gt;&lt;/span&gt;
-&lt;a href="#sympt%c3%b4mes" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Au démarrage, l&amp;rsquo;écran affiche uniquement une invite &lt;code&gt;grub&amp;gt;&lt;/code&gt; minimaliste au lieu du menu habituel avec la liste des noyaux disponibles, ou reste bloqué sur un écran noir avec un simple curseur clignotant. Aucune touche ne semble déclencher l&amp;rsquo;apparition du menu attendu.&lt;/p&gt;
-&lt;h2&gt;Cause probable&lt;span class="hx:absolute hx:-mt-20" id="cause-probable"&gt;&lt;/span&gt;
-&lt;a href="#cause-probable" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Le fichier de configuration &lt;code&gt;grub.cfg&lt;/code&gt; est absent, corrompu, ou pointe vers un chemin de disque qui a changé, souvent après une mise à jour du noyau qui n&amp;rsquo;a pas régénéré correctement la configuration, ou après une modification manuelle de partitionnement qui a décalé les identifiants de disque utilisés par GRUB. Un firmware UEFI mal configuré, qui charge une entrée de démarrage obsolète, peut produire un symptôme similaire.&lt;/p&gt;
-&lt;h2&gt;Diagnostic&lt;span class="hx:absolute hx:-mt-20" id="diagnostic"&gt;&lt;/span&gt;
-&lt;a href="#diagnostic" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
-&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;ls &lt;span style="color:#f92672"&gt;(&lt;/span&gt;hd0,gpt1&lt;span style="color:#f92672"&gt;)&lt;/span&gt;/
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;cat /boot/grub/grub.cfg | head -30
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;efibootmgr -v
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;grub-probe --target&lt;span style="color:#f92672"&gt;=&lt;/span&gt;fs_uuid /&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
-&lt;button
-class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
-title="Copier le code"
-aria-label="Copier le code"
-data-copied-label="Copié !"
-&gt;
-&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
-&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
-&lt;/button&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lotfi Hamadene – Démarrage</title>
+    <link>http://localhost:1317/troubleshooting/systeme/boot/</link>
+    <description>Recent content in Démarrage on Lotfi Hamadene</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-FR</language>
+    
+	  <atom:link href="http://localhost:1317/troubleshooting/systeme/boot/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>GRUB ne présente plus son menu au démarrage</title>
+      <link>http://localhost:1317/troubleshooting/systeme/boot/grub-narrive-pas-au-menu/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1317/troubleshooting/systeme/boot/grub-narrive-pas-au-menu/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;Symptômes&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;symptômes&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#sympt%c3%b4mes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Au démarrage, l&amp;rsquo;écran affiche uniquement une invite &lt;code&gt;grub&amp;gt;&lt;/code&gt; minimaliste au lieu du menu habituel avec la liste des noyaux disponibles, ou reste bloqué sur un écran noir avec un simple curseur clignotant. Aucune touche ne semble déclencher l&amp;rsquo;apparition du menu attendu.&lt;/p&gt;
+&lt;h2&gt;Cause probable&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;cause-probable&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#cause-probable&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Le fichier de configuration &lt;code&gt;grub.cfg&lt;/code&gt; est absent, corrompu, ou pointe vers un chemin de disque qui a changé, souvent après une mise à jour du noyau qui n&amp;rsquo;a pas régénéré correctement la configuration, ou après une modification manuelle de partitionnement qui a décalé les identifiants de disque utilisés par GRUB. Un firmware UEFI mal configuré, qui charge une entrée de démarrage obsolète, peut produire un symptôme similaire.&lt;/p&gt;
+&lt;h2&gt;Diagnostic&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;diagnostic&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#diagnostic&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ls &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;hd0,gpt1&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;/
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cat /boot/grub/grub.cfg | head -30
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;efibootmgr -v
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;grub-probe --target&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;fs_uuid /&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copier le code&#34;
+    aria-label=&#34;Copier le code&#34;
+    data-copied-label=&#34;Copié !&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;Depuis l&amp;rsquo;invite &lt;code&gt;grub&amp;gt;&lt;/code&gt;, la commande &lt;code&gt;ls&lt;/code&gt; permet de lister le contenu des partitions détectées et de vérifier qu&amp;rsquo;un noyau et un initramfs sont bien présents à l&amp;rsquo;emplacement attendu. Cela distingue un problème de configuration GRUB (fichiers présents mais non référencés) d&amp;rsquo;un problème plus grave de partition manquante ou illisible.&lt;/p&gt;
-&lt;h2&gt;Résolution&lt;span class="hx:absolute hx:-mt-20" id="résolution"&gt;&lt;/span&gt;
-&lt;a href="#r%c3%a9solution" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
+&lt;h2&gt;Résolution&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;résolution&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#r%c3%a9solution&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;Depuis l&amp;rsquo;invite &lt;code&gt;grub&amp;gt;&lt;/code&gt;, charger manuellement le noyau pour confirmer que le système démarre bien une fois la bonne partition identifiée : &lt;code&gt;set root=(hd0,gpt1)&lt;/code&gt;, &lt;code&gt;linux /vmlinuz root=/dev/sda1&lt;/code&gt;, &lt;code&gt;initrd /initrd.img&lt;/code&gt;, puis &lt;code&gt;boot&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;Une fois le système démarré, régénérer la configuration GRUB avec &lt;code&gt;grub-mkconfig -o /boot/grub/grub.cfg&lt;/code&gt; (ou &lt;code&gt;update-grub&lt;/code&gt; selon la distribution).&lt;/li&gt;
 &lt;li&gt;Réinstaller le chargeur d&amp;rsquo;amorçage sur le disque concerné avec &lt;code&gt;grub-install /dev/sda&lt;/code&gt; si la configuration régénérée ne suffit pas.&lt;/li&gt;
 &lt;li&gt;Sur un système UEFI, vérifier avec &lt;code&gt;efibootmgr&lt;/code&gt; que l&amp;rsquo;entrée de démarrage pointe vers le bon chemin, et la recréer si nécessaire.&lt;/li&gt;
-&lt;/ol&gt;</description></item><item><title>Kernel panic juste après le chargement du noyau</title><link>https://edulabs.fr/troubleshooting/systeme/boot/kernel-panic-au-boot/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://edulabs.fr/troubleshooting/systeme/boot/kernel-panic-au-boot/</guid><description>
-&lt;h2&gt;Symptômes&lt;span class="hx:absolute hx:-mt-20" id="symptômes"&gt;&lt;/span&gt;
-&lt;a href="#sympt%c3%b4mes" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Le démarrage progresse normalement jusqu&amp;rsquo;à l&amp;rsquo;affichage des premiers messages du noyau, puis s&amp;rsquo;arrête brutalement avec un message « Kernel panic - not syncing » suivi d&amp;rsquo;une trace d&amp;rsquo;appels techniques. Le système ne répond plus et nécessite un redémarrage forcé. Le problème apparaît généralement juste après l&amp;rsquo;installation d&amp;rsquo;une mise à jour de noyau.&lt;/p&gt;
-&lt;h2&gt;Cause probable&lt;span class="hx:absolute hx:-mt-20" id="cause-probable"&gt;&lt;/span&gt;
-&lt;a href="#cause-probable" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;La cause la plus fréquente est un initramfs incomplet ou mal reconstruit qui ne contient pas les modules nécessaires pour monter la racine du système de fichiers (contrôleur de stockage, pilote LVM ou RAID manquant), provoquant l&amp;rsquo;erreur classique « VFS: Unable to mount root fs ». Un module tiers incompatible avec la nouvelle version du noyau, ou un paramètre de démarrage erroné pointant vers un UUID de partition invalide, peuvent produire le même résultat.&lt;/p&gt;
-&lt;h2&gt;Diagnostic&lt;span class="hx:absolute hx:-mt-20" id="diagnostic"&gt;&lt;/span&gt;
-&lt;a href="#diagnostic" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
-&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;journalctl -b -1 -k | tail -50
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;cat /boot/grub/grub.cfg | grep -A2 &lt;span style="color:#e6db74"&gt;&amp;#34;menuentry.*&amp;lt;ancien noyau&amp;gt;&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;lsinitramfs /boot/initrd.img-&amp;lt;version&amp;gt; | grep -i &amp;lt;module&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;blkid&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
-&lt;button
-class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
-title="Copier le code"
-aria-label="Copier le code"
-data-copied-label="Copié !"
-&gt;
-&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
-&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
-&lt;/button&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Kernel panic juste après le chargement du noyau</title>
+      <link>http://localhost:1317/troubleshooting/systeme/boot/kernel-panic-au-boot/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1317/troubleshooting/systeme/boot/kernel-panic-au-boot/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;Symptômes&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;symptômes&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#sympt%c3%b4mes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Le démarrage progresse normalement jusqu&amp;rsquo;à l&amp;rsquo;affichage des premiers messages du noyau, puis s&amp;rsquo;arrête brutalement avec un message « Kernel panic - not syncing » suivi d&amp;rsquo;une trace d&amp;rsquo;appels techniques. Le système ne répond plus et nécessite un redémarrage forcé. Le problème apparaît généralement juste après l&amp;rsquo;installation d&amp;rsquo;une mise à jour de noyau.&lt;/p&gt;
+&lt;h2&gt;Cause probable&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;cause-probable&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#cause-probable&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;La cause la plus fréquente est un initramfs incomplet ou mal reconstruit qui ne contient pas les modules nécessaires pour monter la racine du système de fichiers (contrôleur de stockage, pilote LVM ou RAID manquant), provoquant l&amp;rsquo;erreur classique « VFS: Unable to mount root fs ». Un module tiers incompatible avec la nouvelle version du noyau, ou un paramètre de démarrage erroné pointant vers un UUID de partition invalide, peuvent produire le même résultat.&lt;/p&gt;
+&lt;h2&gt;Diagnostic&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;diagnostic&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#diagnostic&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;journalctl -b -1 -k | tail -50
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cat /boot/grub/grub.cfg | grep -A2 &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;menuentry.*&amp;lt;ancien noyau&amp;gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;lsinitramfs /boot/initrd.img-&amp;lt;version&amp;gt; | grep -i &amp;lt;module&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;blkid&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copier le code&#34;
+    aria-label=&#34;Copier le code&#34;
+    data-copied-label=&#34;Copié !&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;Comparer les paramètres de démarrage de l&amp;rsquo;ancien noyau qui fonctionnait encore avec ceux du nouveau, dans le menu GRUB, aide souvent à repérer un UUID racine incohérent. &lt;code&gt;lsinitramfs&lt;/code&gt; permet de vérifier si un module attendu (pilote de stockage notamment) est bien présent dans l&amp;rsquo;image initramfs générée.&lt;/p&gt;
-&lt;h2&gt;Résolution&lt;span class="hx:absolute hx:-mt-20" id="résolution"&gt;&lt;/span&gt;
-&lt;a href="#r%c3%a9solution" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
+&lt;h2&gt;Résolution&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;résolution&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#r%c3%a9solution&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;Redémarrer en sélectionnant dans le menu GRUB l&amp;rsquo;ancienne version du noyau qui fonctionnait, afin de retrouver un système opérationnel pour investiguer.&lt;/li&gt;
 &lt;li&gt;Vérifier que l&amp;rsquo;UUID de la partition racine dans les paramètres de démarrage correspond bien à celui renvoyé par &lt;code&gt;blkid&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;Reconstruire l&amp;rsquo;initramfs du noyau en échec avec &lt;code&gt;update-initramfs -c -k &amp;lt;version&amp;gt;&lt;/code&gt; (ou l&amp;rsquo;équivalent &lt;code&gt;dracut --force&lt;/code&gt; selon la distribution), en s&amp;rsquo;assurant que les modules de stockage nécessaires y sont bien inclus.&lt;/li&gt;
 &lt;li&gt;Si le noyau récemment installé reste instable après reconstruction de l&amp;rsquo;initramfs, envisager de revenir temporairement à la version précédente en attendant un correctif amont.&lt;/li&gt;
-&lt;/ol&gt;</description></item></channel></rss>
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

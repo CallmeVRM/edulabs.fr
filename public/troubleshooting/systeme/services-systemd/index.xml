@@ -1,59 +1,104 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lotfi Hamadene – Services systemd</title><link>https://edulabs.fr/troubleshooting/systeme/services-systemd/</link><description>Recent content in Services systemd on Lotfi Hamadene</description><generator>Hugo -- gohugo.io</generator><language>fr-FR</language><atom:link href="https://edulabs.fr/troubleshooting/systeme/services-systemd/index.xml" rel="self" type="application/rss+xml"/><item><title>Un service systemd redémarre en boucle</title><link>https://edulabs.fr/troubleshooting/systeme/services-systemd/service-en-echec-boucle/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://edulabs.fr/troubleshooting/systeme/services-systemd/service-en-echec-boucle/</guid><description>
-&lt;h2&gt;Symptômes&lt;span class="hx:absolute hx:-mt-20" id="symptômes"&gt;&lt;/span&gt;
-&lt;a href="#sympt%c3%b4mes" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;code&gt;systemctl status mon-service&lt;/code&gt; affiche un état qui alterne rapidement entre &lt;code&gt;activating&lt;/code&gt; et &lt;code&gt;failed&lt;/code&gt;, avec un compteur de redémarrages qui augmente continuellement. Les journaux montrent le même message d&amp;rsquo;erreur qui se répète toutes les quelques secondes, et le service n&amp;rsquo;atteint jamais un état &lt;code&gt;active (running)&lt;/code&gt; stable.&lt;/p&gt;
-&lt;h2&gt;Cause probable&lt;span class="hx:absolute hx:-mt-20" id="cause-probable"&gt;&lt;/span&gt;
-&lt;a href="#cause-probable" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Le processus lancé par le service échoue systématiquement dès son démarrage, le plus souvent à cause d&amp;rsquo;un fichier de configuration invalide, d&amp;rsquo;une dépendance non disponible (base de données, socket, ou autre service qui n&amp;rsquo;est pas encore prêt), ou d&amp;rsquo;un port déjà occupé par un autre processus. La politique de redémarrage automatique définie dans l&amp;rsquo;unité (&lt;code&gt;Restart=always&lt;/code&gt;) masque alors l&amp;rsquo;échec en relançant indéfiniment le processus sans jamais le stabiliser.&lt;/p&gt;
-&lt;h2&gt;Diagnostic&lt;span class="hx:absolute hx:-mt-20" id="diagnostic"&gt;&lt;/span&gt;
-&lt;a href="#diagnostic" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
-&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;systemctl status mon-service
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;journalctl -u mon-service -n &lt;span style="color:#ae81ff"&gt;50&lt;/span&gt; --no-pager
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;systemctl show mon-service -p Restart -p RestartUSec
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;ss -tlnp | grep &amp;lt;port_attendu&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
-&lt;button
-class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
-title="Copier le code"
-aria-label="Copier le code"
-data-copied-label="Copié !"
-&gt;
-&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
-&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
-&lt;/button&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lotfi Hamadene – Services systemd</title>
+    <link>http://localhost:1317/troubleshooting/systeme/services-systemd/</link>
+    <description>Recent content in Services systemd on Lotfi Hamadene</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-FR</language>
+    
+	  <atom:link href="http://localhost:1317/troubleshooting/systeme/services-systemd/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Un service systemd redémarre en boucle</title>
+      <link>http://localhost:1317/troubleshooting/systeme/services-systemd/service-en-echec-boucle/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1317/troubleshooting/systeme/services-systemd/service-en-echec-boucle/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;Symptômes&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;symptômes&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#sympt%c3%b4mes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;code&gt;systemctl status mon-service&lt;/code&gt; affiche un état qui alterne rapidement entre &lt;code&gt;activating&lt;/code&gt; et &lt;code&gt;failed&lt;/code&gt;, avec un compteur de redémarrages qui augmente continuellement. Les journaux montrent le même message d&amp;rsquo;erreur qui se répète toutes les quelques secondes, et le service n&amp;rsquo;atteint jamais un état &lt;code&gt;active (running)&lt;/code&gt; stable.&lt;/p&gt;
+&lt;h2&gt;Cause probable&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;cause-probable&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#cause-probable&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Le processus lancé par le service échoue systématiquement dès son démarrage, le plus souvent à cause d&amp;rsquo;un fichier de configuration invalide, d&amp;rsquo;une dépendance non disponible (base de données, socket, ou autre service qui n&amp;rsquo;est pas encore prêt), ou d&amp;rsquo;un port déjà occupé par un autre processus. La politique de redémarrage automatique définie dans l&amp;rsquo;unité (&lt;code&gt;Restart=always&lt;/code&gt;) masque alors l&amp;rsquo;échec en relançant indéfiniment le processus sans jamais le stabiliser.&lt;/p&gt;
+&lt;h2&gt;Diagnostic&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;diagnostic&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#diagnostic&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;systemctl status mon-service
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;journalctl -u mon-service -n &lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt; --no-pager
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;systemctl show mon-service -p Restart -p RestartUSec
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ss -tlnp | grep &amp;lt;port_attendu&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copier le code&#34;
+    aria-label=&#34;Copier le code&#34;
+    data-copied-label=&#34;Copié !&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;Le journal détaillé du service donne presque toujours l&amp;rsquo;erreur exacte à l&amp;rsquo;origine de l&amp;rsquo;échec (fichier introuvable, port déjà utilisé, erreur de syntaxe de configuration). Vérifier avec &lt;code&gt;ss&lt;/code&gt; si un autre processus occupe déjà le port attendu permet d&amp;rsquo;écarter rapidement cette cause fréquente.&lt;/p&gt;
-&lt;h2&gt;Résolution&lt;span class="hx:absolute hx:-mt-20" id="résolution"&gt;&lt;/span&gt;
-&lt;a href="#r%c3%a9solution" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
+&lt;h2&gt;Résolution&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;résolution&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#r%c3%a9solution&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;Isoler l&amp;rsquo;erreur précise dans les journaux et la corriger à la source (chemin de configuration, permissions de fichier, dépendance manquante).&lt;/li&gt;
 &lt;li&gt;Si la cause est une dépendance non prête au démarrage, ajouter une directive &lt;code&gt;After=&lt;/code&gt; et &lt;code&gt;Requires=&lt;/code&gt; appropriée dans le fichier d&amp;rsquo;unité pour ordonner correctement le démarrage.&lt;/li&gt;
 &lt;li&gt;Réinitialiser le compteur d&amp;rsquo;échecs et relancer le service proprement : &lt;code&gt;systemctl reset-failed mon-service &amp;amp;&amp;amp; systemctl start mon-service&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;Une fois la cause corrigée, laisser tourner le service quelques minutes en surveillant &lt;code&gt;systemctl status&lt;/code&gt; pour confirmer qu&amp;rsquo;il atteint un état stable sans redémarrage supplémentaire.&lt;/li&gt;
-&lt;/ol&gt;</description></item><item><title>Une unité systemd expire (timeout) au démarrage</title><link>https://edulabs.fr/troubleshooting/systeme/services-systemd/unite-systemd-timeout/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://edulabs.fr/troubleshooting/systeme/services-systemd/unite-systemd-timeout/</guid><description>
-&lt;h2&gt;Symptômes&lt;span class="hx:absolute hx:-mt-20" id="symptômes"&gt;&lt;/span&gt;
-&lt;a href="#sympt%c3%b4mes" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Le démarrage du système prend nettement plus de temps que d&amp;rsquo;habitude, et &lt;code&gt;systemctl status mon-service&lt;/code&gt; finit par afficher un état &lt;code&gt;failed&lt;/code&gt; accompagné du message « start operation timed out ». Le service semble pourtant fonctionner correctement une fois lancé manuellement en dehors de systemd, mais sans jamais réussir son démarrage automatique dans le délai imparti.&lt;/p&gt;
-&lt;h2&gt;Cause probable&lt;span class="hx:absolute hx:-mt-20" id="cause-probable"&gt;&lt;/span&gt;
-&lt;a href="#cause-probable" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Le service met plus de temps à s&amp;rsquo;initialiser que la valeur &lt;code&gt;TimeoutStartSec&lt;/code&gt; définie (90 secondes par défaut dans la plupart des cas), souvent parce qu&amp;rsquo;il attend une ressource externe lente à répondre (base de données distante, montage réseau, ou disque lent), ou parce qu&amp;rsquo;un service de type &lt;code&gt;notify&lt;/code&gt; n&amp;rsquo;envoie jamais le signal &lt;code&gt;READY=1&lt;/code&gt; attendu par systemd, même s&amp;rsquo;il fonctionne par ailleurs normalement.&lt;/p&gt;
-&lt;h2&gt;Diagnostic&lt;span class="hx:absolute hx:-mt-20" id="diagnostic"&gt;&lt;/span&gt;
-&lt;a href="#diagnostic" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
-&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;systemd-analyze blame
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;journalctl -u mon-service -n &lt;span style="color:#ae81ff"&gt;80&lt;/span&gt; --no-pager
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;systemctl show mon-service -p TimeoutStartUSec -p Type
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;systemd-analyze critical-chain mon-service&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
-&lt;button
-class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
-title="Copier le code"
-aria-label="Copier le code"
-data-copied-label="Copié !"
-&gt;
-&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
-&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
-&lt;/button&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Une unité systemd expire (timeout) au démarrage</title>
+      <link>http://localhost:1317/troubleshooting/systeme/services-systemd/unite-systemd-timeout/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1317/troubleshooting/systeme/services-systemd/unite-systemd-timeout/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;Symptômes&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;symptômes&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#sympt%c3%b4mes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Le démarrage du système prend nettement plus de temps que d&amp;rsquo;habitude, et &lt;code&gt;systemctl status mon-service&lt;/code&gt; finit par afficher un état &lt;code&gt;failed&lt;/code&gt; accompagné du message « start operation timed out ». Le service semble pourtant fonctionner correctement une fois lancé manuellement en dehors de systemd, mais sans jamais réussir son démarrage automatique dans le délai imparti.&lt;/p&gt;
+&lt;h2&gt;Cause probable&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;cause-probable&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#cause-probable&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Le service met plus de temps à s&amp;rsquo;initialiser que la valeur &lt;code&gt;TimeoutStartSec&lt;/code&gt; définie (90 secondes par défaut dans la plupart des cas), souvent parce qu&amp;rsquo;il attend une ressource externe lente à répondre (base de données distante, montage réseau, ou disque lent), ou parce qu&amp;rsquo;un service de type &lt;code&gt;notify&lt;/code&gt; n&amp;rsquo;envoie jamais le signal &lt;code&gt;READY=1&lt;/code&gt; attendu par systemd, même s&amp;rsquo;il fonctionne par ailleurs normalement.&lt;/p&gt;
+&lt;h2&gt;Diagnostic&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;diagnostic&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#diagnostic&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;systemd-analyze blame
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;journalctl -u mon-service -n &lt;span style=&#34;color:#ae81ff&#34;&gt;80&lt;/span&gt; --no-pager
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;systemctl show mon-service -p TimeoutStartUSec -p Type
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;systemd-analyze critical-chain mon-service&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copier le code&#34;
+    aria-label=&#34;Copier le code&#34;
+    data-copied-label=&#34;Copié !&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;&lt;code&gt;systemd-analyze blame&lt;/code&gt; classe les unités par temps de démarrage et révèle rapidement si l&amp;rsquo;unité en cause dépasse largement les autres. &lt;code&gt;critical-chain&lt;/code&gt; montre la chaîne de dépendances et le temps consommé à chaque étape, ce qui aide à localiser une attente anormale sur une ressource précise.&lt;/p&gt;
-&lt;h2&gt;Résolution&lt;span class="hx:absolute hx:-mt-20" id="résolution"&gt;&lt;/span&gt;
-&lt;a href="#r%c3%a9solution" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
+&lt;h2&gt;Résolution&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;résolution&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#r%c3%a9solution&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;Si le service a réellement besoin de plus de temps pour s&amp;rsquo;initialiser (cas légitime, par exemple une base de données volumineuse à charger), augmenter &lt;code&gt;TimeoutStartSec&lt;/code&gt; dans un fichier de surcharge (&lt;code&gt;systemctl edit mon-service&lt;/code&gt;) plutôt que dans le fichier d&amp;rsquo;unité fourni par le paquet.&lt;/li&gt;
 &lt;li&gt;Si le service est de type &lt;code&gt;notify&lt;/code&gt; mais n&amp;rsquo;envoie jamais le signal de disponibilité, vérifier que le binaire supporte réellement l&amp;rsquo;intégration &lt;code&gt;sd_notify&lt;/code&gt;, ou passer temporairement le type à &lt;code&gt;simple&lt;/code&gt; en attendant une correction amont.&lt;/li&gt;
 &lt;li&gt;Traiter la cause de la lenteur elle-même si elle est identifiée (connexion réseau lente, disque à latence anormale) plutôt que de se contenter d&amp;rsquo;augmenter le délai.&lt;/li&gt;
 &lt;li&gt;Relancer le service après ajustement et confirmer avec &lt;code&gt;systemd-analyze blame&lt;/code&gt; que son temps de démarrage reste désormais dans une plage normale.&lt;/li&gt;
-&lt;/ol&gt;</description></item></channel></rss>
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

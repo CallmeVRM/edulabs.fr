@@ -1,55 +1,100 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lotfi Hamadene – Shells alternatifs</title><link>https://edulabs.fr/decouvertes/projets-open-source/shells-alternatifs/</link><description>Recent content in Shells alternatifs on Lotfi Hamadene</description><generator>Hugo -- gohugo.io</generator><language>fr-FR</language><atom:link href="https://edulabs.fr/decouvertes/projets-open-source/shells-alternatifs/index.xml" rel="self" type="application/rss+xml"/><item><title>fish : un shell pensé pour l'utilisateur</title><link>https://edulabs.fr/decouvertes/projets-open-source/shells-alternatifs/fish-shell/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://edulabs.fr/decouvertes/projets-open-source/shells-alternatifs/fish-shell/</guid><description>
-&lt;h2&gt;Présentation&lt;span class="hx:absolute hx:-mt-20" id="présentation"&gt;&lt;/span&gt;
-&lt;a href="#pr%c3%a9sentation" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;fish (friendly interactive shell) part d&amp;rsquo;un postulat différent de bash ou zsh : plutôt que de viser une compatibilité stricte avec POSIX, il privilégie l&amp;rsquo;expérience interactive dès l&amp;rsquo;installation, sans configuration préalable. Autocomplétion intelligente, coloration syntaxique en temps réel et suggestions basées sur l&amp;rsquo;historique sont actives par défaut.&lt;/p&gt;
-&lt;h2&gt;Ce qui est intéressant&lt;span class="hx:absolute hx:-mt-20" id="ce-qui-est-intéressant"&gt;&lt;/span&gt;
-&lt;a href="#ce-qui-est-int%c3%a9ressant" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lotfi Hamadene – Shells alternatifs</title>
+    <link>http://localhost:1317/decouvertes/projets-open-source/shells-alternatifs/</link>
+    <description>Recent content in Shells alternatifs on Lotfi Hamadene</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-FR</language>
+    
+	  <atom:link href="http://localhost:1317/decouvertes/projets-open-source/shells-alternatifs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>fish : un shell pensé pour l&#39;utilisateur</title>
+      <link>http://localhost:1317/decouvertes/projets-open-source/shells-alternatifs/fish-shell/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1317/decouvertes/projets-open-source/shells-alternatifs/fish-shell/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;Présentation&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;présentation&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#pr%c3%a9sentation&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;fish (friendly interactive shell) part d&amp;rsquo;un postulat différent de bash ou zsh : plutôt que de viser une compatibilité stricte avec POSIX, il privilégie l&amp;rsquo;expérience interactive dès l&amp;rsquo;installation, sans configuration préalable. Autocomplétion intelligente, coloration syntaxique en temps réel et suggestions basées sur l&amp;rsquo;historique sont actives par défaut.&lt;/p&gt;
+&lt;h2&gt;Ce qui est intéressant&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;ce-qui-est-intéressant&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#ce-qui-est-int%c3%a9ressant&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;Coloration syntaxique en direct pendant la frappe, qui signale par exemple une commande inconnue avant même de valider&lt;/li&gt;
 &lt;li&gt;Suggestions automatiques tirées de l&amp;rsquo;historique, affichées en grisé et validables avec une simple flèche droite&lt;/li&gt;
 &lt;li&gt;Une syntaxe de script volontairement simplifiée par rapport à bash, notamment pour les conditions et les boucles&lt;/li&gt;
 &lt;li&gt;Une autocomplétion des options de commande générée automatiquement à partir des pages de manuel&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Cas d&amp;rsquo;usage&lt;span class="hx:absolute hx:-mt-20" id="cas-dusage"&gt;&lt;/span&gt;
-&lt;a href="#cas-dusage" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Très adapté à un usage interactif quotidien, moins pensé pour l&amp;rsquo;écriture de scripts destinés à être portables. Un exemple de condition en fish :&lt;/p&gt;
-&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
-&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-fish" data-lang="fish"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;test&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;-f&lt;/span&gt; fichier.txt
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;echo&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;présent&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;end&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
-&lt;button
-class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
-title="Copier le code"
-aria-label="Copier le code"
-data-copied-label="Copié !"
-&gt;
-&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
-&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
-&lt;/button&gt;
+&lt;h2&gt;Cas d&amp;rsquo;usage&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;cas-dusage&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#cas-dusage&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Très adapté à un usage interactif quotidien, moins pensé pour l&amp;rsquo;écriture de scripts destinés à être portables. Un exemple de condition en fish :&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-fish&#34; data-lang=&#34;fish&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;test&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;-f&lt;/span&gt; fichier.txt
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;présent&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copier le code&#34;
+    aria-label=&#34;Copier le code&#34;
+    data-copied-label=&#34;Copié !&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;h2&gt;Avis en bref&lt;span class="hx:absolute hx:-mt-20" id="avis-en-bref"&gt;&lt;/span&gt;
-&lt;a href="#avis-en-bref" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;fish assume de ne pas être POSIX et cela se voit dans la qualité de l&amp;rsquo;expérience interactive, nettement plus agréable dès la première utilisation que bash sans configuration additionnelle.&lt;/p&gt;</description></item><item><title>Nushell : quand le shell devient structuré</title><link>https://edulabs.fr/decouvertes/projets-open-source/shells-alternatifs/nushell/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://edulabs.fr/decouvertes/projets-open-source/shells-alternatifs/nushell/</guid><description>
-&lt;h2&gt;Présentation&lt;span class="hx:absolute hx:-mt-20" id="présentation"&gt;&lt;/span&gt;
-&lt;a href="#pr%c3%a9sentation" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Nushell repense plus radicalement encore la notion de shell : au lieu de faire circuler du texte brut entre les commandes comme le font bash ou fish, il fait circuler des données structurées (tables, enregistrements, listes typées). Chaque commande reçoit et produit ces structures, ce qui permet de filtrer, trier ou transformer des données sans jongler avec &lt;code&gt;awk&lt;/code&gt;, &lt;code&gt;sed&lt;/code&gt; ou &lt;code&gt;cut&lt;/code&gt;.&lt;/p&gt;
-&lt;h2&gt;Ce qui est intéressant&lt;span class="hx:absolute hx:-mt-20" id="ce-qui-est-intéressant"&gt;&lt;/span&gt;
-&lt;a href="#ce-qui-est-int%c3%a9ressant" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;h2&gt;Avis en bref&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;avis-en-bref&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#avis-en-bref&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;fish assume de ne pas être POSIX et cela se voit dans la qualité de l&amp;rsquo;expérience interactive, nettement plus agréable dès la première utilisation que bash sans configuration additionnelle.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Nushell : quand le shell devient structuré</title>
+      <link>http://localhost:1317/decouvertes/projets-open-source/shells-alternatifs/nushell/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1317/decouvertes/projets-open-source/shells-alternatifs/nushell/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;Présentation&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;présentation&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#pr%c3%a9sentation&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Nushell repense plus radicalement encore la notion de shell : au lieu de faire circuler du texte brut entre les commandes comme le font bash ou fish, il fait circuler des données structurées (tables, enregistrements, listes typées). Chaque commande reçoit et produit ces structures, ce qui permet de filtrer, trier ou transformer des données sans jongler avec &lt;code&gt;awk&lt;/code&gt;, &lt;code&gt;sed&lt;/code&gt; ou &lt;code&gt;cut&lt;/code&gt;.&lt;/p&gt;
+&lt;h2&gt;Ce qui est intéressant&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;ce-qui-est-intéressant&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#ce-qui-est-int%c3%a9ressant&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;La sortie de commandes comme le listing de répertoire est une véritable table manipulable, triable et filtrable&lt;/li&gt;
 &lt;li&gt;Les fichiers CSV, JSON ou TOML sont chargés directement comme des données structurées, sans parsing manuel&lt;/li&gt;
 &lt;li&gt;Un système de types qui permet d&amp;rsquo;attraper certaines erreurs de script avant même l&amp;rsquo;exécution&lt;/li&gt;
 &lt;li&gt;Multiplateforme par conception, avec un comportement identique sur Linux, macOS et Windows&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Cas d&amp;rsquo;usage&lt;span class="hx:absolute hx:-mt-20" id="cas-dusage"&gt;&lt;/span&gt;
-&lt;a href="#cas-dusage" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Particulièrement à l&amp;rsquo;aise pour des tâches d&amp;rsquo;exploration ou de transformation de données directement en ligne de commande :&lt;/p&gt;
-&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
-&lt;div&gt;&lt;pre&gt;&lt;code&gt;ls | where size &amp;gt; 10mb | sort-by modified&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
-&lt;button
-class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
-title="Copier le code"
-aria-label="Copier le code"
-data-copied-label="Copié !"
-&gt;
-&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
-&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
-&lt;/button&gt;
+&lt;h2&gt;Cas d&amp;rsquo;usage&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;cas-dusage&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#cas-dusage&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Particulièrement à l&amp;rsquo;aise pour des tâches d&amp;rsquo;exploration ou de transformation de données directement en ligne de commande :&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;ls | where size &amp;gt; 10mb | sort-by modified&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copier le code&#34;
+    aria-label=&#34;Copier le code&#34;
+    data-copied-label=&#34;Copié !&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;h2&gt;Avis en bref&lt;span class="hx:absolute hx:-mt-20" id="avis-en-bref"&gt;&lt;/span&gt;
-&lt;a href="#avis-en-bref" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Nushell demande de désapprendre certains réflexes du texte brut façon Unix, mais pour qui manipule régulièrement des données structurées, le gain d&amp;rsquo;expressivité est immédiatement palpable.&lt;/p&gt;</description></item></channel></rss>
+&lt;h2&gt;Avis en bref&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;avis-en-bref&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#avis-en-bref&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Nushell demande de désapprendre certains réflexes du texte brut façon Unix, mais pour qui manipule régulièrement des données structurées, le gain d&amp;rsquo;expressivité est immédiatement palpable.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,64 +1,109 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lotfi Hamadene – ZFS</title><link>https://edulabs.fr/research/systemes-fichiers/zfs/</link><description>Recent content in ZFS on Lotfi Hamadene</description><generator>Hugo -- gohugo.io</generator><language>fr-FR</language><atom:link href="https://edulabs.fr/research/systemes-fichiers/zfs/index.xml" rel="self" type="application/rss+xml"/><item><title>Comprendre le cache ARC de ZFS</title><link>https://edulabs.fr/research/systemes-fichiers/zfs/arc-cache-zfs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://edulabs.fr/research/systemes-fichiers/zfs/arc-cache-zfs/</guid><description>
-&lt;h2&gt;Contexte&lt;span class="hx:absolute hx:-mt-20" id="contexte"&gt;&lt;/span&gt;
-&lt;a href="#contexte" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;ZFS n&amp;rsquo;utilise pas le cache de pages standard du noyau Linux mais son propre mécanisme, l&amp;rsquo;ARC (Adaptive Replacement Cache). Cette particularité surprend souvent les administrateurs qui voient la commande &lt;code&gt;free&lt;/code&gt; afficher peu de mémoire &amp;ldquo;disponible&amp;rdquo; alors que le système fonctionne parfaitement bien. Il paraissait utile de clarifier ce que fait réellement l&amp;rsquo;ARC.&lt;/p&gt;
-&lt;h2&gt;Analyse technique&lt;span class="hx:absolute hx:-mt-20" id="analyse-technique"&gt;&lt;/span&gt;
-&lt;a href="#analyse-technique" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;L&amp;rsquo;ARC est un cache de blocs qui maintient deux listes séparées : une pour les blocs récemment utilisés (MRU, most recently used) et une pour les blocs fréquemment utilisés (MFU, most frequently used), avec un ajustement dynamique de la taille relative de chaque liste selon les motifs d&amp;rsquo;accès observés. Ce fonctionnement le rend en théorie plus résistant aux balayages ponctuels (un grand &lt;code&gt;find&lt;/code&gt; ou une sauvegarde complète) qu&amp;rsquo;un simple cache LRU, car les blocs fréquemment accédés ne sont pas évincés par un accès massif mais ponctuel.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lotfi Hamadene – ZFS</title>
+    <link>http://localhost:1317/research/systemes-fichiers/zfs/</link>
+    <description>Recent content in ZFS on Lotfi Hamadene</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-FR</language>
+    
+	  <atom:link href="http://localhost:1317/research/systemes-fichiers/zfs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Comprendre le cache ARC de ZFS</title>
+      <link>http://localhost:1317/research/systemes-fichiers/zfs/arc-cache-zfs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1317/research/systemes-fichiers/zfs/arc-cache-zfs/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;Contexte&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;contexte&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#contexte&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;ZFS n&amp;rsquo;utilise pas le cache de pages standard du noyau Linux mais son propre mécanisme, l&amp;rsquo;ARC (Adaptive Replacement Cache). Cette particularité surprend souvent les administrateurs qui voient la commande &lt;code&gt;free&lt;/code&gt; afficher peu de mémoire &amp;ldquo;disponible&amp;rdquo; alors que le système fonctionne parfaitement bien. Il paraissait utile de clarifier ce que fait réellement l&amp;rsquo;ARC.&lt;/p&gt;
+&lt;h2&gt;Analyse technique&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;analyse-technique&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#analyse-technique&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;L&amp;rsquo;ARC est un cache de blocs qui maintient deux listes séparées : une pour les blocs récemment utilisés (MRU, most recently used) et une pour les blocs fréquemment utilisés (MFU, most frequently used), avec un ajustement dynamique de la taille relative de chaque liste selon les motifs d&amp;rsquo;accès observés. Ce fonctionnement le rend en théorie plus résistant aux balayages ponctuels (un grand &lt;code&gt;find&lt;/code&gt; ou une sauvegarde complète) qu&amp;rsquo;un simple cache LRU, car les blocs fréquemment accédés ne sont pas évincés par un accès massif mais ponctuel.&lt;/p&gt;
 &lt;p&gt;L&amp;rsquo;ARC peut aussi s&amp;rsquo;étendre à un second niveau, le L2ARC, stocké sur un périphérique rapide (SSD ou NVMe) pour absorber les données qui débordent de la RAM sans redescendre jusqu&amp;rsquo;au disque mécanique.&lt;/p&gt;
-&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
-&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# taille courante et limites de l&amp;#39;ARC&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;cat /proc/spl/kstat/zfs/arcstats | grep -E &lt;span style="color:#e6db74"&gt;&amp;#34;^(size|c_max|c_min) &amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# fixer une limite haute à 8 Go&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;echo &lt;span style="color:#ae81ff"&gt;8589934592&lt;/span&gt; &amp;gt; /sys/module/zfs/parameters/zfs_arc_max&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
-&lt;button
-class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
-title="Copier le code"
-aria-label="Copier le code"
-data-copied-label="Copié !"
-&gt;
-&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
-&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
-&lt;/button&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# taille courante et limites de l&amp;#39;ARC&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cat /proc/spl/kstat/zfs/arcstats | grep -E &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;^(size|c_max|c_min) &amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# fixer une limite haute à 8 Go&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;echo &lt;span style=&#34;color:#ae81ff&#34;&gt;8589934592&lt;/span&gt; &amp;gt; /sys/module/zfs/parameters/zfs_arc_max&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copier le code&#34;
+    aria-label=&#34;Copier le code&#34;
+    data-copied-label=&#34;Copié !&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;h2&gt;Observations&lt;span class="hx:absolute hx:-mt-20" id="observations"&gt;&lt;/span&gt;
-&lt;a href="#observations" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Sur un serveur de fichiers avec 64 Go de RAM et une charge de lecture aléatoire mixte :&lt;/p&gt;
+&lt;h2&gt;Observations&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;observations&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#observations&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Sur un serveur de fichiers avec 64 Go de RAM et une charge de lecture aléatoire mixte :&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;l&amp;rsquo;ARC occupe par défaut jusqu&amp;rsquo;à environ 50 % de la RAM disponible, ce qui explique la mémoire &amp;ldquo;manquante&amp;rdquo; dans les outils standards ;&lt;/li&gt;
 &lt;li&gt;le taux de succès du cache (&lt;code&gt;hit ratio&lt;/code&gt;) mesuré sur une semaine dépasse 90 % pour les blocs de métadonnées et reste autour de 70 % pour les données, ce qui confirme l&amp;rsquo;intérêt de la séparation MRU/MFU sur cette charge ;&lt;/li&gt;
 &lt;li&gt;limiter explicitement &lt;code&gt;zfs_arc_max&lt;/code&gt; évite les situations où l&amp;rsquo;ARC entre en compétition mémoire avec d&amp;rsquo;autres services critiques du même hôte.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Pour aller plus loin&lt;span class="hx:absolute hx:-mt-20" id="pour-aller-plus-loin"&gt;&lt;/span&gt;
-&lt;a href="#pour-aller-plus-loin" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Un test avec L2ARC sur un SSD NVMe permettrait de quantifier le gain réel une fois la RAM saturée, notamment sur un working set dépassant largement la taille de l&amp;rsquo;ARC primaire.&lt;/p&gt;</description></item><item><title>ZFS et Btrfs : comparatif pour un usage serveur</title><link>https://edulabs.fr/research/systemes-fichiers/zfs/zfs-vs-btrfs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://edulabs.fr/research/systemes-fichiers/zfs/zfs-vs-btrfs/</guid><description>
-&lt;h2&gt;Contexte&lt;span class="hx:absolute hx:-mt-20" id="contexte"&gt;&lt;/span&gt;
-&lt;a href="#contexte" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Le choix entre ZFS et Btrfs revient régulièrement lors du dimensionnement d&amp;rsquo;un nouveau serveur de stockage. Les deux visent des objectifs proches (intégrité des données, snapshots, gestion de volumes) mais avec des historiques et des contraintes d&amp;rsquo;intégration très différents sous Linux, ce qui justifie de remettre les critères de choix à plat.&lt;/p&gt;
-&lt;h2&gt;Analyse technique&lt;span class="hx:absolute hx:-mt-20" id="analyse-technique"&gt;&lt;/span&gt;
-&lt;a href="#analyse-technique" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;ZFS, sous licence CDDL jugée incompatible avec la GPL par la Software Foundation, ne peut pas être intégré au noyau mainline et doit être installé comme module hors arbre via OpenZFS, avec un risque de rupture à chaque montée de version noyau majeure. En contrepartie, il bénéficie de plus de vingt ans de maturité industrielle, notamment sur Solaris puis FreeBSD, et de fonctionnalités comme les RAID-Z sans le problème de write hole qui touche Btrfs, grâce à une conception qui évite l&amp;rsquo;écriture partielle de bandes.&lt;/p&gt;
+&lt;h2&gt;Pour aller plus loin&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;pour-aller-plus-loin&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#pour-aller-plus-loin&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Un test avec L2ARC sur un SSD NVMe permettrait de quantifier le gain réel une fois la RAM saturée, notamment sur un working set dépassant largement la taille de l&amp;rsquo;ARC primaire.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>ZFS et Btrfs : comparatif pour un usage serveur</title>
+      <link>http://localhost:1317/research/systemes-fichiers/zfs/zfs-vs-btrfs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1317/research/systemes-fichiers/zfs/zfs-vs-btrfs/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;Contexte&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;contexte&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#contexte&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Le choix entre ZFS et Btrfs revient régulièrement lors du dimensionnement d&amp;rsquo;un nouveau serveur de stockage. Les deux visent des objectifs proches (intégrité des données, snapshots, gestion de volumes) mais avec des historiques et des contraintes d&amp;rsquo;intégration très différents sous Linux, ce qui justifie de remettre les critères de choix à plat.&lt;/p&gt;
+&lt;h2&gt;Analyse technique&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;analyse-technique&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#analyse-technique&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;ZFS, sous licence CDDL jugée incompatible avec la GPL par la Software Foundation, ne peut pas être intégré au noyau mainline et doit être installé comme module hors arbre via OpenZFS, avec un risque de rupture à chaque montée de version noyau majeure. En contrepartie, il bénéficie de plus de vingt ans de maturité industrielle, notamment sur Solaris puis FreeBSD, et de fonctionnalités comme les RAID-Z sans le problème de write hole qui touche Btrfs, grâce à une conception qui évite l&amp;rsquo;écriture partielle de bandes.&lt;/p&gt;
 &lt;p&gt;Btrfs, intégré au noyau, profite d&amp;rsquo;une installation plus simple et d&amp;rsquo;un développement suivant le rythme du noyau lui-même, mais certaines fonctionnalités (RAID5/6 notamment) restent en retrait par rapport à leur équivalent ZFS en termes de fiabilité éprouvée.&lt;/p&gt;
-&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
-&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# comparaison rapide des commandes équivalentes&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;zpool status tank &lt;span style="color:#75715e"&gt;# ZFS : état du pool&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;btrfs filesystem show &lt;span style="color:#75715e"&gt;# Btrfs : état du système de fichiers&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;zfs list -o space &lt;span style="color:#75715e"&gt;# ZFS : usage par dataset&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;btrfs filesystem usage /mnt &lt;span style="color:#75715e"&gt;# Btrfs : usage global&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
-&lt;button
-class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
-title="Copier le code"
-aria-label="Copier le code"
-data-copied-label="Copié !"
-&gt;
-&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
-&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
-&lt;/button&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# comparaison rapide des commandes équivalentes&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;zpool status tank          &lt;span style=&#34;color:#75715e&#34;&gt;# ZFS : état du pool&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;btrfs filesystem show      &lt;span style=&#34;color:#75715e&#34;&gt;# Btrfs : état du système de fichiers&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;zfs list -o space          &lt;span style=&#34;color:#75715e&#34;&gt;# ZFS : usage par dataset&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;btrfs filesystem usage /mnt &lt;span style=&#34;color:#75715e&#34;&gt;# Btrfs : usage global&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copier le code&#34;
+    aria-label=&#34;Copier le code&#34;
+    data-copied-label=&#34;Copié !&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;h2&gt;Observations&lt;span class="hx:absolute hx:-mt-20" id="observations"&gt;&lt;/span&gt;
-&lt;a href="#observations" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;En confrontant les deux sur un même serveur de sauvegarde (deux volumes équivalents, un par technologie) :&lt;/p&gt;
+&lt;h2&gt;Observations&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;observations&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#observations&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;En confrontant les deux sur un même serveur de sauvegarde (deux volumes équivalents, un par technologie) :&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;ZFS s&amp;rsquo;est montré plus prévisible sous forte charge d&amp;rsquo;écriture séquentielle continue, avec une dégradation plus progressive à l&amp;rsquo;approche du plein ;&lt;/li&gt;
 &lt;li&gt;Btrfs s&amp;rsquo;est révélé plus simple à administrer au quotidien, notamment pour redimensionner des sous-volumes à la volée sans étape d&amp;rsquo;export/import ;&lt;/li&gt;
 &lt;li&gt;les deux ont détecté et corrigé sans intervention une corruption silencieuse injectée artificiellement sur un des disques, confirmant que le mécanisme de checksum fonctionne comme attendu dans les deux cas.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Pour aller plus loin&lt;span class="hx:absolute hx:-mt-20" id="pour-aller-plus-loin"&gt;&lt;/span&gt;
-&lt;a href="#pour-aller-plus-loin" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Le choix dépend beaucoup du besoin en RAID parité : pour ce cas précis, ZFS reste la valeur la plus sûre si RAID5/6 (RAID-Z) est requis, une question à retester régulièrement à mesure que Btrfs progresse.&lt;/p&gt;</description></item></channel></rss>
+&lt;h2&gt;Pour aller plus loin&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;pour-aller-plus-loin&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#pour-aller-plus-loin&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Le choix dépend beaucoup du besoin en RAID parité : pour ce cas précis, ZFS reste la valeur la plus sûre si RAID5/6 (RAID-Z) est requis, une question à retester régulièrement à mesure que Btrfs progresse.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,11 +1,52 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lotfi Hamadene – OpenSUSE-MicroOS</title><link>https://edulabs.fr/docs/os-immuable/opensuse-microos/</link><description>Recent content in OpenSUSE-MicroOS on Lotfi Hamadene</description><generator>Hugo -- gohugo.io</generator><language>fr-FR</language><atom:link href="https://edulabs.fr/docs/os-immuable/opensuse-microos/index.xml" rel="self" type="application/rss+xml"/><item><title>MicroOS en mode 4G</title><link>https://edulabs.fr/docs/os-immuable/opensuse-microos/4g_mode/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://edulabs.fr/docs/os-immuable/opensuse-microos/4g_mode/</guid><description>
-&lt;h2&gt;Objectif&lt;span class="hx:absolute hx:-mt-20" id="objectif"&gt;&lt;/span&gt;
-&lt;a href="#objectif" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h2&gt;Prérequis&lt;span class="hx:absolute hx:-mt-20" id="prérequis"&gt;&lt;/span&gt;
-&lt;a href="#pr%c3%a9requis" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h2&gt;Étapes&lt;span class="hx:absolute hx:-mt-20" id="étapes"&gt;&lt;/span&gt;
-&lt;a href="#%c3%a9tapes" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h2&gt;Vérification&lt;span class="hx:absolute hx:-mt-20" id="vérification"&gt;&lt;/span&gt;
-&lt;a href="#v%c3%a9rification" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;</description></item><item><title>Wrapper nftables</title><link>https://edulabs.fr/docs/os-immuable/opensuse-microos/wrapper_nft/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://edulabs.fr/docs/os-immuable/opensuse-microos/wrapper_nft/</guid><description>
-&lt;h2&gt;Objectif&lt;span class="hx:absolute hx:-mt-20" id="objectif"&gt;&lt;/span&gt;
-&lt;a href="#objectif" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h2&gt;Prérequis&lt;span class="hx:absolute hx:-mt-20" id="prérequis"&gt;&lt;/span&gt;
-&lt;a href="#pr%c3%a9requis" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h2&gt;Étapes&lt;span class="hx:absolute hx:-mt-20" id="étapes"&gt;&lt;/span&gt;
-&lt;a href="#%c3%a9tapes" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h2&gt;Vérification&lt;span class="hx:absolute hx:-mt-20" id="vérification"&gt;&lt;/span&gt;
-&lt;a href="#v%c3%a9rification" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;</description></item></channel></rss>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lotfi Hamadene – OpenSUSE-MicroOS</title>
+    <link>http://localhost:1317/docs/os-immuable/opensuse-microos/</link>
+    <description>Recent content in OpenSUSE-MicroOS on Lotfi Hamadene</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-FR</language>
+    
+	  <atom:link href="http://localhost:1317/docs/os-immuable/opensuse-microos/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>MicroOS en mode 4G</title>
+      <link>http://localhost:1317/docs/os-immuable/opensuse-microos/4g-mode/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1317/docs/os-immuable/opensuse-microos/4g-mode/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;Objectif&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;objectif&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#objectif&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h2&gt;Prérequis&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;prérequis&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#pr%c3%a9requis&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h2&gt;Étapes&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;étapes&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%c3%a9tapes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h2&gt;Vérification&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;vérification&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#v%c3%a9rification&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Wrapper nftables</title>
+      <link>http://localhost:1317/docs/os-immuable/opensuse-microos/wrapper-nft/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1317/docs/os-immuable/opensuse-microos/wrapper-nft/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;Objectif&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;objectif&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#objectif&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h2&gt;Prérequis&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;prérequis&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#pr%c3%a9requis&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h2&gt;Étapes&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;étapes&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%c3%a9tapes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h2&gt;Vérification&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;vérification&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#v%c3%a9rification&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+      </description>
+    </item>
+    
+  </channel>
+</rss>

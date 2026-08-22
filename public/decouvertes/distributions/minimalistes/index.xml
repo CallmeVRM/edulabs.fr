@@ -1,55 +1,100 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lotfi Hamadene – Distributions minimalistes</title><link>https://edulabs.fr/decouvertes/distributions/minimalistes/</link><description>Recent content in Distributions minimalistes on Lotfi Hamadene</description><generator>Hugo -- gohugo.io</generator><language>fr-FR</language><atom:link href="https://edulabs.fr/decouvertes/distributions/minimalistes/index.xml" rel="self" type="application/rss+xml"/><item><title>Alpine Linux : légèreté et musl</title><link>https://edulabs.fr/decouvertes/distributions/minimalistes/alpine-linux/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://edulabs.fr/decouvertes/distributions/minimalistes/alpine-linux/</guid><description>
-&lt;h2&gt;Présentation&lt;span class="hx:absolute hx:-mt-20" id="présentation"&gt;&lt;/span&gt;
-&lt;a href="#pr%c3%a9sentation" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Alpine Linux s&amp;rsquo;est fait connaître comme l&amp;rsquo;image de base d&amp;rsquo;une bonne partie des conteneurs Docker, mais c&amp;rsquo;est aussi une distribution complète et utilisable directement sur une machine. Elle remplace glibc par musl libc et utilise BusyBox pour la plupart des utilitaires système, ce qui donne une empreinte disque minuscule.&lt;/p&gt;
-&lt;h2&gt;Ce qui est intéressant&lt;span class="hx:absolute hx:-mt-20" id="ce-qui-est-intéressant"&gt;&lt;/span&gt;
-&lt;a href="#ce-qui-est-int%c3%a9ressant" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lotfi Hamadene – Distributions minimalistes</title>
+    <link>http://localhost:1317/decouvertes/distributions/minimalistes/</link>
+    <description>Recent content in Distributions minimalistes on Lotfi Hamadene</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-FR</language>
+    
+	  <atom:link href="http://localhost:1317/decouvertes/distributions/minimalistes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Alpine Linux : légèreté et musl</title>
+      <link>http://localhost:1317/decouvertes/distributions/minimalistes/alpine-linux/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1317/decouvertes/distributions/minimalistes/alpine-linux/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;Présentation&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;présentation&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#pr%c3%a9sentation&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Alpine Linux s&amp;rsquo;est fait connaître comme l&amp;rsquo;image de base d&amp;rsquo;une bonne partie des conteneurs Docker, mais c&amp;rsquo;est aussi une distribution complète et utilisable directement sur une machine. Elle remplace glibc par musl libc et utilise BusyBox pour la plupart des utilitaires système, ce qui donne une empreinte disque minuscule.&lt;/p&gt;
+&lt;h2&gt;Ce qui est intéressant&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;ce-qui-est-intéressant&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#ce-qui-est-int%c3%a9ressant&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;Une image de base pesant seulement quelques mégaoctets, très appréciée pour les conteneurs&lt;/li&gt;
 &lt;li&gt;Le gestionnaire de paquets apk, rapide et simple, avec un dépôt bien fourni malgré la taille du système&lt;/li&gt;
 &lt;li&gt;Un modèle de sécurité orienté durcissement par défaut, avec PIE et SSP activés sur l&amp;rsquo;ensemble des paquets&lt;/li&gt;
 &lt;li&gt;OpenRC comme système d&amp;rsquo;init, plus lisible que systemd pour qui veut comprendre chaque étape du démarrage&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Cas d&amp;rsquo;usage&lt;span class="hx:absolute hx:-mt-20" id="cas-dusage"&gt;&lt;/span&gt;
-&lt;a href="#cas-dusage" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Parfait pour des conteneurs légers ou des serveurs à ressources limitées. Installer un paquet se résume à :&lt;/p&gt;
-&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
-&lt;div&gt;&lt;pre&gt;&lt;code&gt;apk add nom-du-paquet&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
-&lt;button
-class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
-title="Copier le code"
-aria-label="Copier le code"
-data-copied-label="Copié !"
-&gt;
-&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
-&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
-&lt;/button&gt;
+&lt;h2&gt;Cas d&amp;rsquo;usage&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;cas-dusage&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#cas-dusage&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Parfait pour des conteneurs légers ou des serveurs à ressources limitées. Installer un paquet se résume à :&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;apk add nom-du-paquet&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copier le code&#34;
+    aria-label=&#34;Copier le code&#34;
+    data-copied-label=&#34;Copié !&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;Attention cependant : certains logiciels compilés en supposant glibc peuvent nécessiter des ajustements avec musl.&lt;/p&gt;
-&lt;h2&gt;Avis en bref&lt;span class="hx:absolute hx:-mt-20" id="avis-en-bref"&gt;&lt;/span&gt;
-&lt;a href="#avis-en-bref" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Alpine tient une promesse rare : rester minuscule sans devenir pénible à utiliser. Un excellent choix par défaut pour les conteneurs, à condition de vérifier la compatibilité musl des logiciels les plus exotiques.&lt;/p&gt;</description></item><item><title>Void Linux et son init runit</title><link>https://edulabs.fr/decouvertes/distributions/minimalistes/void-linux/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://edulabs.fr/decouvertes/distributions/minimalistes/void-linux/</guid><description>
-&lt;h2&gt;Présentation&lt;span class="hx:absolute hx:-mt-20" id="présentation"&gt;&lt;/span&gt;
-&lt;a href="#pr%c3%a9sentation" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Void Linux est une distribution indépendante, construite à partir de zéro plutôt que dérivée d&amp;rsquo;une autre. Elle utilise son propre gestionnaire de paquets XBPS et remplace systemd par runit, un système d&amp;rsquo;init volontairement minimal. C&amp;rsquo;est aussi l&amp;rsquo;une des rares distributions grand public à proposer musl comme option en plus de glibc.&lt;/p&gt;
-&lt;h2&gt;Ce qui est intéressant&lt;span class="hx:absolute hx:-mt-20" id="ce-qui-est-intéressant"&gt;&lt;/span&gt;
-&lt;a href="#ce-qui-est-int%c3%a9ressant" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;h2&gt;Avis en bref&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;avis-en-bref&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#avis-en-bref&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Alpine tient une promesse rare : rester minuscule sans devenir pénible à utiliser. Un excellent choix par défaut pour les conteneurs, à condition de vérifier la compatibilité musl des logiciels les plus exotiques.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Void Linux et son init runit</title>
+      <link>http://localhost:1317/decouvertes/distributions/minimalistes/void-linux/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1317/decouvertes/distributions/minimalistes/void-linux/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;Présentation&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;présentation&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#pr%c3%a9sentation&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Void Linux est une distribution indépendante, construite à partir de zéro plutôt que dérivée d&amp;rsquo;une autre. Elle utilise son propre gestionnaire de paquets XBPS et remplace systemd par runit, un système d&amp;rsquo;init volontairement minimal. C&amp;rsquo;est aussi l&amp;rsquo;une des rares distributions grand public à proposer musl comme option en plus de glibc.&lt;/p&gt;
+&lt;h2&gt;Ce qui est intéressant&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;ce-qui-est-intéressant&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#ce-qui-est-int%c3%a9ressant&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;XBPS, un gestionnaire de paquets binaire rapide, avec des paquets sources faciles à modifier via xbps-src&lt;/li&gt;
 &lt;li&gt;runit comme init : quelques centaines de lignes de code, des services démarrés par de simples scripts shell dans des répertoires dédiés&lt;/li&gt;
 &lt;li&gt;Un modèle &amp;ldquo;rolling release&amp;rdquo; sans version figée, avec des mises à jour continues plutôt que des sauts de version majeurs&lt;/li&gt;
 &lt;li&gt;Une communauté qui documente activement les choix techniques et les alternatives à systemd&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Cas d&amp;rsquo;usage&lt;span class="hx:absolute hx:-mt-20" id="cas-dusage"&gt;&lt;/span&gt;
-&lt;a href="#cas-dusage" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Convient à qui veut comprendre précisément ce qui démarre sur sa machine et pourquoi. Un service runit s&amp;rsquo;active en général ainsi :&lt;/p&gt;
-&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
-&lt;div&gt;&lt;pre&gt;&lt;code&gt;ln -s /etc/sv/nom-du-service /var/service/&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
-&lt;button
-class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
-title="Copier le code"
-aria-label="Copier le code"
-data-copied-label="Copié !"
-&gt;
-&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
-&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
-&lt;/button&gt;
+&lt;h2&gt;Cas d&amp;rsquo;usage&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;cas-dusage&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#cas-dusage&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Convient à qui veut comprendre précisément ce qui démarre sur sa machine et pourquoi. Un service runit s&amp;rsquo;active en général ainsi :&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;ln -s /etc/sv/nom-du-service /var/service/&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copier le code&#34;
+    aria-label=&#34;Copier le code&#34;
+    data-copied-label=&#34;Copié !&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;et il tourne alors sous supervision continue.&lt;/p&gt;
-&lt;h2&gt;Avis en bref&lt;span class="hx:absolute hx:-mt-20" id="avis-en-bref"&gt;&lt;/span&gt;
-&lt;a href="#avis-en-bref" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Void demande de mettre un peu les mains dans le cambouis, mais c&amp;rsquo;est justement ce qui en fait une excellente distribution pédagogique pour qui veut sortir de l&amp;rsquo;écosystème systemd sans sacrifier la stabilité.&lt;/p&gt;</description></item></channel></rss>
+&lt;h2&gt;Avis en bref&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;avis-en-bref&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#avis-en-bref&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Void demande de mettre un peu les mains dans le cambouis, mais c&amp;rsquo;est justement ce qui en fait une excellente distribution pédagogique pour qui veut sortir de l&amp;rsquo;écosystème systemd sans sacrifier la stabilité.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>
