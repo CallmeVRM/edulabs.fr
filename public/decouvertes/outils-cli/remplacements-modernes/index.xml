@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lotfi Hamadene – Remplacements modernes</title>
-    <link>http://localhost:1320/decouvertes/outils-cli/remplacements-modernes/</link>
+    <link>http://localhost:1321/decouvertes/outils-cli/remplacements-modernes/</link>
     <description>Recent content in Remplacements modernes on Lotfi Hamadene</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-FR</language>
     
-	  <atom:link href="http://localhost:1320/decouvertes/outils-cli/remplacements-modernes/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:1321/decouvertes/outils-cli/remplacements-modernes/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>ripgrep et fd : la recherche réinventée</title>
-      <link>http://localhost:1320/decouvertes/outils-cli/remplacements-modernes/ripgrep-et-fd/</link>
+      <link>http://localhost:1321/decouvertes/outils-cli/remplacements-modernes/ripgrep-et-fd/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1320/decouvertes/outils-cli/remplacements-modernes/ripgrep-et-fd/</guid>
+      <guid>http://localhost:1321/decouvertes/outils-cli/remplacements-modernes/ripgrep-et-fd/</guid>
       <description>
         
         
@@ -56,10 +56,10 @@
     
     <item>
       <title>bat et eza : cat et ls modernisés</title>
-      <link>http://localhost:1320/decouvertes/outils-cli/remplacements-modernes/bat-et-eza/</link>
+      <link>http://localhost:1321/decouvertes/outils-cli/remplacements-modernes/bat-et-eza/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1320/decouvertes/outils-cli/remplacements-modernes/bat-et-eza/</guid>
+      <guid>http://localhost:1321/decouvertes/outils-cli/remplacements-modernes/bat-et-eza/</guid>
       <description>
         
         

@@ -28,14 +28,8 @@ layout: hextra-home
 
 </div>
 
-<div class="hx:w-full hx:mt-16 hx:mb-6">
-<h2 class="hx:not-prose hx:text-2xl hx:font-semibold hx:tracking-tight hx:text-center hx:text-gray-900 hx:dark:text-gray-100">
-  Explorer le site
-</h2>
-</div>
-
-<div class="hx:w-full home-cards">
-{{< cards cols="1" >}}
+<div class="hx:w-full hx:mt-12 home-cards">
+{{< cards cols="3" >}}
   {{< card link="troubleshooting" title="Troubleshooting" icon="exclamation" subtitle="Pannes rencontrées, diagnostics et résolutions, classées par domaine." >}}
   {{< card link="research" title="Research" icon="beaker" subtitle="Explorations techniques plus poussées sur le noyau, le stockage et la sécurité." >}}
   {{< card link="docs" title="Docs" icon="document-text" subtitle="Documentation de référence, procédures et configurations types." >}}

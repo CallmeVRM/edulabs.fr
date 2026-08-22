@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lotfi Hamadene – Réseau</title>
-    <link>http://localhost:1320/troubleshooting/reseau/</link>
+    <link>http://localhost:1321/troubleshooting/reseau/</link>
     <description>Recent content in Réseau on Lotfi Hamadene</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-FR</language>
     
-	  <atom:link href="http://localhost:1320/troubleshooting/reseau/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:1321/troubleshooting/reseau/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>DNS</title>
-      <link>http://localhost:1320/troubleshooting/reseau/dns/</link>
+      <link>http://localhost:1321/troubleshooting/reseau/dns/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1320/troubleshooting/reseau/dns/</guid>
+      <guid>http://localhost:1321/troubleshooting/reseau/dns/</guid>
       <description>
         
         
@@ -41,10 +41,10 @@
     
     <item>
       <title>Interfaces réseau</title>
-      <link>http://localhost:1320/troubleshooting/reseau/interfaces/</link>
+      <link>http://localhost:1321/troubleshooting/reseau/interfaces/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1320/troubleshooting/reseau/interfaces/</guid>
+      <guid>http://localhost:1321/troubleshooting/reseau/interfaces/</guid>
       <description>
         
         

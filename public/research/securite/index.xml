@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lotfi Hamadene – Sécurité</title>
-    <link>http://localhost:1320/research/securite/</link>
+    <link>http://localhost:1321/research/securite/</link>
     <description>Recent content in Sécurité on Lotfi Hamadene</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-FR</language>
     
-	  <atom:link href="http://localhost:1320/research/securite/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:1321/research/securite/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Modules de sécurité (LSM)</title>
-      <link>http://localhost:1320/research/securite/lsm/</link>
+      <link>http://localhost:1321/research/securite/lsm/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1320/research/securite/lsm/</guid>
+      <guid>http://localhost:1321/research/securite/lsm/</guid>
       <description>
         
         
@@ -41,10 +41,10 @@
     
     <item>
       <title>Observabilité noyau</title>
-      <link>http://localhost:1320/research/securite/observabilite-noyau/</link>
+      <link>http://localhost:1321/research/securite/observabilite-noyau/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1320/research/securite/observabilite-noyau/</guid>
+      <guid>http://localhost:1321/research/securite/observabilite-noyau/</guid>
       <description>
         
         

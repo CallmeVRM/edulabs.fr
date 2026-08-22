@@ -410,16 +410,23 @@ main article {
   line-height: 1.55;
 }
 
-/* Accueil : cartes empilées à la verticale, colonne centrée et resserrée.
-   `grid-template-columns: 1fr` est indispensable — la grille du thème
-   (auto-fill / minmax 250px) repasserait sinon sur plusieurs colonnes dès
-   qu'il y a de la place. !important car le thème pose la propriété sur la
-   même classe via --hextra-cards-grid-cols. */
+/* Accueil : cartes en ligne, 3 par rangée, bloc centré et borné en largeur.
+   Flex plutôt que la grille du thème : avec 5 cartes, la dernière rangée est
+   incomplète — `justify-content: center` la centre au lieu de laisser un trou
+   à droite. Les cartes gardent toutes la même largeur.
+   58rem / 17rem / gap 1rem => 3 par rangée (3x17+2x1 = 53rem < 58rem,
+   une 4e ne rentrerait pas). */
 .home-cards .hextra-cards {
-  grid-template-columns: 1fr !important;
-  max-width: 32rem;
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 58rem;
   margin-inline: auto;
-  gap: 0.75rem;
+  gap: 1rem;
+}
+
+.home-cards .hextra-card {
+  flex: 0 1 17rem;
 }
 
 /* --------------------------------------------------------------------------
