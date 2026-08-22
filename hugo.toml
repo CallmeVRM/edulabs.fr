@@ -55,7 +55,11 @@ title = 'Lotfi Hamadene'
     default = "system"
     displayToggle = true
 
+  [params.page]
+    width = "wide"
+
   [params.navbar]
+    width = "wide"
     displayTitle = true
     displayLogo = false
 

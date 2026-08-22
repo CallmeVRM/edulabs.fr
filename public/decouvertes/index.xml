@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lotfi Hamadene – Découvertes</title>
-    <link>https://edulabs.fr/decouvertes/</link>
+    <link>http://localhost:1313/decouvertes/</link>
     <description>Recent content in Découvertes on Lotfi Hamadene</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-FR</language>
     
-	  <atom:link href="https://edulabs.fr/decouvertes/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:1313/decouvertes/index.xml" rel="self" type="application/rss+xml" />
     
     
       

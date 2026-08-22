@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lotfi Hamadene – Interfaces réseau</title>
-    <link>https://edulabs.fr/troubleshooting/reseau/interfaces/</link>
+    <link>http://localhost:1313/troubleshooting/reseau/interfaces/</link>
     <description>Recent content in Interfaces réseau on Lotfi Hamadene</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-FR</language>
     
-	  <atom:link href="https://edulabs.fr/troubleshooting/reseau/interfaces/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:1313/troubleshooting/reseau/interfaces/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Une interface réseau reste à l&#39;état DOWN</title>
-      <link>https://edulabs.fr/troubleshooting/reseau/interfaces/interface-down/</link>
+      <link>http://localhost:1313/troubleshooting/reseau/interfaces/interface-down/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://edulabs.fr/troubleshooting/reseau/interfaces/interface-down/</guid>
+      <guid>http://localhost:1313/troubleshooting/reseau/interfaces/interface-down/</guid>
       <description>
         
         
@@ -59,10 +59,10 @@
     
     <item>
       <title>Conflit d&#39;adresse IP sur le réseau local</title>
-      <link>https://edulabs.fr/troubleshooting/reseau/interfaces/conflit-adresse-ip/</link>
+      <link>http://localhost:1313/troubleshooting/reseau/interfaces/conflit-adresse-ip/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://edulabs.fr/troubleshooting/reseau/interfaces/conflit-adresse-ip/</guid>
+      <guid>http://localhost:1313/troubleshooting/reseau/interfaces/conflit-adresse-ip/</guid>
       <description>
         
         
