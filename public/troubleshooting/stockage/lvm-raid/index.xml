@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lotfi Hamadene – LVM &amp; RAID</title>
-    <link>http://localhost:1317/troubleshooting/stockage/lvm-raid/</link>
+    <link>http://localhost:1318/troubleshooting/stockage/lvm-raid/</link>
     <description>Recent content in LVM &amp; RAID on Lotfi Hamadene</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-FR</language>
     
-	  <atom:link href="http://localhost:1317/troubleshooting/stockage/lvm-raid/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:1318/troubleshooting/stockage/lvm-raid/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Un volume logique LVM n&#39;est plus détecté au démarrage</title>
-      <link>http://localhost:1317/troubleshooting/stockage/lvm-raid/volume-lvm-introuvable/</link>
+      <link>http://localhost:1318/troubleshooting/stockage/lvm-raid/volume-lvm-introuvable/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1317/troubleshooting/stockage/lvm-raid/volume-lvm-introuvable/</guid>
+      <guid>http://localhost:1318/troubleshooting/stockage/lvm-raid/volume-lvm-introuvable/</guid>
       <description>
         
         
@@ -59,10 +59,10 @@
     
     <item>
       <title>Tableau RAID logiciel bloqué en mode dégradé</title>
-      <link>http://localhost:1317/troubleshooting/stockage/lvm-raid/raid-en-mode-degrade/</link>
+      <link>http://localhost:1318/troubleshooting/stockage/lvm-raid/raid-en-mode-degrade/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1317/troubleshooting/stockage/lvm-raid/raid-en-mode-degrade/</guid>
+      <guid>http://localhost:1318/troubleshooting/stockage/lvm-raid/raid-en-mode-degrade/</guid>
       <description>
         
         

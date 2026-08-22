@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" dir="ltr"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1317&amp;path=livereload" data-no-instant defer></script>
+<html lang="fr" dir="ltr"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1318&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="robots" content="noindex, nofollow" />
   <link rel="icon shortcut" href="/favicon.ico" sizes="32x32" />
@@ -10,7 +10,7 @@
 <link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
 <title>Créer et configurer un nouvel utilisateur – Lotfi Hamadene</title>
   <meta name="description" content="Objectif Cette procédure décrit la création d’un compte utilisateur local, l’attribution d’un mot de passe et son ajout à un ou plusieurs groupes existants, afin de lui donner un accès contrôlé au système.
-Prérequis Accès root ou droits sudo sur la machine Le paquet shadow-utils (ou équivalent) installé, présent par défaut sur la quasi-totalité des distributions Connaître le groupe secondaire souhaité (par exemple sudo, wheel ou docker) Étapes Créer le compte avec un répertoire personnel et un shell par défaut. Définir un mot de passe initial que l’utilisateur devra changer à la première connexion. Ajouter le compte à un groupe secondaire si nécessaire. Forcer l’expiration du mot de passe pour imposer un changement. sudo useradd -m -s /bin/bash amartin sudo passwd amartin sudo usermod -aG sudo amartin sudo chage -d 0 amartin Le drapeau -m garantit la création du répertoire /home/amartin, et -s /bin/bash fixe le shell de connexion. L’ajout au groupe sudo (ou wheel sur les distributions basées sur RHEL) permet d’exécuter des commandes privilégiées sans passer par le compte root directement." /><link rel="canonical" href="http://localhost:1317/docs/administration/utilisateurs-permissions/creer-un-utilisateur/" itemprop="url" />
+Prérequis Accès root ou droits sudo sur la machine Le paquet shadow-utils (ou équivalent) installé, présent par défaut sur la quasi-totalité des distributions Connaître le groupe secondaire souhaité (par exemple sudo, wheel ou docker) Étapes Créer le compte avec un répertoire personnel et un shell par défaut. Définir un mot de passe initial que l’utilisateur devra changer à la première connexion. Ajouter le compte à un groupe secondaire si nécessaire. Forcer l’expiration du mot de passe pour imposer un changement. sudo useradd -m -s /bin/bash amartin sudo passwd amartin sudo usermod -aG sudo amartin sudo chage -d 0 amartin Le drapeau -m garantit la création du répertoire /home/amartin, et -s /bin/bash fixe le shell de connexion. L’ajout au groupe sudo (ou wheel sur les distributions basées sur RHEL) permet d’exécuter des commandes privilégiées sans passer par le compte root directement." /><link rel="canonical" href="http://localhost:1318/docs/administration/utilisateurs-permissions/creer-un-utilisateur/" itemprop="url" />
 
 <meta property="og:title" content="Créer et configurer un nouvel utilisateur">
 <meta
@@ -52,7 +52,7 @@ Le drapeau -m garantit la création du répertoire /home/amartin, et -s /bin/bas
   content="
     article
   ">
-<meta property="og:url" content="http://localhost:1317/docs/administration/utilisateurs-permissions/creer-un-utilisateur/"><meta property="article:section" content="docs">
+<meta property="og:url" content="http://localhost:1318/docs/administration/utilisateurs-permissions/creer-un-utilisateur/"><meta property="article:section" content="docs">
 
 
 
@@ -75,8 +75,9 @@ Prérequis Accès root ou droits sudo sur la machine Le paquet shadow-utils (ou 
   
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link
-  href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=JetBrains+Mono:wght@400..600&display=swap"
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400..700&display=swap"
   rel="stylesheet"
 />
 </head>

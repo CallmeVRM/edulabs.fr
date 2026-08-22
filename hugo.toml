@@ -56,7 +56,7 @@ title = 'Lotfi Hamadene'
     displayToggle = true
 
   [params.page]
-    width = "wide"
+    width = "full"
 
   [params.navbar]
     width = "wide"

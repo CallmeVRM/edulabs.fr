@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" dir="ltr"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1317&amp;path=livereload" data-no-instant defer></script>
+<html lang="fr" dir="ltr"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1318&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="robots" content="noindex, nofollow" />
   <link rel="icon shortcut" href="/favicon.ico" sizes="32x32" />
@@ -10,7 +10,7 @@
 <link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
 <title>UFW pour configurer un pare-feu rapidement – Lotfi Hamadene</title>
   <meta name="description" content="Objectif UFW (Uncomplicated Firewall) simplifie la gestion du pare-feu en fournissant une syntaxe simple par-dessus nftables ou iptables. Ce guide couvre la mise en place d’une politique minimale : tout bloquer en entrée, autoriser explicitement quelques services.
-Prérequis Paquet ufw installé (présent par défaut sur Ubuntu desktop et serveur) Droits sudo Liste des ports à ouvrir (SSH, HTTP, HTTPS…) Étapes Définir les politiques par défaut : refuser en entrée, autoriser en sortie. Autoriser le SSH avant toute autre chose, pour ne pas perdre l’accès distant. Autoriser les ports HTTP et HTTPS si un service web tourne sur la machine. Activer le pare-feu. sudo ufw default deny incoming sudo ufw default allow outgoing sudo ufw allow OpenSSH sudo ufw allow 80/tcp sudo ufw allow 443/tcp sudo ufw enable ufw allow OpenSSH s’appuie sur un profil d’application préenregistré, équivalent à allow 22/tcp, mais plus lisible. Il est possible de limiter une règle à une IP source précise avec ufw allow from 192.168.1.0/24 to any port 22, ce qui est utile pour restreindre l’accès SSH à un réseau d’administration." /><link rel="canonical" href="http://localhost:1317/docs/reseau/pare-feu/ufw-pour-les-presses/" itemprop="url" />
+Prérequis Paquet ufw installé (présent par défaut sur Ubuntu desktop et serveur) Droits sudo Liste des ports à ouvrir (SSH, HTTP, HTTPS…) Étapes Définir les politiques par défaut : refuser en entrée, autoriser en sortie. Autoriser le SSH avant toute autre chose, pour ne pas perdre l’accès distant. Autoriser les ports HTTP et HTTPS si un service web tourne sur la machine. Activer le pare-feu. sudo ufw default deny incoming sudo ufw default allow outgoing sudo ufw allow OpenSSH sudo ufw allow 80/tcp sudo ufw allow 443/tcp sudo ufw enable ufw allow OpenSSH s’appuie sur un profil d’application préenregistré, équivalent à allow 22/tcp, mais plus lisible. Il est possible de limiter une règle à une IP source précise avec ufw allow from 192.168.1.0/24 to any port 22, ce qui est utile pour restreindre l’accès SSH à un réseau d’administration." /><link rel="canonical" href="http://localhost:1318/docs/reseau/pare-feu/ufw-pour-les-presses/" itemprop="url" />
 
 <meta property="og:title" content="UFW pour configurer un pare-feu rapidement">
 <meta
@@ -54,7 +54,7 @@ ufw allow OpenSSH s&rsquo;appuie sur un profil d&rsquo;application préenregistr
   content="
     article
   ">
-<meta property="og:url" content="http://localhost:1317/docs/reseau/pare-feu/ufw-pour-les-presses/"><meta property="article:section" content="docs">
+<meta property="og:url" content="http://localhost:1318/docs/reseau/pare-feu/ufw-pour-les-presses/"><meta property="article:section" content="docs">
 
 
 
@@ -77,8 +77,9 @@ Prérequis Paquet ufw installé (présent par défaut sur Ubuntu desktop et serv
   
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link
-  href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=JetBrains+Mono:wght@400..600&display=swap"
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400..700&display=swap"
   rel="stylesheet"
 />
 </head>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" dir="ltr"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1317&amp;path=livereload" data-no-instant defer></script>
+<html lang="fr" dir="ltr"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1318&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="robots" content="noindex, nofollow" />
   <link rel="icon shortcut" href="/favicon.ico" sizes="32x32" />
@@ -10,7 +10,7 @@
 <link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
 <title>Sauvegarder avec Restic – Lotfi Hamadene</title>
   <meta name="description" content="Objectif Ce guide met en place des sauvegardes chiffrées, dédupliquées et incrémentales avec Restic, vers un dépôt local ou distant (SFTP, S3, Backblaze B2…).
-Prérequis restic installé (apt install restic ou binaire statique) Un espace de stockage cible (disque externe, serveur SFTP, bucket S3…) Un mot de passe de dépôt à conserver précieusement Le mot de passe du dépôt n’est stocké nulle part par Restic. En cas de perte, les données sauvegardées sont définitivement inaccessibles, y compris pour vous. Étapes ### Initialiser le dépôt ```bash export RESTIC_REPOSITORY=/mnt/backup/restic-repo export RESTIC_PASSWORD=&#34;un-mot-de-passe-long-et-unique&#34; restic init ``` ### Lancer une première sauvegarde ```bash restic backup /etc /home /var/www ``` Restic ne transfère que les blocs de données nouveaux ou modifiés depuis le dernier instantané (`snapshot`), grâce à un découpage en chunks à taille variable. Une deuxième sauvegarde du même arbre est donc généralement très rapide. ### Vérifier les instantanés existants ```bash restic snapshots ``` ### Restaurer un fichier ou une arborescence ```bash restic restore latest --target /tmp/restauration --include /etc/nginx ``` Politique de rétention Sans nettoyage, le dépôt grossit indéfiniment. La commande forget associée à prune applique une politique de rétention puis libère l’espace disque correspondant :" /><link rel="canonical" href="http://localhost:1317/docs/administration/sauvegardes/sauvegarder-avec-restic/" itemprop="url" />
+Prérequis restic installé (apt install restic ou binaire statique) Un espace de stockage cible (disque externe, serveur SFTP, bucket S3…) Un mot de passe de dépôt à conserver précieusement Le mot de passe du dépôt n’est stocké nulle part par Restic. En cas de perte, les données sauvegardées sont définitivement inaccessibles, y compris pour vous. Étapes ### Initialiser le dépôt ```bash export RESTIC_REPOSITORY=/mnt/backup/restic-repo export RESTIC_PASSWORD=&#34;un-mot-de-passe-long-et-unique&#34; restic init ``` ### Lancer une première sauvegarde ```bash restic backup /etc /home /var/www ``` Restic ne transfère que les blocs de données nouveaux ou modifiés depuis le dernier instantané (`snapshot`), grâce à un découpage en chunks à taille variable. Une deuxième sauvegarde du même arbre est donc généralement très rapide. ### Vérifier les instantanés existants ```bash restic snapshots ``` ### Restaurer un fichier ou une arborescence ```bash restic restore latest --target /tmp/restauration --include /etc/nginx ``` Politique de rétention Sans nettoyage, le dépôt grossit indéfiniment. La commande forget associée à prune applique une politique de rétention puis libère l’espace disque correspondant :" /><link rel="canonical" href="http://localhost:1318/docs/administration/sauvegardes/sauvegarder-avec-restic/" itemprop="url" />
 
 <meta property="og:title" content="Sauvegarder avec Restic">
 <meta
@@ -75,7 +75,7 @@ Politique de rétention
   content="
     article
   ">
-<meta property="og:url" content="http://localhost:1317/docs/administration/sauvegardes/sauvegarder-avec-restic/"><meta property="article:section" content="docs">
+<meta property="og:url" content="http://localhost:1318/docs/administration/sauvegardes/sauvegarder-avec-restic/"><meta property="article:section" content="docs">
 
 
 
@@ -98,8 +98,9 @@ Prérequis restic installé (apt install restic ou binaire statique) Un espace d
   
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link
-  href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=JetBrains+Mono:wght@400..600&display=swap"
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400..700&display=swap"
   rel="stylesheet"
 />
 </head>

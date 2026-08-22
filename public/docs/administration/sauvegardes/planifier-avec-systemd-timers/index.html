@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" dir="ltr"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1317&amp;path=livereload" data-no-instant defer></script>
+<html lang="fr" dir="ltr"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1318&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="robots" content="noindex, nofollow" />
   <link rel="icon shortcut" href="/favicon.ico" sizes="32x32" />
@@ -10,7 +10,7 @@
 <link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
 <title>Planifier avec systemd timers – Lotfi Hamadene</title>
   <meta name="description" content="Objectif Remplacer une entrée cron par un couple service &#43; timer systemd, pour bénéficier de la journalisation dans journald, de la gestion des dépendances et du rattrapage automatique (Persistent=true) après une extinction de la machine.
-Prérequis Accès root ou sudo pour créer des unités dans /etc/systemd/system/ Un script ou une commande de sauvegarde déjà fonctionnelle (voir Sauvegarder avec Restic) Étapes ### Créer le service `/etc/systemd/system/backup-restic.service` : ```ini [Unit] Description=Sauvegarde Restic [Service] Type=oneshot EnvironmentFile=/etc/restic/backup.env ExecStart=/usr/bin/restic backup /etc /home /var/www ``` Le service est de type `oneshot` : il exécute la commande puis se termine, contrairement à un service qui tournerait en continu. Les identifiants sensibles (mot de passe du dépôt, clés d&#39;accès) sont isolés dans un fichier d&#39;environnement dédié plutôt qu&#39;écrits en clair dans l&#39;unité. ### Créer le timer associé `/etc/systemd/system/backup-restic.timer` : ```ini [Unit] Description=Planification de la sauvegarde Restic [Timer] OnCalendar=*-*-* 02:30:00 Persistent=true [Install] WantedBy=timers.target ``` `Persistent=true` déclenche l&#39;exécution au prochain démarrage si la machine était éteinte à l&#39;heure prévue, ce que `cron` ne fait pas nativement. ### Activer et démarrer le timer ```bash systemctl daemon-reload systemctl enable --now backup-restic.timer ``` Vérification systemctl list-timers backup-restic.timer journalctl -u backup-restic.service --since &#34;-7 days&#34; list-timers affiche la prochaine date de déclenchement calculée ainsi que la date de la dernière exécution. En cas d’échec du service, journalctl contient la sortie complète de restic, y compris les éventuels messages d’erreur réseau ou de dépôt verrouillé." /><link rel="canonical" href="http://localhost:1317/docs/administration/sauvegardes/planifier-avec-systemd-timers/" itemprop="url" />
+Prérequis Accès root ou sudo pour créer des unités dans /etc/systemd/system/ Un script ou une commande de sauvegarde déjà fonctionnelle (voir Sauvegarder avec Restic) Étapes ### Créer le service `/etc/systemd/system/backup-restic.service` : ```ini [Unit] Description=Sauvegarde Restic [Service] Type=oneshot EnvironmentFile=/etc/restic/backup.env ExecStart=/usr/bin/restic backup /etc /home /var/www ``` Le service est de type `oneshot` : il exécute la commande puis se termine, contrairement à un service qui tournerait en continu. Les identifiants sensibles (mot de passe du dépôt, clés d&#39;accès) sont isolés dans un fichier d&#39;environnement dédié plutôt qu&#39;écrits en clair dans l&#39;unité. ### Créer le timer associé `/etc/systemd/system/backup-restic.timer` : ```ini [Unit] Description=Planification de la sauvegarde Restic [Timer] OnCalendar=*-*-* 02:30:00 Persistent=true [Install] WantedBy=timers.target ``` `Persistent=true` déclenche l&#39;exécution au prochain démarrage si la machine était éteinte à l&#39;heure prévue, ce que `cron` ne fait pas nativement. ### Activer et démarrer le timer ```bash systemctl daemon-reload systemctl enable --now backup-restic.timer ``` Vérification systemctl list-timers backup-restic.timer journalctl -u backup-restic.service --since &#34;-7 days&#34; list-timers affiche la prochaine date de déclenchement calculée ainsi que la date de la dernière exécution. En cas d’échec du service, journalctl contient la sortie complète de restic, y compris les éventuels messages d’erreur réseau ou de dépôt verrouillé." /><link rel="canonical" href="http://localhost:1318/docs/administration/sauvegardes/planifier-avec-systemd-timers/" itemprop="url" />
 
 <meta property="og:title" content="Planifier avec systemd timers">
 <meta
@@ -89,7 +89,7 @@ list-timers affiche la prochaine date de déclenchement calculée ainsi que la d
   content="
     article
   ">
-<meta property="og:url" content="http://localhost:1317/docs/administration/sauvegardes/planifier-avec-systemd-timers/"><meta property="article:section" content="docs">
+<meta property="og:url" content="http://localhost:1318/docs/administration/sauvegardes/planifier-avec-systemd-timers/"><meta property="article:section" content="docs">
 
 
 
@@ -112,8 +112,9 @@ Prérequis Accès root ou sudo pour créer des unités dans /etc/systemd/system/
   
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link
-  href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=JetBrains+Mono:wght@400..600&display=swap"
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400..700&display=swap"
   rel="stylesheet"
 />
 </head>

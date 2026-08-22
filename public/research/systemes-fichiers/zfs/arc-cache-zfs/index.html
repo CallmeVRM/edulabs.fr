@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" dir="ltr"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1317&amp;path=livereload" data-no-instant defer></script>
+<html lang="fr" dir="ltr"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1318&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="robots" content="noindex, nofollow" />
   <link rel="icon shortcut" href="/favicon.ico" sizes="32x32" />
@@ -10,7 +10,7 @@
 <link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
 <title>Comprendre le cache ARC de ZFS – Lotfi Hamadene</title>
   <meta name="description" content="Contexte ZFS n’utilise pas le cache de pages standard du noyau Linux mais son propre mécanisme, l’ARC (Adaptive Replacement Cache). Cette particularité surprend souvent les administrateurs qui voient la commande free afficher peu de mémoire “disponible” alors que le système fonctionne parfaitement bien. Il paraissait utile de clarifier ce que fait réellement l’ARC.
-Analyse technique L’ARC est un cache de blocs qui maintient deux listes séparées : une pour les blocs récemment utilisés (MRU, most recently used) et une pour les blocs fréquemment utilisés (MFU, most frequently used), avec un ajustement dynamique de la taille relative de chaque liste selon les motifs d’accès observés. Ce fonctionnement le rend en théorie plus résistant aux balayages ponctuels (un grand find ou une sauvegarde complète) qu’un simple cache LRU, car les blocs fréquemment accédés ne sont pas évincés par un accès massif mais ponctuel." /><link rel="canonical" href="http://localhost:1317/research/systemes-fichiers/zfs/arc-cache-zfs/" itemprop="url" />
+Analyse technique L’ARC est un cache de blocs qui maintient deux listes séparées : une pour les blocs récemment utilisés (MRU, most recently used) et une pour les blocs fréquemment utilisés (MFU, most frequently used), avec un ajustement dynamique de la taille relative de chaque liste selon les motifs d’accès observés. Ce fonctionnement le rend en théorie plus résistant aux balayages ponctuels (un grand find ou une sauvegarde complète) qu’un simple cache LRU, car les blocs fréquemment accédés ne sont pas évincés par un accès massif mais ponctuel." /><link rel="canonical" href="http://localhost:1318/research/systemes-fichiers/zfs/arc-cache-zfs/" itemprop="url" />
 
 <meta property="og:title" content="Comprendre le cache ARC de ZFS">
 <meta
@@ -28,7 +28,7 @@ Analyse technique
   content="
     article
   ">
-<meta property="og:url" content="http://localhost:1317/research/systemes-fichiers/zfs/arc-cache-zfs/"><meta property="article:section" content="research">
+<meta property="og:url" content="http://localhost:1318/research/systemes-fichiers/zfs/arc-cache-zfs/"><meta property="article:section" content="research">
 
 
 
@@ -51,8 +51,9 @@ Analyse technique L’ARC est un cache de blocs qui maintient deux listes sépar
   
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link
-  href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=JetBrains+Mono:wght@400..600&display=swap"
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400..700&display=swap"
   rel="stylesheet"
 />
 </head>
