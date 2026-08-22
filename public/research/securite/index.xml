@@ -1,68 +1,23 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Lotfi Hamadene – Sécurité</title>
-    <link>http://localhost:1313/research/securite/</link>
-    <description>Recent content in Sécurité on Lotfi Hamadene</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>fr-FR</language>
-    
-	  <atom:link href="http://localhost:1313/research/securite/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-      
-        
-      
-    
-    
-    <item>
-      <title>Modules de sécurité (LSM)</title>
-      <link>http://localhost:1313/research/securite/lsm/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/research/securite/lsm/</guid>
-      <description>
-        
-        
-        &lt;p&gt;Les modules Linux Security Modules encadrent ce que les processus peuvent faire, bien au-delà des permissions Unix classiques.&lt;/p&gt;
-&lt;div class=&#34;hextra-cards hx:mt-4 hx:gap-4 hx:grid not-prose&#34; style=&#34;--hextra-cards-grid-cols: 3;&#34;&gt;
-  &lt;a
-    class=&#34;hextra-card hx:group hx:flex hx:flex-col hx:justify-start hx:overflow-hidden hx:rounded-lg hx:border hx:border-gray-200 hx:text-current hx:no-underline hx:dark:shadow-none hx:hover:shadow-gray-100 hx:dark:hover:shadow-none hx:shadow-gray-100 hx:active:shadow-sm hx:active:shadow-gray-200 hx:transition-all hx:duration-200 hx:hover:border-gray-300 hx:bg-transparent hx:shadow-xs hx:dark:border-neutral-800 hx:hover:bg-slate-50 hx:hover:shadow-md hx:dark:hover:border-neutral-700 hx:dark:hover:bg-neutral-900&#34;href=&#34;selinux-vs-apparmor&#34;
-      &gt;&lt;div class=&#34;hx:mt-auto&#34;&gt;
-      &lt;span class=&#34;hextra-card-icon hx:flex hx:font-semibold hx:items-start hx:gap-2 hx:p-4 hx:text-gray-700 hx:hover:text-gray-900 hx:dark:text-neutral-200 hx:dark:hover:text-neutral-50&#34;&gt;SELinux contre AppArmor : deux modèles de confinement&lt;/span&gt;&lt;/div&gt;&lt;/a&gt;
-  &lt;a
-    class=&#34;hextra-card hx:group hx:flex hx:flex-col hx:justify-start hx:overflow-hidden hx:rounded-lg hx:border hx:border-gray-200 hx:text-current hx:no-underline hx:dark:shadow-none hx:hover:shadow-gray-100 hx:dark:hover:shadow-none hx:shadow-gray-100 hx:active:shadow-sm hx:active:shadow-gray-200 hx:transition-all hx:duration-200 hx:hover:border-gray-300 hx:bg-transparent hx:shadow-xs hx:dark:border-neutral-800 hx:hover:bg-slate-50 hx:hover:shadow-md hx:dark:hover:border-neutral-700 hx:dark:hover:bg-neutral-900&#34;href=&#34;durcissement-namespaces&#34;
-      &gt;&lt;div class=&#34;hx:mt-auto&#34;&gt;
-      &lt;span class=&#34;hextra-card-icon hx:flex hx:font-semibold hx:items-start hx:gap-2 hx:p-4 hx:text-gray-700 hx:hover:text-gray-900 hx:dark:text-neutral-200 hx:dark:hover:text-neutral-50&#34;&gt;Isolation par namespaces : jusqu&amp;#39;où aller ?&lt;/span&gt;&lt;/div&gt;&lt;/a&gt;
-&lt;/div&gt;
-
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Observabilité noyau</title>
-      <link>http://localhost:1313/research/securite/observabilite-noyau/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/research/securite/observabilite-noyau/</guid>
-      <description>
-        
-        
-        &lt;p&gt;Comprendre ce qui se passe réellement dans le noyau, sans redémarrer ni recompiler quoi que ce soit, change profondément la façon d&amp;rsquo;investiguer un problème de performance.&lt;/p&gt;
-&lt;div class=&#34;hextra-cards hx:mt-4 hx:gap-4 hx:grid not-prose&#34; style=&#34;--hextra-cards-grid-cols: 3;&#34;&gt;
-  &lt;a
-    class=&#34;hextra-card hx:group hx:flex hx:flex-col hx:justify-start hx:overflow-hidden hx:rounded-lg hx:border hx:border-gray-200 hx:text-current hx:no-underline hx:dark:shadow-none hx:hover:shadow-gray-100 hx:dark:hover:shadow-none hx:shadow-gray-100 hx:active:shadow-sm hx:active:shadow-gray-200 hx:transition-all hx:duration-200 hx:hover:border-gray-300 hx:bg-transparent hx:shadow-xs hx:dark:border-neutral-800 hx:hover:bg-slate-50 hx:hover:shadow-md hx:dark:hover:border-neutral-700 hx:dark:hover:bg-neutral-900&#34;href=&#34;ebpf-tracing-en-production&#34;
-      &gt;&lt;div class=&#34;hx:mt-auto&#34;&gt;
-      &lt;span class=&#34;hextra-card-icon hx:flex hx:font-semibold hx:items-start hx:gap-2 hx:p-4 hx:text-gray-700 hx:hover:text-gray-900 hx:dark:text-neutral-200 hx:dark:hover:text-neutral-50&#34;&gt;Tracer un système en production avec eBPF&lt;/span&gt;&lt;/div&gt;&lt;/a&gt;
-  &lt;a
-    class=&#34;hextra-card hx:group hx:flex hx:flex-col hx:justify-start hx:overflow-hidden hx:rounded-lg hx:border hx:border-gray-200 hx:text-current hx:no-underline hx:dark:shadow-none hx:hover:shadow-gray-100 hx:dark:hover:shadow-none hx:shadow-gray-100 hx:active:shadow-sm hx:active:shadow-gray-200 hx:transition-all hx:duration-200 hx:hover:border-gray-300 hx:bg-transparent hx:shadow-xs hx:dark:border-neutral-800 hx:hover:bg-slate-50 hx:hover:shadow-md hx:dark:hover:border-neutral-700 hx:dark:hover:bg-neutral-900&#34;href=&#34;perf-et-flamegraphs&#34;
-      &gt;&lt;div class=&#34;hx:mt-auto&#34;&gt;
-      &lt;span class=&#34;hextra-card-icon hx:flex hx:font-semibold hx:items-start hx:gap-2 hx:p-4 hx:text-gray-700 hx:hover:text-gray-900 hx:dark:text-neutral-200 hx:dark:hover:text-neutral-50&#34;&gt;Générer des flamegraphs avec perf&lt;/span&gt;&lt;/div&gt;&lt;/a&gt;
-&lt;/div&gt;
-
-
-      </description>
-    </item>
-    
-  </channel>
-</rss>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lotfi Hamadene – Sécurité</title><link>https://edulabs.fr/research/securite/</link><description>Recent content in Sécurité on Lotfi Hamadene</description><generator>Hugo -- gohugo.io</generator><language>fr-FR</language><atom:link href="https://edulabs.fr/research/securite/index.xml" rel="self" type="application/rss+xml"/><item><title>Modules de sécurité (LSM)</title><link>https://edulabs.fr/research/securite/lsm/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://edulabs.fr/research/securite/lsm/</guid><description>
+&lt;p&gt;Les modules Linux Security Modules encadrent ce que les processus peuvent faire, bien au-delà des permissions Unix classiques.&lt;/p&gt;
+&lt;div class="hextra-cards hx:mt-4 hx:gap-4 hx:grid not-prose" style="--hextra-cards-grid-cols: 3;"&gt;
+&lt;a
+class="hextra-card hx:group hx:flex hx:flex-col hx:justify-start hx:overflow-hidden hx:rounded-lg hx:border hx:border-gray-200 hx:text-current hx:no-underline hx:dark:shadow-none hx:hover:shadow-gray-100 hx:dark:hover:shadow-none hx:shadow-gray-100 hx:active:shadow-sm hx:active:shadow-gray-200 hx:transition-all hx:duration-200 hx:hover:border-gray-300 hx:bg-transparent hx:shadow-xs hx:dark:border-neutral-800 hx:hover:bg-slate-50 hx:hover:shadow-md hx:dark:hover:border-neutral-700 hx:dark:hover:bg-neutral-900"href="selinux-vs-apparmor"
+&gt;&lt;div class="hx:mt-auto"&gt;
+&lt;span class="hextra-card-icon hx:flex hx:font-semibold hx:items-start hx:gap-2 hx:p-4 hx:text-gray-700 hx:hover:text-gray-900 hx:dark:text-neutral-200 hx:dark:hover:text-neutral-50"&gt;SELinux contre AppArmor : deux modèles de confinement&lt;/span&gt;&lt;/div&gt;&lt;/a&gt;
+&lt;a
+class="hextra-card hx:group hx:flex hx:flex-col hx:justify-start hx:overflow-hidden hx:rounded-lg hx:border hx:border-gray-200 hx:text-current hx:no-underline hx:dark:shadow-none hx:hover:shadow-gray-100 hx:dark:hover:shadow-none hx:shadow-gray-100 hx:active:shadow-sm hx:active:shadow-gray-200 hx:transition-all hx:duration-200 hx:hover:border-gray-300 hx:bg-transparent hx:shadow-xs hx:dark:border-neutral-800 hx:hover:bg-slate-50 hx:hover:shadow-md hx:dark:hover:border-neutral-700 hx:dark:hover:bg-neutral-900"href="durcissement-namespaces"
+&gt;&lt;div class="hx:mt-auto"&gt;
+&lt;span class="hextra-card-icon hx:flex hx:font-semibold hx:items-start hx:gap-2 hx:p-4 hx:text-gray-700 hx:hover:text-gray-900 hx:dark:text-neutral-200 hx:dark:hover:text-neutral-50"&gt;Isolation par namespaces : jusqu&amp;#39;où aller ?&lt;/span&gt;&lt;/div&gt;&lt;/a&gt;
+&lt;/div&gt;</description></item><item><title>Observabilité noyau</title><link>https://edulabs.fr/research/securite/observabilite-noyau/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://edulabs.fr/research/securite/observabilite-noyau/</guid><description>
+&lt;p&gt;Comprendre ce qui se passe réellement dans le noyau, sans redémarrer ni recompiler quoi que ce soit, change profondément la façon d&amp;rsquo;investiguer un problème de performance.&lt;/p&gt;
+&lt;div class="hextra-cards hx:mt-4 hx:gap-4 hx:grid not-prose" style="--hextra-cards-grid-cols: 3;"&gt;
+&lt;a
+class="hextra-card hx:group hx:flex hx:flex-col hx:justify-start hx:overflow-hidden hx:rounded-lg hx:border hx:border-gray-200 hx:text-current hx:no-underline hx:dark:shadow-none hx:hover:shadow-gray-100 hx:dark:hover:shadow-none hx:shadow-gray-100 hx:active:shadow-sm hx:active:shadow-gray-200 hx:transition-all hx:duration-200 hx:hover:border-gray-300 hx:bg-transparent hx:shadow-xs hx:dark:border-neutral-800 hx:hover:bg-slate-50 hx:hover:shadow-md hx:dark:hover:border-neutral-700 hx:dark:hover:bg-neutral-900"href="ebpf-tracing-en-production"
+&gt;&lt;div class="hx:mt-auto"&gt;
+&lt;span class="hextra-card-icon hx:flex hx:font-semibold hx:items-start hx:gap-2 hx:p-4 hx:text-gray-700 hx:hover:text-gray-900 hx:dark:text-neutral-200 hx:dark:hover:text-neutral-50"&gt;Tracer un système en production avec eBPF&lt;/span&gt;&lt;/div&gt;&lt;/a&gt;
+&lt;a
+class="hextra-card hx:group hx:flex hx:flex-col hx:justify-start hx:overflow-hidden hx:rounded-lg hx:border hx:border-gray-200 hx:text-current hx:no-underline hx:dark:shadow-none hx:hover:shadow-gray-100 hx:dark:hover:shadow-none hx:shadow-gray-100 hx:active:shadow-sm hx:active:shadow-gray-200 hx:transition-all hx:duration-200 hx:hover:border-gray-300 hx:bg-transparent hx:shadow-xs hx:dark:border-neutral-800 hx:hover:bg-slate-50 hx:hover:shadow-md hx:dark:hover:border-neutral-700 hx:dark:hover:bg-neutral-900"href="perf-et-flamegraphs"
+&gt;&lt;div class="hx:mt-auto"&gt;
+&lt;span class="hextra-card-icon hx:flex hx:font-semibold hx:items-start hx:gap-2 hx:p-4 hx:text-gray-700 hx:hover:text-gray-900 hx:dark:text-neutral-200 hx:dark:hover:text-neutral-50"&gt;Générer des flamegraphs avec perf&lt;/span&gt;&lt;/div&gt;&lt;/a&gt;
+&lt;/div&gt;</description></item></channel></rss>

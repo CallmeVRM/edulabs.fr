@@ -1,35 +1,5 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Lotfi Hamadene – Infrastructure</title>
-    <link>http://localhost:1313/tags/infrastructure/</link>
-    <description>Recent content in Infrastructure on Lotfi Hamadene</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>fr-FR</language>
-    <lastBuildDate>Sun, 12 Jul 2026 00:00:00 +0000</lastBuildDate>
-    
-	  <atom:link href="http://localhost:1313/tags/infrastructure/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-      
-        
-      
-    
-    
-    <item>
-      <title>Le cloud nous a-t-il fait oublier l&#39;administration système ?</title>
-      <link>http://localhost:1313/opinions/le-cloud-nous-a-fait-oublier-ladministration-systeme/</link>
-      <pubDate>Sun, 12 Jul 2026 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/opinions/le-cloud-nous-a-fait-oublier-ladministration-systeme/</guid>
-      <description>
-        
-        
-        &lt;p&gt;Je forme régulièrement des jeunes ingénieurs qui savent écrire un manifeste Kubernetes impeccable mais qui n&amp;rsquo;ont jamais eu à diagnostiquer une charge CPU anormale avec &lt;code&gt;top&lt;/code&gt; ou à comprendre pourquoi un service ne redémarre pas après un crash. Ce n&amp;rsquo;est pas un jugement, c&amp;rsquo;est un constat qui m&amp;rsquo;inquiète un peu.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lotfi Hamadene – Infrastructure</title><link>https://edulabs.fr/tags/infrastructure/</link><description>Recent content in Infrastructure on Lotfi Hamadene</description><generator>Hugo -- gohugo.io</generator><language>fr-FR</language><lastBuildDate>Sun, 12 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://edulabs.fr/tags/infrastructure/index.xml" rel="self" type="application/rss+xml"/><item><title>Le cloud nous a-t-il fait oublier l'administration système ?</title><link>https://edulabs.fr/opinions/le-cloud-nous-a-fait-oublier-ladministration-systeme/</link><pubDate>Sun, 12 Jul 2026 00:00:00 +0000</pubDate><guid>https://edulabs.fr/opinions/le-cloud-nous-a-fait-oublier-ladministration-systeme/</guid><description>
+&lt;p&gt;Je forme régulièrement des jeunes ingénieurs qui savent écrire un manifeste Kubernetes impeccable mais qui n&amp;rsquo;ont jamais eu à diagnostiquer une charge CPU anormale avec &lt;code&gt;top&lt;/code&gt; ou à comprendre pourquoi un service ne redémarre pas après un crash. Ce n&amp;rsquo;est pas un jugement, c&amp;rsquo;est un constat qui m&amp;rsquo;inquiète un peu.&lt;/p&gt;
 &lt;p&gt;Le cloud a rendu énormément de choses plus simples, et c&amp;rsquo;est tout à son mérite : provisionner une machine en quelques secondes, faire du scaling automatique, déléguer la gestion du stockage et du réseau à un fournisseur qui a des équipes dédiées à ça. Mais cette simplicité a un coût caché : quand l&amp;rsquo;abstraction fuit — et elle fuit toujours, un jour ou l&amp;rsquo;autre — il faut redescendre au niveau du système, et c&amp;rsquo;est précisément la compétence qui s&amp;rsquo;érode le plus vite chez les nouvelles générations d&amp;rsquo;administrateurs.&lt;/p&gt;
 &lt;p&gt;J&amp;rsquo;ai vu des incidents de production traités à coup de redémarrage de pod en boucle, alors que le vrai problème était une fuite mémoire noyau parfaitement diagnosticable avec &lt;code&gt;dmesg&lt;/code&gt; et un peu de patience. Le réflexe cloud-natif, quand il n&amp;rsquo;est pas accompagné de bases système solides, devient un pansement qui masque le symptôme sans jamais toucher à la cause.&lt;/p&gt;
-&lt;p&gt;Mon avis : le cloud n&amp;rsquo;est pas le problème, notre façon de former les gens qui l&amp;rsquo;utilisent l&amp;rsquo;est. Comprendre ce qui se passe sous l&amp;rsquo;abstraction — le noyau, les processus, le réseau — reste, à mes yeux, un prérequis et non une option, même pour quelqu&amp;rsquo;un qui ne touchera jamais un serveur physique de sa carrière.&lt;/p&gt;
-      </description>
-    </item>
-    
-  </channel>
-</rss>
+&lt;p&gt;Mon avis : le cloud n&amp;rsquo;est pas le problème, notre façon de former les gens qui l&amp;rsquo;utilisent l&amp;rsquo;est. Comprendre ce qui se passe sous l&amp;rsquo;abstraction — le noyau, les processus, le réseau — reste, à mes yeux, un prérequis et non une option, même pour quelqu&amp;rsquo;un qui ne touchera jamais un serveur physique de sa carrière.&lt;/p&gt;</description></item></channel></rss>

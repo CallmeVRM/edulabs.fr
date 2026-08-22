@@ -1,175 +1,126 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Lotfi Hamadene – Gestion des paquets</title>
-    <link>http://localhost:1313/docs/administration/gestion-paquets/</link>
-    <description>Recent content in Gestion des paquets on Lotfi Hamadene</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>fr-FR</language>
-    
-	  <atom:link href="http://localhost:1313/docs/administration/gestion-paquets/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-      
-        
-      
-    
-    
-    <item>
-      <title>Utiliser APT au quotidien</title>
-      <link>http://localhost:1313/docs/administration/gestion-paquets/utiliser-apt/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/docs/administration/gestion-paquets/utiliser-apt/</guid>
-      <description>
-        
-        
-        &lt;h2&gt;Objectif&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;objectif&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#objectif&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Ce guide couvre les opérations les plus fréquentes avec APT, le gestionnaire de paquets des distributions basées sur Debian (Debian, Ubuntu, Mint&amp;hellip;) : recherche, installation, mise à jour et nettoyage des paquets.&lt;/p&gt;
-&lt;h2&gt;Prérequis&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;prérequis&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#pr%c3%a9requis&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lotfi Hamadene – Gestion des paquets</title><link>https://edulabs.fr/docs/administration/gestion-paquets/</link><description>Recent content in Gestion des paquets on Lotfi Hamadene</description><generator>Hugo -- gohugo.io</generator><language>fr-FR</language><atom:link href="https://edulabs.fr/docs/administration/gestion-paquets/index.xml" rel="self" type="application/rss+xml"/><item><title>Utiliser APT au quotidien</title><link>https://edulabs.fr/docs/administration/gestion-paquets/utiliser-apt/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://edulabs.fr/docs/administration/gestion-paquets/utiliser-apt/</guid><description>
+&lt;h2&gt;Objectif&lt;span class="hx:absolute hx:-mt-20" id="objectif"&gt;&lt;/span&gt;
+&lt;a href="#objectif" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Ce guide couvre les opérations les plus fréquentes avec APT, le gestionnaire de paquets des distributions basées sur Debian (Debian, Ubuntu, Mint&amp;hellip;) : recherche, installation, mise à jour et nettoyage des paquets.&lt;/p&gt;
+&lt;h2&gt;Prérequis&lt;span class="hx:absolute hx:-mt-20" id="prérequis"&gt;&lt;/span&gt;
+&lt;a href="#pr%c3%a9requis" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;Distribution basée sur Debian ou Ubuntu&lt;/li&gt;
 &lt;li&gt;Accès &lt;code&gt;sudo&lt;/code&gt; pour les opérations d&amp;rsquo;installation et de suppression&lt;/li&gt;
 &lt;li&gt;Une connexion réseau vers les dépôts configurés dans &lt;code&gt;/etc/apt/sources.list&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Étapes&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;étapes&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#%c3%a9tapes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
+&lt;h2&gt;Étapes&lt;span class="hx:absolute hx:-mt-20" id="étapes"&gt;&lt;/span&gt;
+&lt;a href="#%c3%a9tapes" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;Rafraîchir la liste des paquets disponibles depuis les dépôts configurés.&lt;/li&gt;
 &lt;li&gt;Rechercher un paquet par mot-clé.&lt;/li&gt;
 &lt;li&gt;Installer un paquet et ses dépendances.&lt;/li&gt;
 &lt;li&gt;Mettre à jour l&amp;rsquo;ensemble des paquets installés.&lt;/li&gt;
 &lt;li&gt;Supprimer les paquets qui ne sont plus nécessaires (dépendances orphelines).&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
-
-&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt update
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;apt search nginx
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt install nginx
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt upgrade
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt autoremove&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
-  &lt;button
-    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
-    title=&#34;Copier le code&#34;
-    aria-label=&#34;Copier le code&#34;
-    data-copied-label=&#34;Copié !&#34;
-  &gt;
-    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-  &lt;/button&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt update
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;apt search nginx
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt install nginx
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt upgrade
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt autoremove&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copier le code"
+aria-label="Copier le code"
+data-copied-label="Copié !"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;&lt;code&gt;apt update&lt;/code&gt; ne fait que synchroniser les index locaux avec les dépôts distants, il n&amp;rsquo;installe rien. &lt;code&gt;apt upgrade&lt;/code&gt; applique ensuite les mises à jour disponibles pour les paquets déjà installés, sans en supprimer. Pensez à distinguer &lt;code&gt;apt upgrade&lt;/code&gt; de &lt;code&gt;apt full-upgrade&lt;/code&gt;, qui autorise la suppression de paquets si cela est nécessaire pour résoudre les dépendances.&lt;/p&gt;
-&lt;h2&gt;Vérification&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;vérification&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#v%c3%a9rification&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Vérifiez qu&amp;rsquo;un paquet est bien installé et consultez sa version :&lt;/p&gt;
-&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
-
-&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dpkg -l | grep nginx
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;apt show nginx&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
-  &lt;button
-    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
-    title=&#34;Copier le code&#34;
-    aria-label=&#34;Copier le code&#34;
-    data-copied-label=&#34;Copié !&#34;
-  &gt;
-    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-  &lt;/button&gt;
+&lt;h2&gt;Vérification&lt;span class="hx:absolute hx:-mt-20" id="vérification"&gt;&lt;/span&gt;
+&lt;a href="#v%c3%a9rification" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Vérifiez qu&amp;rsquo;un paquet est bien installé et consultez sa version :&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;dpkg -l | grep nginx
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;apt show nginx&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copier le code"
+aria-label="Copier le code"
+data-copied-label="Copié !"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;code&gt;dpkg -l&lt;/code&gt; doit afficher &lt;code&gt;ii&lt;/code&gt; en début de ligne, ce qui signifie que le paquet est correctement installé et configuré. La commande &lt;code&gt;apt show&lt;/code&gt; donne des détails complémentaires comme la version installée et la taille du paquet.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Utiliser DNF et Pacman</title>
-      <link>http://localhost:1313/docs/administration/gestion-paquets/utiliser-dnf-et-pacman/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/docs/administration/gestion-paquets/utiliser-dnf-et-pacman/</guid>
-      <description>
-        
-        
-        &lt;h2&gt;Objectif&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;objectif&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#objectif&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Au-delà de Debian et Ubuntu, deux autres gestionnaires de paquets sont très répandus : DNF sur les distributions basées sur Fedora/RHEL, et Pacman sur Arch Linux. Ce guide présente les commandes équivalentes pour installer, mettre à jour et supprimer des paquets avec chacun d&amp;rsquo;eux.&lt;/p&gt;
-&lt;h2&gt;Prérequis&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;prérequis&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#pr%c3%a9requis&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;p&gt;&lt;code&gt;dpkg -l&lt;/code&gt; doit afficher &lt;code&gt;ii&lt;/code&gt; en début de ligne, ce qui signifie que le paquet est correctement installé et configuré. La commande &lt;code&gt;apt show&lt;/code&gt; donne des détails complémentaires comme la version installée et la taille du paquet.&lt;/p&gt;</description></item><item><title>Utiliser DNF et Pacman</title><link>https://edulabs.fr/docs/administration/gestion-paquets/utiliser-dnf-et-pacman/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://edulabs.fr/docs/administration/gestion-paquets/utiliser-dnf-et-pacman/</guid><description>
+&lt;h2&gt;Objectif&lt;span class="hx:absolute hx:-mt-20" id="objectif"&gt;&lt;/span&gt;
+&lt;a href="#objectif" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Au-delà de Debian et Ubuntu, deux autres gestionnaires de paquets sont très répandus : DNF sur les distributions basées sur Fedora/RHEL, et Pacman sur Arch Linux. Ce guide présente les commandes équivalentes pour installer, mettre à jour et supprimer des paquets avec chacun d&amp;rsquo;eux.&lt;/p&gt;
+&lt;h2&gt;Prérequis&lt;span class="hx:absolute hx:-mt-20" id="prérequis"&gt;&lt;/span&gt;
+&lt;a href="#pr%c3%a9requis" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;Une distribution basée sur Fedora/RHEL (pour DNF) ou Arch Linux/Manjaro (pour Pacman)&lt;/li&gt;
 &lt;li&gt;Droits &lt;code&gt;sudo&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Dépôts correctement configurés (&lt;code&gt;/etc/yum.repos.d/&lt;/code&gt; pour DNF, &lt;code&gt;/etc/pacman.conf&lt;/code&gt; pour Pacman)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Étapes&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;étapes&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#%c3%a9tapes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Sur une distribution Fedora ou RHEL :&lt;/p&gt;
-&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
-
-&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo dnf install httpd
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo dnf update
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo dnf remove httpd
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo dnf autoremove&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
-  &lt;button
-    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
-    title=&#34;Copier le code&#34;
-    aria-label=&#34;Copier le code&#34;
-    data-copied-label=&#34;Copié !&#34;
-  &gt;
-    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-  &lt;/button&gt;
+&lt;h2&gt;Étapes&lt;span class="hx:absolute hx:-mt-20" id="étapes"&gt;&lt;/span&gt;
+&lt;a href="#%c3%a9tapes" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Sur une distribution Fedora ou RHEL :&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo dnf install httpd
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo dnf update
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo dnf remove httpd
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo dnf autoremove&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copier le code"
+aria-label="Copier le code"
+data-copied-label="Copié !"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;Sur Arch Linux, la logique est proche mais la syntaxe diffère :&lt;/p&gt;
-&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
-
-&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo pacman -Sy httpd
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo pacman -Syu
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo pacman -R httpd
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo pacman -Rns httpd&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
-  &lt;button
-    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
-    title=&#34;Copier le code&#34;
-    aria-label=&#34;Copier le code&#34;
-    data-copied-label=&#34;Copié !&#34;
-  &gt;
-    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-  &lt;/button&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo pacman -Sy httpd
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo pacman -Syu
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo pacman -R httpd
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo pacman -Rns httpd&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copier le code"
+aria-label="Copier le code"
+data-copied-label="Copié !"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;Avec Pacman, &lt;code&gt;-Syu&lt;/code&gt; synchronise les dépôts et met à jour tout le système en une seule commande ; il est déconseillé de faire un simple &lt;code&gt;-Sy&lt;/code&gt; suivi d&amp;rsquo;une installation sans mise à jour complète, car cela peut casser des dépendances (le fameux problème des « mises à jour partielles »). L&amp;rsquo;option &lt;code&gt;-Rns&lt;/code&gt; supprime un paquet ainsi que ses dépendances désormais inutilisées et ses fichiers de configuration.&lt;/p&gt;
-&lt;h2&gt;Vérification&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;vérification&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#v%c3%a9rification&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Pour DNF :&lt;/p&gt;
-&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
-
-&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dnf list installed | grep httpd&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
-  &lt;button
-    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
-    title=&#34;Copier le code&#34;
-    aria-label=&#34;Copier le code&#34;
-    data-copied-label=&#34;Copié !&#34;
-  &gt;
-    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-  &lt;/button&gt;
+&lt;h2&gt;Vérification&lt;span class="hx:absolute hx:-mt-20" id="vérification"&gt;&lt;/span&gt;
+&lt;a href="#v%c3%a9rification" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Pour DNF :&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;dnf list installed | grep httpd&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copier le code"
+aria-label="Copier le code"
+data-copied-label="Copié !"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;Pour Pacman :&lt;/p&gt;
-&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
-
-&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pacman -Qi httpd&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
-  &lt;button
-    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
-    title=&#34;Copier le code&#34;
-    aria-label=&#34;Copier le code&#34;
-    data-copied-label=&#34;Copié !&#34;
-  &gt;
-    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-  &lt;/button&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;pacman -Qi httpd&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copier le code"
+aria-label="Copier le code"
+data-copied-label="Copié !"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;Dans les deux cas, la commande doit renvoyer une ligne correspondant au paquet avec sa version installée ; une absence de résultat signifie que le paquet n&amp;rsquo;est pas (ou plus) présent sur le système.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-  </channel>
-</rss>
+&lt;p&gt;Dans les deux cas, la commande doit renvoyer une ligne correspondant au paquet avec sa version installée ; une absence de résultat signifie que le paquet n&amp;rsquo;est pas (ou plus) présent sur le système.&lt;/p&gt;</description></item></channel></rss>

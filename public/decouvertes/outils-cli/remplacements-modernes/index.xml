@@ -1,99 +1,54 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Lotfi Hamadene – Remplacements modernes</title>
-    <link>http://localhost:1313/decouvertes/outils-cli/remplacements-modernes/</link>
-    <description>Recent content in Remplacements modernes on Lotfi Hamadene</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>fr-FR</language>
-    
-	  <atom:link href="http://localhost:1313/decouvertes/outils-cli/remplacements-modernes/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-      
-        
-      
-    
-    
-    <item>
-      <title>ripgrep et fd : la recherche réinventée</title>
-      <link>http://localhost:1313/decouvertes/outils-cli/remplacements-modernes/ripgrep-et-fd/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/decouvertes/outils-cli/remplacements-modernes/ripgrep-et-fd/</guid>
-      <description>
-        
-        
-        &lt;h2&gt;Présentation&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;présentation&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#pr%c3%a9sentation&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;ripgrep (&lt;code&gt;rg&lt;/code&gt;) et fd sont deux outils écrits en Rust qui remplacent respectivement grep et find. Ils reprennent l&amp;rsquo;esprit des commandes historiques mais avec des valeurs par défaut pensées pour l&amp;rsquo;usage courant : ignorer automatiquement les fichiers listés dans &lt;code&gt;.gitignore&lt;/code&gt;, sauter les fichiers binaires, et paralléliser la recherche sur plusieurs cœurs.&lt;/p&gt;
-&lt;h2&gt;Ce qui est intéressant&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;ce-qui-est-intéressant&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#ce-qui-est-int%c3%a9ressant&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lotfi Hamadene – Remplacements modernes</title><link>https://edulabs.fr/decouvertes/outils-cli/remplacements-modernes/</link><description>Recent content in Remplacements modernes on Lotfi Hamadene</description><generator>Hugo -- gohugo.io</generator><language>fr-FR</language><atom:link href="https://edulabs.fr/decouvertes/outils-cli/remplacements-modernes/index.xml" rel="self" type="application/rss+xml"/><item><title>ripgrep et fd : la recherche réinventée</title><link>https://edulabs.fr/decouvertes/outils-cli/remplacements-modernes/ripgrep-et-fd/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://edulabs.fr/decouvertes/outils-cli/remplacements-modernes/ripgrep-et-fd/</guid><description>
+&lt;h2&gt;Présentation&lt;span class="hx:absolute hx:-mt-20" id="présentation"&gt;&lt;/span&gt;
+&lt;a href="#pr%c3%a9sentation" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;ripgrep (&lt;code&gt;rg&lt;/code&gt;) et fd sont deux outils écrits en Rust qui remplacent respectivement grep et find. Ils reprennent l&amp;rsquo;esprit des commandes historiques mais avec des valeurs par défaut pensées pour l&amp;rsquo;usage courant : ignorer automatiquement les fichiers listés dans &lt;code&gt;.gitignore&lt;/code&gt;, sauter les fichiers binaires, et paralléliser la recherche sur plusieurs cœurs.&lt;/p&gt;
+&lt;h2&gt;Ce qui est intéressant&lt;span class="hx:absolute hx:-mt-20" id="ce-qui-est-intéressant"&gt;&lt;/span&gt;
+&lt;a href="#ce-qui-est-int%c3%a9ressant" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;ripgrep ignore par défaut les répertoires &lt;code&gt;.git&lt;/code&gt;, &lt;code&gt;node_modules&lt;/code&gt; et tout ce qui est listé dans &lt;code&gt;.gitignore&lt;/code&gt;, ce qui évite de fouiller dans du bruit&lt;/li&gt;
 &lt;li&gt;Une vitesse de recherche nettement supérieure à grep sur de gros arbres de fichiers, grâce à un moteur d&amp;rsquo;expressions régulières optimisé&lt;/li&gt;
 &lt;li&gt;fd propose une syntaxe bien plus courte que find, avec une recherche récursive et une coloration des résultats par défaut&lt;/li&gt;
 &lt;li&gt;Les deux outils gèrent nativement l&amp;rsquo;Unicode et l&amp;rsquo;UTF-8 sans configuration supplémentaire&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Cas d&amp;rsquo;usage&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;cas-dusage&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#cas-dusage&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Utile dès qu&amp;rsquo;on cherche du texte ou des fichiers dans un projet de taille respectable. Par exemple, chercher toutes les occurrences d&amp;rsquo;une fonction en ignorant le dossier de build :&lt;/p&gt;
-&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
-
-&lt;div&gt;&lt;pre&gt;&lt;code&gt;rg &amp;#34;ma_fonction&amp;#34; --type rust&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
-  &lt;button
-    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
-    title=&#34;Copier le code&#34;
-    aria-label=&#34;Copier le code&#34;
-    data-copied-label=&#34;Copié !&#34;
-  &gt;
-    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-  &lt;/button&gt;
+&lt;h2&gt;Cas d&amp;rsquo;usage&lt;span class="hx:absolute hx:-mt-20" id="cas-dusage"&gt;&lt;/span&gt;
+&lt;a href="#cas-dusage" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Utile dès qu&amp;rsquo;on cherche du texte ou des fichiers dans un projet de taille respectable. Par exemple, chercher toutes les occurrences d&amp;rsquo;une fonction en ignorant le dossier de build :&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;rg &amp;#34;ma_fonction&amp;#34; --type rust&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copier le code"
+aria-label="Copier le code"
+data-copied-label="Copié !"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;h2&gt;Avis en bref&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;avis-en-bref&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#avis-en-bref&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Une fois qu&amp;rsquo;on a goûté à la rapidité et aux valeurs par défaut sensées de ripgrep et fd, revenir à grep et find nu paraît presque punitif. Deux outils qui méritent largement leur place dans les alias du quotidien.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>bat et eza : cat et ls modernisés</title>
-      <link>http://localhost:1313/decouvertes/outils-cli/remplacements-modernes/bat-et-eza/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/decouvertes/outils-cli/remplacements-modernes/bat-et-eza/</guid>
-      <description>
-        
-        
-        &lt;h2&gt;Présentation&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;présentation&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#pr%c3%a9sentation&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;bat et eza s&amp;rsquo;attaquent à deux commandes que tout le monde tape des dizaines de fois par jour : cat et ls. bat affiche le contenu d&amp;rsquo;un fichier avec coloration syntaxique et numéros de ligne, tandis qu&amp;rsquo;eza (une continuation communautaire d&amp;rsquo;exa) enrichit le listing de répertoires avec des icônes, des couleurs par type de fichier et une intégration git.&lt;/p&gt;
-&lt;h2&gt;Ce qui est intéressant&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;ce-qui-est-intéressant&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#ce-qui-est-int%c3%a9ressant&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;h2&gt;Avis en bref&lt;span class="hx:absolute hx:-mt-20" id="avis-en-bref"&gt;&lt;/span&gt;
+&lt;a href="#avis-en-bref" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Une fois qu&amp;rsquo;on a goûté à la rapidité et aux valeurs par défaut sensées de ripgrep et fd, revenir à grep et find nu paraît presque punitif. Deux outils qui méritent largement leur place dans les alias du quotidien.&lt;/p&gt;</description></item><item><title>bat et eza : cat et ls modernisés</title><link>https://edulabs.fr/decouvertes/outils-cli/remplacements-modernes/bat-et-eza/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://edulabs.fr/decouvertes/outils-cli/remplacements-modernes/bat-et-eza/</guid><description>
+&lt;h2&gt;Présentation&lt;span class="hx:absolute hx:-mt-20" id="présentation"&gt;&lt;/span&gt;
+&lt;a href="#pr%c3%a9sentation" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;bat et eza s&amp;rsquo;attaquent à deux commandes que tout le monde tape des dizaines de fois par jour : cat et ls. bat affiche le contenu d&amp;rsquo;un fichier avec coloration syntaxique et numéros de ligne, tandis qu&amp;rsquo;eza (une continuation communautaire d&amp;rsquo;exa) enrichit le listing de répertoires avec des icônes, des couleurs par type de fichier et une intégration git.&lt;/p&gt;
+&lt;h2&gt;Ce qui est intéressant&lt;span class="hx:absolute hx:-mt-20" id="ce-qui-est-intéressant"&gt;&lt;/span&gt;
+&lt;a href="#ce-qui-est-int%c3%a9ressant" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;bat détecte automatiquement le langage d&amp;rsquo;un fichier et applique la coloration syntaxique correspondante, comme le ferait un éditeur&lt;/li&gt;
 &lt;li&gt;La pagination intégrée de bat s&amp;rsquo;active automatiquement pour les fichiers longs, sans avoir à penser à &lt;code&gt;less&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;eza affiche l&amp;rsquo;état git (modifié, ajouté, ignoré) directement dans le listing d&amp;rsquo;un dépôt&lt;/li&gt;
 &lt;li&gt;eza propose une vue arborescente intégrée qui remplace avantageusement une invocation séparée de &lt;code&gt;tree&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Cas d&amp;rsquo;usage&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;cas-dusage&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#cas-dusage&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Pratique pour quiconque passe sa journée à lire du code ou à naviguer dans des répertoires de projet. Un alias classique :&lt;/p&gt;
-&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
-
+&lt;h2&gt;Cas d&amp;rsquo;usage&lt;span class="hx:absolute hx:-mt-20" id="cas-dusage"&gt;&lt;/span&gt;
+&lt;a href="#cas-dusage" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Pratique pour quiconque passe sa journée à lire du code ou à naviguer dans des répertoires de projet. Un alias classique :&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
 &lt;div&gt;&lt;pre&gt;&lt;code&gt;alias cat=bat
-alias ls=&amp;#34;eza --icons --git&amp;#34;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
-  &lt;button
-    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
-    title=&#34;Copier le code&#34;
-    aria-label=&#34;Copier le code&#34;
-    data-copied-label=&#34;Copié !&#34;
-  &gt;
-    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-  &lt;/button&gt;
+alias ls=&amp;#34;eza --icons --git&amp;#34;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copier le code"
+aria-label="Copier le code"
+data-copied-label="Copié !"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;h2&gt;Avis en bref&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;avis-en-bref&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#avis-en-bref&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Ce sont de petits outils, mais l&amp;rsquo;accumulation de détails soignés (couleurs, icônes, intégration git) change réellement le confort d&amp;rsquo;utilisation du terminal au quotidien.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-  </channel>
-</rss>
+&lt;h2&gt;Avis en bref&lt;span class="hx:absolute hx:-mt-20" id="avis-en-bref"&gt;&lt;/span&gt;
+&lt;a href="#avis-en-bref" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Ce sont de petits outils, mais l&amp;rsquo;accumulation de détails soignés (couleurs, icônes, intégration git) change réellement le confort d&amp;rsquo;utilisation du terminal au quotidien.&lt;/p&gt;</description></item></channel></rss>

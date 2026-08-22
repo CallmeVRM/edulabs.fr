@@ -1,35 +1,5 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Lotfi Hamadene – Bureau</title>
-    <link>http://localhost:1313/tags/bureau/</link>
-    <description>Recent content in Bureau on Lotfi Hamadene</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>fr-FR</language>
-    <lastBuildDate>Thu, 30 Apr 2026 00:00:00 +0000</lastBuildDate>
-    
-	  <atom:link href="http://localhost:1313/tags/bureau/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-      
-        
-      
-    
-    
-    <item>
-      <title>Wayland est-il vraiment prêt pour tout le monde ?</title>
-      <link>http://localhost:1313/opinions/wayland-est-il-vraiment-pret/</link>
-      <pubDate>Thu, 30 Apr 2026 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/opinions/wayland-est-il-vraiment-pret/</guid>
-      <description>
-        
-        
-        &lt;p&gt;Après avoir basculé mon poste principal sous Wayland il y a quelques mois, je peux enfin répondre sans faire de politique : oui, presque. Et ce « presque » cache encore de vraies aspérités.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lotfi Hamadene – Bureau</title><link>https://edulabs.fr/tags/bureau/</link><description>Recent content in Bureau on Lotfi Hamadene</description><generator>Hugo -- gohugo.io</generator><language>fr-FR</language><lastBuildDate>Thu, 30 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://edulabs.fr/tags/bureau/index.xml" rel="self" type="application/rss+xml"/><item><title>Wayland est-il vraiment prêt pour tout le monde ?</title><link>https://edulabs.fr/opinions/wayland-est-il-vraiment-pret/</link><pubDate>Thu, 30 Apr 2026 00:00:00 +0000</pubDate><guid>https://edulabs.fr/opinions/wayland-est-il-vraiment-pret/</guid><description>
+&lt;p&gt;Après avoir basculé mon poste principal sous Wayland il y a quelques mois, je peux enfin répondre sans faire de politique : oui, presque. Et ce « presque » cache encore de vraies aspérités.&lt;/p&gt;
 &lt;p&gt;Ce qui fonctionne bien, et même très bien : le rendu est plus fluide, la gestion du multi-écran avec des résolutions mixtes n&amp;rsquo;a plus rien à voir avec les bricolages d&amp;rsquo;antan sous X11, et la sécurité par défaut (chaque application ne peut plus espionner les autres à volonté) est un vrai progrès qu&amp;rsquo;on sous-estime trop souvent dans les comparatifs.&lt;/p&gt;
 &lt;p&gt;Ce qui coince encore : le partage d&amp;rsquo;écran dans certaines applications de visioconférence reste capricieux selon le compositeur utilisé, quelques outils historiques de capture ou de gestion des fenêtres n&amp;rsquo;ont jamais été portés, et les pilotes propriétaires NVIDIA, même après les progrès récents, restent le point de friction numéro un cité par tous ceux qui hésitent encore à migrer.&lt;/p&gt;
-&lt;p&gt;Mon avis, pour ce qu&amp;rsquo;il vaut : sur du matériel récent avec des pilotes libres (Intel, AMD), la bascule est aujourd&amp;rsquo;hui indolore et je ne reviendrais pas en arrière. Sur une configuration NVIDIA un peu datée ou avec des besoins de capture d&amp;rsquo;écran spécifiques, X11 garde encore, pour l&amp;rsquo;instant, un vrai rôle à jouer.&lt;/p&gt;
-      </description>
-    </item>
-    
-  </channel>
-</rss>
+&lt;p&gt;Mon avis, pour ce qu&amp;rsquo;il vaut : sur du matériel récent avec des pilotes libres (Intel, AMD), la bascule est aujourd&amp;rsquo;hui indolore et je ne reviendrais pas en arrière. Sur une configuration NVIDIA un peu datée ou avec des besoins de capture d&amp;rsquo;écran spécifiques, X11 garde encore, pour l&amp;rsquo;instant, un vrai rôle à jouer.&lt;/p&gt;</description></item></channel></rss>

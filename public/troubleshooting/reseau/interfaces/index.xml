@@ -1,104 +1,59 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Lotfi Hamadene – Interfaces réseau</title>
-    <link>http://localhost:1313/troubleshooting/reseau/interfaces/</link>
-    <description>Recent content in Interfaces réseau on Lotfi Hamadene</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>fr-FR</language>
-    
-	  <atom:link href="http://localhost:1313/troubleshooting/reseau/interfaces/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-      
-        
-      
-    
-    
-    <item>
-      <title>Une interface réseau reste à l&#39;état DOWN</title>
-      <link>http://localhost:1313/troubleshooting/reseau/interfaces/interface-down/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/troubleshooting/reseau/interfaces/interface-down/</guid>
-      <description>
-        
-        
-        &lt;h2&gt;Symptômes&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;symptômes&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#sympt%c3%b4mes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Après un redémarrage ou le branchement d&amp;rsquo;un câble, l&amp;rsquo;interface &lt;code&gt;enp3s0&lt;/code&gt; (ou équivalent) reste affichée en état &lt;code&gt;DOWN&lt;/code&gt; dans la sortie de &lt;code&gt;ip link&lt;/code&gt;, aucune adresse IP n&amp;rsquo;est attribuée et aucun trafic ne circule. Le voyant du port sur le commutateur reste éteint alors que le câble est visiblement branché aux deux extrémités.&lt;/p&gt;
-&lt;h2&gt;Cause probable&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;cause-probable&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#cause-probable&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Les causes les plus fréquentes sont un pilote de carte réseau qui n&amp;rsquo;a pas été chargé correctement après une mise à jour du noyau, un câble ou un port physiquement défectueux, ou une politique de gestion réseau (NetworkManager, systemd-networkd) qui ne prend pas en charge l&amp;rsquo;interface parce qu&amp;rsquo;aucun profil de connexion ne lui est associé. Un problème d&amp;rsquo;alimentation sur une carte PCIe mal fixée peut aussi expliquer une absence totale de négociation de lien.&lt;/p&gt;
-&lt;h2&gt;Diagnostic&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;diagnostic&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#diagnostic&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
-
-&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ip link show enp3s0
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ethtool enp3s0
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dmesg | grep -i enp3s0
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nmcli device status&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
-  &lt;button
-    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
-    title=&#34;Copier le code&#34;
-    aria-label=&#34;Copier le code&#34;
-    data-copied-label=&#34;Copié !&#34;
-  &gt;
-    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-  &lt;/button&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lotfi Hamadene – Interfaces réseau</title><link>https://edulabs.fr/troubleshooting/reseau/interfaces/</link><description>Recent content in Interfaces réseau on Lotfi Hamadene</description><generator>Hugo -- gohugo.io</generator><language>fr-FR</language><atom:link href="https://edulabs.fr/troubleshooting/reseau/interfaces/index.xml" rel="self" type="application/rss+xml"/><item><title>Une interface réseau reste à l'état DOWN</title><link>https://edulabs.fr/troubleshooting/reseau/interfaces/interface-down/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://edulabs.fr/troubleshooting/reseau/interfaces/interface-down/</guid><description>
+&lt;h2&gt;Symptômes&lt;span class="hx:absolute hx:-mt-20" id="symptômes"&gt;&lt;/span&gt;
+&lt;a href="#sympt%c3%b4mes" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Après un redémarrage ou le branchement d&amp;rsquo;un câble, l&amp;rsquo;interface &lt;code&gt;enp3s0&lt;/code&gt; (ou équivalent) reste affichée en état &lt;code&gt;DOWN&lt;/code&gt; dans la sortie de &lt;code&gt;ip link&lt;/code&gt;, aucune adresse IP n&amp;rsquo;est attribuée et aucun trafic ne circule. Le voyant du port sur le commutateur reste éteint alors que le câble est visiblement branché aux deux extrémités.&lt;/p&gt;
+&lt;h2&gt;Cause probable&lt;span class="hx:absolute hx:-mt-20" id="cause-probable"&gt;&lt;/span&gt;
+&lt;a href="#cause-probable" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Les causes les plus fréquentes sont un pilote de carte réseau qui n&amp;rsquo;a pas été chargé correctement après une mise à jour du noyau, un câble ou un port physiquement défectueux, ou une politique de gestion réseau (NetworkManager, systemd-networkd) qui ne prend pas en charge l&amp;rsquo;interface parce qu&amp;rsquo;aucun profil de connexion ne lui est associé. Un problème d&amp;rsquo;alimentation sur une carte PCIe mal fixée peut aussi expliquer une absence totale de négociation de lien.&lt;/p&gt;
+&lt;h2&gt;Diagnostic&lt;span class="hx:absolute hx:-mt-20" id="diagnostic"&gt;&lt;/span&gt;
+&lt;a href="#diagnostic" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;ip link show enp3s0
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;ethtool enp3s0
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;dmesg | grep -i enp3s0
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;nmcli device status&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copier le code"
+aria-label="Copier le code"
+data-copied-label="Copié !"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;&lt;code&gt;ethtool&lt;/code&gt; indique si un lien physique est détecté (&lt;code&gt;Link detected: yes/no&lt;/code&gt;) indépendamment de la configuration logicielle. Si le lien physique n&amp;rsquo;est pas détecté, le problème est matériel ; s&amp;rsquo;il l&amp;rsquo;est mais que l&amp;rsquo;interface reste DOWN, la cause est plus probablement logicielle ou liée à la gestion des connexions.&lt;/p&gt;
-&lt;h2&gt;Résolution&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;résolution&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#r%c3%a9solution&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
+&lt;h2&gt;Résolution&lt;span class="hx:absolute hx:-mt-20" id="résolution"&gt;&lt;/span&gt;
+&lt;a href="#r%c3%a9solution" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;Si &lt;code&gt;ethtool&lt;/code&gt; ne détecte aucun lien, tester un autre câble puis un autre port sur le commutateur avant toute intervention logicielle.&lt;/li&gt;
 &lt;li&gt;Forcer l&amp;rsquo;activation de l&amp;rsquo;interface avec &lt;code&gt;ip link set enp3s0 up&lt;/code&gt; et observer si elle passe en &lt;code&gt;UP&lt;/code&gt; puis retombe.&lt;/li&gt;
 &lt;li&gt;Vérifier les messages du noyau autour du chargement du pilote (&lt;code&gt;dmesg | grep -i eth&lt;/code&gt; ou le nom du pilote concerné) et recharger le module si nécessaire avec &lt;code&gt;modprobe -r &amp;lt;module&amp;gt; &amp;amp;&amp;amp; modprobe &amp;lt;module&amp;gt;&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;Si NetworkManager gère l&amp;rsquo;interface, créer ou réactiver un profil de connexion avec &lt;code&gt;nmcli device connect enp3s0&lt;/code&gt;.&lt;/li&gt;
-&lt;/ol&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Conflit d&#39;adresse IP sur le réseau local</title>
-      <link>http://localhost:1313/troubleshooting/reseau/interfaces/conflit-adresse-ip/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/troubleshooting/reseau/interfaces/conflit-adresse-ip/</guid>
-      <description>
-        
-        
-        &lt;h2&gt;Symptômes&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;symptômes&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#sympt%c3%b4mes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Un poste perd la connectivité réseau de façon intermittente, avec des messages système du type « duplicate address detected » ou des déconnexions brèves suivies d&amp;rsquo;une reprise automatique. D&amp;rsquo;autres machines du même sous-réseau signalent parfois un comportement erratique similaire au même moment, et un &lt;code&gt;arp -a&lt;/code&gt; fait apparaître deux adresses MAC différentes associées à la même IP à quelques secondes d&amp;rsquo;intervalle.&lt;/p&gt;
-&lt;h2&gt;Cause probable&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;cause-probable&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#cause-probable&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Deux équipements du réseau se voient attribuer la même adresse IP, généralement parce qu&amp;rsquo;une machine a été configurée avec une IP statique qui appartient en réalité à la plage gérée par le serveur DHCP, ou parce qu&amp;rsquo;un bail DHCP expiré a été réattribué à un nouvel appareil alors que l&amp;rsquo;ancien poste, resté endormi, continue de croire qu&amp;rsquo;il détient toujours cette adresse.&lt;/p&gt;
-&lt;h2&gt;Diagnostic&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;diagnostic&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#diagnostic&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
-
-&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ip addr show
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;arping -D -I enp3s0 192.168.1.50
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;journalctl -k | grep -i &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;duplicate address&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;arp -a | grep 192.168.1.50&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
-  &lt;button
-    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
-    title=&#34;Copier le code&#34;
-    aria-label=&#34;Copier le code&#34;
-    data-copied-label=&#34;Copié !&#34;
-  &gt;
-    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-  &lt;/button&gt;
+&lt;/ol&gt;</description></item><item><title>Conflit d'adresse IP sur le réseau local</title><link>https://edulabs.fr/troubleshooting/reseau/interfaces/conflit-adresse-ip/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://edulabs.fr/troubleshooting/reseau/interfaces/conflit-adresse-ip/</guid><description>
+&lt;h2&gt;Symptômes&lt;span class="hx:absolute hx:-mt-20" id="symptômes"&gt;&lt;/span&gt;
+&lt;a href="#sympt%c3%b4mes" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Un poste perd la connectivité réseau de façon intermittente, avec des messages système du type « duplicate address detected » ou des déconnexions brèves suivies d&amp;rsquo;une reprise automatique. D&amp;rsquo;autres machines du même sous-réseau signalent parfois un comportement erratique similaire au même moment, et un &lt;code&gt;arp -a&lt;/code&gt; fait apparaître deux adresses MAC différentes associées à la même IP à quelques secondes d&amp;rsquo;intervalle.&lt;/p&gt;
+&lt;h2&gt;Cause probable&lt;span class="hx:absolute hx:-mt-20" id="cause-probable"&gt;&lt;/span&gt;
+&lt;a href="#cause-probable" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Deux équipements du réseau se voient attribuer la même adresse IP, généralement parce qu&amp;rsquo;une machine a été configurée avec une IP statique qui appartient en réalité à la plage gérée par le serveur DHCP, ou parce qu&amp;rsquo;un bail DHCP expiré a été réattribué à un nouvel appareil alors que l&amp;rsquo;ancien poste, resté endormi, continue de croire qu&amp;rsquo;il détient toujours cette adresse.&lt;/p&gt;
+&lt;h2&gt;Diagnostic&lt;span class="hx:absolute hx:-mt-20" id="diagnostic"&gt;&lt;/span&gt;
+&lt;a href="#diagnostic" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;ip addr show
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;arping -D -I enp3s0 192.168.1.50
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;journalctl -k | grep -i &lt;span style="color:#e6db74"&gt;&amp;#34;duplicate address&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;arp -a | grep 192.168.1.50&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copier le code"
+aria-label="Copier le code"
+data-copied-label="Copié !"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;&lt;code&gt;arping -D&lt;/code&gt; interroge activement le réseau pour savoir si une adresse est déjà utilisée par une autre machine, indépendamment de la table ARP locale déjà en cache. Un résultat positif confirme le conflit et donne l&amp;rsquo;adresse MAC de l&amp;rsquo;équipement concurrent.&lt;/p&gt;
-&lt;h2&gt;Résolution&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;résolution&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#r%c3%a9solution&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
+&lt;h2&gt;Résolution&lt;span class="hx:absolute hx:-mt-20" id="résolution"&gt;&lt;/span&gt;
+&lt;a href="#r%c3%a9solution" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;Identifier physiquement l&amp;rsquo;équipement portant l&amp;rsquo;adresse MAC concurrente (recherche dans l&amp;rsquo;inventaire réseau ou sur le commutateur via sa table MAC).&lt;/li&gt;
 &lt;li&gt;Retirer l&amp;rsquo;adresse IP statique fautive ou la faire sortir de la plage DHCP réservée, en la déplaçant si besoin vers une plage d&amp;rsquo;exclusion dédiée.&lt;/li&gt;
 &lt;li&gt;Relancer un cycle DHCP propre sur les postes concernés avec &lt;code&gt;dhclient -r enp3s0 &amp;amp;&amp;amp; dhclient enp3s0&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;Sur le serveur DHCP, envisager une réservation d&amp;rsquo;adresse par adresse MAC pour les postes qui nécessitent une IP stable, afin d&amp;rsquo;éviter toute nouvelle collision.&lt;/li&gt;
-&lt;/ol&gt;
-
-      </description>
-    </item>
-    
-  </channel>
-</rss>
+&lt;/ol&gt;</description></item></channel></rss>

@@ -1,162 +1,114 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Lotfi Hamadene – systemd-nspawn</title>
-    <link>http://localhost:1313/docs/conteneurs/systemd-nspawn/</link>
-    <description>Recent content in systemd-nspawn on Lotfi Hamadene</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>fr-FR</language>
-    
-	  <atom:link href="http://localhost:1313/docs/conteneurs/systemd-nspawn/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-      
-        
-      
-    
-    
-    <item>
-      <title>Créer un conteneur léger avec systemd-nspawn</title>
-      <link>http://localhost:1313/docs/conteneurs/systemd-nspawn/creer-un-conteneur-nspawn/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/docs/conteneurs/systemd-nspawn/creer-un-conteneur-nspawn/</guid>
-      <description>
-        
-        
-        &lt;h2&gt;Objectif&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;objectif&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#objectif&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;systemd-nspawn permet de créer et démarrer un conteneur à partir d&amp;rsquo;une simple arborescence de fichiers, sans image intermédiaire ni démon supplémentaire, en s&amp;rsquo;appuyant uniquement sur les composants déjà fournis par systemd.&lt;/p&gt;
-&lt;h2&gt;Prérequis&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;prérequis&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#pr%c3%a9requis&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lotfi Hamadene – systemd-nspawn</title><link>https://edulabs.fr/docs/conteneurs/systemd-nspawn/</link><description>Recent content in systemd-nspawn on Lotfi Hamadene</description><generator>Hugo -- gohugo.io</generator><language>fr-FR</language><atom:link href="https://edulabs.fr/docs/conteneurs/systemd-nspawn/index.xml" rel="self" type="application/rss+xml"/><item><title>Créer un conteneur léger avec systemd-nspawn</title><link>https://edulabs.fr/docs/conteneurs/systemd-nspawn/creer-un-conteneur-nspawn/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://edulabs.fr/docs/conteneurs/systemd-nspawn/creer-un-conteneur-nspawn/</guid><description>
+&lt;h2&gt;Objectif&lt;span class="hx:absolute hx:-mt-20" id="objectif"&gt;&lt;/span&gt;
+&lt;a href="#objectif" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;systemd-nspawn permet de créer et démarrer un conteneur à partir d&amp;rsquo;une simple arborescence de fichiers, sans image intermédiaire ni démon supplémentaire, en s&amp;rsquo;appuyant uniquement sur les composants déjà fournis par systemd.&lt;/p&gt;
+&lt;h2&gt;Prérequis&lt;span class="hx:absolute hx:-mt-20" id="prérequis"&gt;&lt;/span&gt;
+&lt;a href="#pr%c3%a9requis" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;Paquet &lt;code&gt;systemd-container&lt;/code&gt; installé&lt;/li&gt;
 &lt;li&gt;Droits root&lt;/li&gt;
 &lt;li&gt;Outil &lt;code&gt;debootstrap&lt;/code&gt; (ou équivalent) pour préparer une arborescence minimale d&amp;rsquo;une distribution&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Étapes&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;étapes&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#%c3%a9tapes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
+&lt;h2&gt;Étapes&lt;span class="hx:absolute hx:-mt-20" id="étapes"&gt;&lt;/span&gt;
+&lt;a href="#%c3%a9tapes" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;Créer un répertoire qui accueillera l&amp;rsquo;arborescence racine du conteneur.&lt;/li&gt;
 &lt;li&gt;Installer un système minimal dans ce répertoire avec &lt;code&gt;debootstrap&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;Démarrer un shell interactif dans le conteneur pour vérifier son bon fonctionnement.&lt;/li&gt;
 &lt;li&gt;Enregistrer le conteneur comme une machine gérée par &lt;code&gt;machinectl&lt;/code&gt; pour un démarrage persistant.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
-
-&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo mkdir -p /var/lib/machines/monconteneur
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo debootstrap stable /var/lib/machines/monconteneur http://deb.debian.org/debian
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo systemd-nspawn -D /var/lib/machines/monconteneur
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo machinectl start monconteneur&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
-  &lt;button
-    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
-    title=&#34;Copier le code&#34;
-    aria-label=&#34;Copier le code&#34;
-    data-copied-label=&#34;Copié !&#34;
-  &gt;
-    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-  &lt;/button&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo mkdir -p /var/lib/machines/monconteneur
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo debootstrap stable /var/lib/machines/monconteneur http://deb.debian.org/debian
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo systemd-nspawn -D /var/lib/machines/monconteneur
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo machinectl start monconteneur&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copier le code"
+aria-label="Copier le code"
+data-copied-label="Copié !"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;Une fois dans le shell interactif ouvert par &lt;code&gt;systemd-nspawn -D&lt;/code&gt;, vous êtes root dans le conteneur et pouvez y installer des paquets ou configurer des services comme sur une machine classique. La commande &lt;code&gt;machinectl start&lt;/code&gt; démarre le conteneur en arrière-plan comme un service systemd, ce qui permet de le superviser avec les outils habituels (&lt;code&gt;systemctl&lt;/code&gt;, &lt;code&gt;journalctl&lt;/code&gt;).&lt;/p&gt;
-&lt;h2&gt;Vérification&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;vérification&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#v%c3%a9rification&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Listez les machines actives et confirmez que le conteneur répond :&lt;/p&gt;
-&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
-
-&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;machinectl list
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;machinectl shell monconteneur&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
-  &lt;button
-    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
-    title=&#34;Copier le code&#34;
-    aria-label=&#34;Copier le code&#34;
-    data-copied-label=&#34;Copié !&#34;
-  &gt;
-    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-  &lt;/button&gt;
+&lt;h2&gt;Vérification&lt;span class="hx:absolute hx:-mt-20" id="vérification"&gt;&lt;/span&gt;
+&lt;a href="#v%c3%a9rification" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Listez les machines actives et confirmez que le conteneur répond :&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;machinectl list
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;machinectl shell monconteneur&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copier le code"
+aria-label="Copier le code"
+data-copied-label="Copié !"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;code&gt;machinectl list&lt;/code&gt; doit afficher &lt;code&gt;monconteneur&lt;/code&gt; avec l&amp;rsquo;état &lt;code&gt;running&lt;/code&gt;, et &lt;code&gt;machinectl shell&lt;/code&gt; doit ouvrir une session à l&amp;rsquo;intérieur du conteneur sans erreur.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Configurer le réseau d&#39;un conteneur nspawn</title>
-      <link>http://localhost:1313/docs/conteneurs/systemd-nspawn/reseau-nspawn/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/docs/conteneurs/systemd-nspawn/reseau-nspawn/</guid>
-      <description>
-        
-        
-        &lt;h2&gt;Objectif&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;objectif&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#objectif&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Par défaut, un conteneur systemd-nspawn partage l&amp;rsquo;espace réseau de l&amp;rsquo;hôte, ce qui n&amp;rsquo;est pas toujours souhaitable. Ce guide montre comment lui attribuer une interface réseau virtuelle dédiée, isolée de celle de l&amp;rsquo;hôte.&lt;/p&gt;
-&lt;h2&gt;Prérequis&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;prérequis&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#pr%c3%a9requis&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;p&gt;&lt;code&gt;machinectl list&lt;/code&gt; doit afficher &lt;code&gt;monconteneur&lt;/code&gt; avec l&amp;rsquo;état &lt;code&gt;running&lt;/code&gt;, et &lt;code&gt;machinectl shell&lt;/code&gt; doit ouvrir une session à l&amp;rsquo;intérieur du conteneur sans erreur.&lt;/p&gt;</description></item><item><title>Configurer le réseau d'un conteneur nspawn</title><link>https://edulabs.fr/docs/conteneurs/systemd-nspawn/reseau-nspawn/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://edulabs.fr/docs/conteneurs/systemd-nspawn/reseau-nspawn/</guid><description>
+&lt;h2&gt;Objectif&lt;span class="hx:absolute hx:-mt-20" id="objectif"&gt;&lt;/span&gt;
+&lt;a href="#objectif" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Par défaut, un conteneur systemd-nspawn partage l&amp;rsquo;espace réseau de l&amp;rsquo;hôte, ce qui n&amp;rsquo;est pas toujours souhaitable. Ce guide montre comment lui attribuer une interface réseau virtuelle dédiée, isolée de celle de l&amp;rsquo;hôte.&lt;/p&gt;
+&lt;h2&gt;Prérequis&lt;span class="hx:absolute hx:-mt-20" id="prérequis"&gt;&lt;/span&gt;
+&lt;a href="#pr%c3%a9requis" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;Conteneur déjà créé (voir la page « Créer un conteneur léger avec systemd-nspawn »)&lt;/li&gt;
 &lt;li&gt;Droits root sur l&amp;rsquo;hôte&lt;/li&gt;
 &lt;li&gt;Le module &lt;code&gt;bridge&lt;/code&gt; du noyau disponible si vous souhaitez relier le conteneur à un pont existant&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Étapes&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;étapes&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#%c3%a9tapes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
+&lt;h2&gt;Étapes&lt;span class="hx:absolute hx:-mt-20" id="étapes"&gt;&lt;/span&gt;
+&lt;a href="#%c3%a9tapes" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;Démarrer le conteneur avec une interface réseau virtuelle privée (paire veth).&lt;/li&gt;
 &lt;li&gt;Configurer l&amp;rsquo;interface côté hôte pour lui donner accès au réseau.&lt;/li&gt;
 &lt;li&gt;Attribuer une adresse IP à l&amp;rsquo;interface côté conteneur.&lt;/li&gt;
 &lt;li&gt;Rendre la configuration persistante dans le fichier de service du conteneur.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
-
-&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo systemd-nspawn -D /var/lib/machines/monconteneur --network-veth
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo ip addr add 10.10.10.1/24 dev ve-monconteneur
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo ip link set ve-monconteneur up&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
-  &lt;button
-    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
-    title=&#34;Copier le code&#34;
-    aria-label=&#34;Copier le code&#34;
-    data-copied-label=&#34;Copié !&#34;
-  &gt;
-    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-  &lt;/button&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo systemd-nspawn -D /var/lib/machines/monconteneur --network-veth
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo ip addr add 10.10.10.1/24 dev ve-monconteneur
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo ip link set ve-monconteneur up&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copier le code"
+aria-label="Copier le code"
+data-copied-label="Copié !"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;Dans le conteneur, il faut ensuite configurer l&amp;rsquo;interface &lt;code&gt;host0&lt;/code&gt; (nom donné automatiquement côté conteneur à l&amp;rsquo;autre extrémité de la paire veth) :&lt;/p&gt;
-&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
-
-&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ip addr add 10.10.10.2/24 dev host0
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ip link set host0 up
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ip route add default via 10.10.10.1&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
-  &lt;button
-    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
-    title=&#34;Copier le code&#34;
-    aria-label=&#34;Copier le code&#34;
-    data-copied-label=&#34;Copié !&#34;
-  &gt;
-    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-  &lt;/button&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;ip addr add 10.10.10.2/24 dev host0
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;ip link set host0 up
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;ip route add default via 10.10.10.1&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copier le code"
+aria-label="Copier le code"
+data-copied-label="Copié !"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;Pour que cette configuration réseau soit appliquée automatiquement à chaque démarrage via &lt;code&gt;machinectl&lt;/code&gt;, ajoutez &lt;code&gt;--network-veth&lt;/code&gt; dans un fichier de configuration sous &lt;code&gt;/etc/systemd/nspawn/monconteneur.nspawn&lt;/code&gt;, dans la section &lt;code&gt;[Network]&lt;/code&gt;.&lt;/p&gt;
-&lt;h2&gt;Vérification&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;vérification&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#v%c3%a9rification&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Depuis l&amp;rsquo;hôte, vérifiez que l&amp;rsquo;interface veth est active et que le conteneur répond aux requêtes ping :&lt;/p&gt;
-&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
-
-&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ip addr show ve-monconteneur
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ping -c &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; 10.10.10.2&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
-  &lt;button
-    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
-    title=&#34;Copier le code&#34;
-    aria-label=&#34;Copier le code&#34;
-    data-copied-label=&#34;Copié !&#34;
-  &gt;
-    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-  &lt;/button&gt;
+&lt;h2&gt;Vérification&lt;span class="hx:absolute hx:-mt-20" id="vérification"&gt;&lt;/span&gt;
+&lt;a href="#v%c3%a9rification" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Depuis l&amp;rsquo;hôte, vérifiez que l&amp;rsquo;interface veth est active et que le conteneur répond aux requêtes ping :&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;ip addr show ve-monconteneur
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;ping -c &lt;span style="color:#ae81ff"&gt;3&lt;/span&gt; 10.10.10.2&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copier le code"
+aria-label="Copier le code"
+data-copied-label="Copié !"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;L&amp;rsquo;interface &lt;code&gt;ve-monconteneur&lt;/code&gt; doit apparaître à l&amp;rsquo;état &lt;code&gt;UP&lt;/code&gt; avec l&amp;rsquo;adresse configurée, et les requêtes ping vers l&amp;rsquo;adresse du conteneur doivent obtenir une réponse.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-  </channel>
-</rss>
+&lt;p&gt;L&amp;rsquo;interface &lt;code&gt;ve-monconteneur&lt;/code&gt; doit apparaître à l&amp;rsquo;état &lt;code&gt;UP&lt;/code&gt; avec l&amp;rsquo;adresse configurée, et les requêtes ping vers l&amp;rsquo;adresse du conteneur doivent obtenir une réponse.&lt;/p&gt;</description></item></channel></rss>

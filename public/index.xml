@@ -1,115 +1,26 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Lotfi Hamadene – Accueil</title>
-    <link>http://localhost:1313/</link>
-    <description>Recent content in Accueil on Lotfi Hamadene</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>fr-FR</language>
-    <lastBuildDate>Sat, 15 Aug 2026 00:00:00 +0000</lastBuildDate>
-    
-	  <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-      
-      
-    
-    
-    <item>
-      <title>Arch Linux n&#39;est pas réservé aux élitistes</title>
-      <link>http://localhost:1313/opinions/arch-linux-nest-pas-que-pour-les-elitistes/</link>
-      <pubDate>Sat, 15 Aug 2026 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/opinions/arch-linux-nest-pas-que-pour-les-elitistes/</guid>
-      <description>
-        
-        
-        &lt;p&gt;« Arch, c&amp;rsquo;est pour ceux qui aiment se compliquer la vie. » J&amp;rsquo;ai entendu cette phrase des dizaines de fois, et chaque fois elle me fait un peu grincer des dents, parce qu&amp;rsquo;elle confond deux choses très différentes : la difficulté et l&amp;rsquo;exigence.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lotfi Hamadene – Accueil</title><link>https://edulabs.fr/</link><description>Recent content in Accueil on Lotfi Hamadene</description><generator>Hugo -- gohugo.io</generator><language>fr-FR</language><lastBuildDate>Sat, 15 Aug 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://edulabs.fr/index.xml" rel="self" type="application/rss+xml"/><item><title>Arch Linux n'est pas réservé aux élitistes</title><link>https://edulabs.fr/opinions/arch-linux-nest-pas-que-pour-les-elitistes/</link><pubDate>Sat, 15 Aug 2026 00:00:00 +0000</pubDate><guid>https://edulabs.fr/opinions/arch-linux-nest-pas-que-pour-les-elitistes/</guid><description>
+&lt;p&gt;« Arch, c&amp;rsquo;est pour ceux qui aiment se compliquer la vie. » J&amp;rsquo;ai entendu cette phrase des dizaines de fois, et chaque fois elle me fait un peu grincer des dents, parce qu&amp;rsquo;elle confond deux choses très différentes : la difficulté et l&amp;rsquo;exigence.&lt;/p&gt;
 &lt;p&gt;Arch Linux n&amp;rsquo;est pas difficile parce qu&amp;rsquo;elle serait mal conçue ou volontairement hostile. Elle est exigeante parce qu&amp;rsquo;elle refuse de prendre des décisions à la place de l&amp;rsquo;utilisateur : pas de configuration par défaut imposée, pas de service activé sans qu&amp;rsquo;on l&amp;rsquo;ait demandé, pas de surcouche graphique qui masque ce qui se passe réellement. Le fameux principe KISS de la distribution ne veut pas dire « simple à utiliser », il veut dire « simple à comprendre », ce qui est très différent.&lt;/p&gt;
 &lt;p&gt;Le vrai obstacle, ce n&amp;rsquo;est pas l&amp;rsquo;installation — le wiki Arch est probablement la meilleure documentation technique de tout l&amp;rsquo;écosystème Linux, toutes distributions confondues, et sert de référence même à des utilisateurs Debian ou Fedora. L&amp;rsquo;obstacle, c&amp;rsquo;est l&amp;rsquo;investissement en temps qu&amp;rsquo;on accepte de faire au début pour comprendre chaque brique qu&amp;rsquo;on installe.&lt;/p&gt;
-&lt;p&gt;Je ne recommanderai jamais Arch à quelqu&amp;rsquo;un qui veut un système qui « marche tout seul » dès le premier jour. Mais l&amp;rsquo;idée qu&amp;rsquo;elle serait réservée à une élite technique me semble fausse : c&amp;rsquo;est avant tout une question de curiosité et de patience, pas de niveau. J&amp;rsquo;ai vu des débutants complets apprendre plus sur le fonctionnement de Linux en une semaine d&amp;rsquo;installation Arch qu&amp;rsquo;en un an d&amp;rsquo;utilisation d&amp;rsquo;une distribution qui fait tout à leur place.&lt;/p&gt;
-      </description>
-    </item>
-    
-    <item>
-      <title>Le cloud nous a-t-il fait oublier l&#39;administration système ?</title>
-      <link>http://localhost:1313/opinions/le-cloud-nous-a-fait-oublier-ladministration-systeme/</link>
-      <pubDate>Sun, 12 Jul 2026 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/opinions/le-cloud-nous-a-fait-oublier-ladministration-systeme/</guid>
-      <description>
-        
-        
-        &lt;p&gt;Je forme régulièrement des jeunes ingénieurs qui savent écrire un manifeste Kubernetes impeccable mais qui n&amp;rsquo;ont jamais eu à diagnostiquer une charge CPU anormale avec &lt;code&gt;top&lt;/code&gt; ou à comprendre pourquoi un service ne redémarre pas après un crash. Ce n&amp;rsquo;est pas un jugement, c&amp;rsquo;est un constat qui m&amp;rsquo;inquiète un peu.&lt;/p&gt;
+&lt;p&gt;Je ne recommanderai jamais Arch à quelqu&amp;rsquo;un qui veut un système qui « marche tout seul » dès le premier jour. Mais l&amp;rsquo;idée qu&amp;rsquo;elle serait réservée à une élite technique me semble fausse : c&amp;rsquo;est avant tout une question de curiosité et de patience, pas de niveau. J&amp;rsquo;ai vu des débutants complets apprendre plus sur le fonctionnement de Linux en une semaine d&amp;rsquo;installation Arch qu&amp;rsquo;en un an d&amp;rsquo;utilisation d&amp;rsquo;une distribution qui fait tout à leur place.&lt;/p&gt;</description></item><item><title>Le cloud nous a-t-il fait oublier l'administration système ?</title><link>https://edulabs.fr/opinions/le-cloud-nous-a-fait-oublier-ladministration-systeme/</link><pubDate>Sun, 12 Jul 2026 00:00:00 +0000</pubDate><guid>https://edulabs.fr/opinions/le-cloud-nous-a-fait-oublier-ladministration-systeme/</guid><description>
+&lt;p&gt;Je forme régulièrement des jeunes ingénieurs qui savent écrire un manifeste Kubernetes impeccable mais qui n&amp;rsquo;ont jamais eu à diagnostiquer une charge CPU anormale avec &lt;code&gt;top&lt;/code&gt; ou à comprendre pourquoi un service ne redémarre pas après un crash. Ce n&amp;rsquo;est pas un jugement, c&amp;rsquo;est un constat qui m&amp;rsquo;inquiète un peu.&lt;/p&gt;
 &lt;p&gt;Le cloud a rendu énormément de choses plus simples, et c&amp;rsquo;est tout à son mérite : provisionner une machine en quelques secondes, faire du scaling automatique, déléguer la gestion du stockage et du réseau à un fournisseur qui a des équipes dédiées à ça. Mais cette simplicité a un coût caché : quand l&amp;rsquo;abstraction fuit — et elle fuit toujours, un jour ou l&amp;rsquo;autre — il faut redescendre au niveau du système, et c&amp;rsquo;est précisément la compétence qui s&amp;rsquo;érode le plus vite chez les nouvelles générations d&amp;rsquo;administrateurs.&lt;/p&gt;
 &lt;p&gt;J&amp;rsquo;ai vu des incidents de production traités à coup de redémarrage de pod en boucle, alors que le vrai problème était une fuite mémoire noyau parfaitement diagnosticable avec &lt;code&gt;dmesg&lt;/code&gt; et un peu de patience. Le réflexe cloud-natif, quand il n&amp;rsquo;est pas accompagné de bases système solides, devient un pansement qui masque le symptôme sans jamais toucher à la cause.&lt;/p&gt;
-&lt;p&gt;Mon avis : le cloud n&amp;rsquo;est pas le problème, notre façon de former les gens qui l&amp;rsquo;utilisent l&amp;rsquo;est. Comprendre ce qui se passe sous l&amp;rsquo;abstraction — le noyau, les processus, le réseau — reste, à mes yeux, un prérequis et non une option, même pour quelqu&amp;rsquo;un qui ne touchera jamais un serveur physique de sa carrière.&lt;/p&gt;
-      </description>
-    </item>
-    
-    <item>
-      <title>Flatpak, Snap, AppImage : le chaos des formats universels</title>
-      <link>http://localhost:1313/opinions/flatpak-snap-appimage-le-chaos-des-formats/</link>
-      <pubDate>Fri, 05 Jun 2026 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/opinions/flatpak-snap-appimage-le-chaos-des-formats/</guid>
-      <description>
-        
-        
-        &lt;p&gt;On nous promettait, avec les formats de paquets universels, la fin du morcellement entre distributions. Une application, un fichier, n&amp;rsquo;importe quelle distribution. Sur le papier, magnifique. Dans les faits, on a surtout ajouté une couche de complexité au-dessus de l&amp;rsquo;ancienne.&lt;/p&gt;
+&lt;p&gt;Mon avis : le cloud n&amp;rsquo;est pas le problème, notre façon de former les gens qui l&amp;rsquo;utilisent l&amp;rsquo;est. Comprendre ce qui se passe sous l&amp;rsquo;abstraction — le noyau, les processus, le réseau — reste, à mes yeux, un prérequis et non une option, même pour quelqu&amp;rsquo;un qui ne touchera jamais un serveur physique de sa carrière.&lt;/p&gt;</description></item><item><title>Flatpak, Snap, AppImage : le chaos des formats universels</title><link>https://edulabs.fr/opinions/flatpak-snap-appimage-le-chaos-des-formats/</link><pubDate>Fri, 05 Jun 2026 00:00:00 +0000</pubDate><guid>https://edulabs.fr/opinions/flatpak-snap-appimage-le-chaos-des-formats/</guid><description>
+&lt;p&gt;On nous promettait, avec les formats de paquets universels, la fin du morcellement entre distributions. Une application, un fichier, n&amp;rsquo;importe quelle distribution. Sur le papier, magnifique. Dans les faits, on a surtout ajouté une couche de complexité au-dessus de l&amp;rsquo;ancienne.&lt;/p&gt;
 &lt;p&gt;Flatpak s&amp;rsquo;est imposé sur le bureau grâce à Flathub et à un bon compromis entre isolation et intégration, mais chaque application embarque ses propres runtimes, ce qui gonfle l&amp;rsquo;espace disque utilisé et complique le débogage quand quelque chose ne fonctionne pas comme prévu. Snap fait un pari similaire côté Canonical, avec en prime une intégration parfois trop appuyée dans Ubuntu, ce qui a fini par agacer une partie de la communauté. AppImage, de son côté, séduit par sa simplicité — un fichier exécutable, aucune installation — mais laisse à l&amp;rsquo;utilisateur la charge des mises à jour et de l&amp;rsquo;intégration au bureau, ce qui n&amp;rsquo;est pas rien pour un public non technique.&lt;/p&gt;
 &lt;p&gt;Résultat : au lieu d&amp;rsquo;un standard unique, on a maintenant trois écosystèmes qui coexistent, chacun avec ses forces, et un utilisateur qui doit encore choisir. La fragmentation qu&amp;rsquo;on voulait éliminer entre distributions s&amp;rsquo;est simplement déplacée d&amp;rsquo;un cran plus haut.&lt;/p&gt;
-&lt;p&gt;Je ne crois pas qu&amp;rsquo;un des trois formats « gagnera » à court terme. Je pense plutôt qu&amp;rsquo;on va continuer à vivre avec cette coexistence, et que le vrai progrès viendra plutôt d&amp;rsquo;une meilleure interopérabilité entre eux que d&amp;rsquo;une hypothétique unification.&lt;/p&gt;
-      </description>
-    </item>
-    
-    <item>
-      <title>Wayland est-il vraiment prêt pour tout le monde ?</title>
-      <link>http://localhost:1313/opinions/wayland-est-il-vraiment-pret/</link>
-      <pubDate>Thu, 30 Apr 2026 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/opinions/wayland-est-il-vraiment-pret/</guid>
-      <description>
-        
-        
-        &lt;p&gt;Après avoir basculé mon poste principal sous Wayland il y a quelques mois, je peux enfin répondre sans faire de politique : oui, presque. Et ce « presque » cache encore de vraies aspérités.&lt;/p&gt;
+&lt;p&gt;Je ne crois pas qu&amp;rsquo;un des trois formats « gagnera » à court terme. Je pense plutôt qu&amp;rsquo;on va continuer à vivre avec cette coexistence, et que le vrai progrès viendra plutôt d&amp;rsquo;une meilleure interopérabilité entre eux que d&amp;rsquo;une hypothétique unification.&lt;/p&gt;</description></item><item><title>Wayland est-il vraiment prêt pour tout le monde ?</title><link>https://edulabs.fr/opinions/wayland-est-il-vraiment-pret/</link><pubDate>Thu, 30 Apr 2026 00:00:00 +0000</pubDate><guid>https://edulabs.fr/opinions/wayland-est-il-vraiment-pret/</guid><description>
+&lt;p&gt;Après avoir basculé mon poste principal sous Wayland il y a quelques mois, je peux enfin répondre sans faire de politique : oui, presque. Et ce « presque » cache encore de vraies aspérités.&lt;/p&gt;
 &lt;p&gt;Ce qui fonctionne bien, et même très bien : le rendu est plus fluide, la gestion du multi-écran avec des résolutions mixtes n&amp;rsquo;a plus rien à voir avec les bricolages d&amp;rsquo;antan sous X11, et la sécurité par défaut (chaque application ne peut plus espionner les autres à volonté) est un vrai progrès qu&amp;rsquo;on sous-estime trop souvent dans les comparatifs.&lt;/p&gt;
 &lt;p&gt;Ce qui coince encore : le partage d&amp;rsquo;écran dans certaines applications de visioconférence reste capricieux selon le compositeur utilisé, quelques outils historiques de capture ou de gestion des fenêtres n&amp;rsquo;ont jamais été portés, et les pilotes propriétaires NVIDIA, même après les progrès récents, restent le point de friction numéro un cité par tous ceux qui hésitent encore à migrer.&lt;/p&gt;
-&lt;p&gt;Mon avis, pour ce qu&amp;rsquo;il vaut : sur du matériel récent avec des pilotes libres (Intel, AMD), la bascule est aujourd&amp;rsquo;hui indolore et je ne reviendrais pas en arrière. Sur une configuration NVIDIA un peu datée ou avec des besoins de capture d&amp;rsquo;écran spécifiques, X11 garde encore, pour l&amp;rsquo;instant, un vrai rôle à jouer.&lt;/p&gt;
-      </description>
-    </item>
-    
-    <item>
-      <title>Pourquoi j&#39;ai quitté Ubuntu pour Debian</title>
-      <link>http://localhost:1313/opinions/pourquoi-jai-quitte-ubuntu-pour-debian/</link>
-      <pubDate>Sun, 22 Mar 2026 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/opinions/pourquoi-jai-quitte-ubuntu-pour-debian/</guid>
-      <description>
-        
-        
-        &lt;p&gt;Pendant longtemps, Ubuntu a été mon choix par défaut : bonne prise en charge du matériel, communauté immense, documentation abondante. Puis, petit à petit, quelque chose s&amp;rsquo;est cassé dans la relation.&lt;/p&gt;
+&lt;p&gt;Mon avis, pour ce qu&amp;rsquo;il vaut : sur du matériel récent avec des pilotes libres (Intel, AMD), la bascule est aujourd&amp;rsquo;hui indolore et je ne reviendrais pas en arrière. Sur une configuration NVIDIA un peu datée ou avec des besoins de capture d&amp;rsquo;écran spécifiques, X11 garde encore, pour l&amp;rsquo;instant, un vrai rôle à jouer.&lt;/p&gt;</description></item><item><title>Pourquoi j'ai quitté Ubuntu pour Debian</title><link>https://edulabs.fr/opinions/pourquoi-jai-quitte-ubuntu-pour-debian/</link><pubDate>Sun, 22 Mar 2026 00:00:00 +0000</pubDate><guid>https://edulabs.fr/opinions/pourquoi-jai-quitte-ubuntu-pour-debian/</guid><description>
+&lt;p&gt;Pendant longtemps, Ubuntu a été mon choix par défaut : bonne prise en charge du matériel, communauté immense, documentation abondante. Puis, petit à petit, quelque chose s&amp;rsquo;est cassé dans la relation.&lt;/p&gt;
 &lt;p&gt;Le déclencheur n&amp;rsquo;a pas été un bug précis, mais une accumulation. Snap imposé pour des paquets qui n&amp;rsquo;avaient aucune raison d&amp;rsquo;y passer, des temps de démarrage d&amp;rsquo;application qui se sont allongés sans explication claire, et cette sensation croissante que les décisions produit passaient avant les besoins de l&amp;rsquo;utilisateur qui veut juste un système stable et prévisible.&lt;/p&gt;
 &lt;p&gt;Je suis revenu à Debian, la distribution sur laquelle Ubuntu s&amp;rsquo;appuie elle-même. Moins de surprises, un cycle de publication qui privilégie la stabilité plutôt que la nouveauté à tout prix, et un gestionnaire de paquets qui fait ce qu&amp;rsquo;on lui demande sans détour. La contrepartie est connue : des versions de logiciels parfois en retard, et il faut activer les dépôts &lt;code&gt;backports&lt;/code&gt; quand on veut un noyau ou un paquet plus récent.&lt;/p&gt;
-&lt;p&gt;Ce que je veux dire, ce n&amp;rsquo;est pas qu&amp;rsquo;Ubuntu est un mauvais choix — pour beaucoup d&amp;rsquo;usages, notamment sur poste de travail grand public, c&amp;rsquo;est encore l&amp;rsquo;option la plus confortable. Mais pour un serveur ou une machine sur laquelle je veux comprendre exactement ce qui s&amp;rsquo;y passe, je préfère la sobriété de Debian à l&amp;rsquo;ergonomie parfois trop opinionnée d&amp;rsquo;Ubuntu.&lt;/p&gt;
-      </description>
-    </item>
-    
-    <item>
-      <title>systemd, le débat qui ne meurt jamais</title>
-      <link>http://localhost:1313/opinions/systemd-le-debat-qui-ne-meurt-jamais/</link>
-      <pubDate>Tue, 10 Feb 2026 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/opinions/systemd-le-debat-qui-ne-meurt-jamais/</guid>
-      <description>
-        
-        
-        &lt;p&gt;Il y a des sujets qu&amp;rsquo;on ne peut plus aborder sereinement sur un forum Linux. systemd en fait partie depuis plus de dix ans, et je commence à comprendre pourquoi le débat ne s&amp;rsquo;éteint pas : les deux camps ont raison, chacun sur un point différent.&lt;/p&gt;
+&lt;p&gt;Ce que je veux dire, ce n&amp;rsquo;est pas qu&amp;rsquo;Ubuntu est un mauvais choix — pour beaucoup d&amp;rsquo;usages, notamment sur poste de travail grand public, c&amp;rsquo;est encore l&amp;rsquo;option la plus confortable. Mais pour un serveur ou une machine sur laquelle je veux comprendre exactement ce qui s&amp;rsquo;y passe, je préfère la sobriété de Debian à l&amp;rsquo;ergonomie parfois trop opinionnée d&amp;rsquo;Ubuntu.&lt;/p&gt;</description></item><item><title>systemd, le débat qui ne meurt jamais</title><link>https://edulabs.fr/opinions/systemd-le-debat-qui-ne-meurt-jamais/</link><pubDate>Tue, 10 Feb 2026 00:00:00 +0000</pubDate><guid>https://edulabs.fr/opinions/systemd-le-debat-qui-ne-meurt-jamais/</guid><description>
+&lt;p&gt;Il y a des sujets qu&amp;rsquo;on ne peut plus aborder sereinement sur un forum Linux. systemd en fait partie depuis plus de dix ans, et je commence à comprendre pourquoi le débat ne s&amp;rsquo;éteint pas : les deux camps ont raison, chacun sur un point différent.&lt;/p&gt;
 &lt;p&gt;D&amp;rsquo;un côté, les pragmatiques : systemd démarre plus vite, gère proprement les dépendances entre services, journalise tout au même endroit et propose des primitives (sockets, timers, cgroups) qu&amp;rsquo;on aurait dû avoir depuis longtemps. Sur un serveur qu&amp;rsquo;on administre à dix, ce confort n&amp;rsquo;est pas négociable.&lt;/p&gt;
 &lt;p&gt;De l&amp;rsquo;autre, les puristes UNIX : un PID 1 qui absorbe la gestion des logs, du réseau, du temps et des points de montage, ça viole un principe qu&amp;rsquo;on a mis quarante ans à faire comprendre à tout le monde — un outil, une responsabilité. Et honnêtement, &lt;code&gt;journalctl&lt;/code&gt; reste plus pénible à parcourir qu&amp;rsquo;un bon vieux fichier texte avec &lt;code&gt;grep&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Ce que je retiens après des années à administrer les deux mondes : le vrai problème n&amp;rsquo;est pas systemd lui-même, c&amp;rsquo;est l&amp;rsquo;absence d&amp;rsquo;alternative crédible qui aurait pu tirer la gestion des services vers le haut sans absorber le reste. runit et s6 prouvent qu&amp;rsquo;on peut faire un init minimaliste et fiable, mais ils n&amp;rsquo;ont jamais eu la surface d&amp;rsquo;adoption nécessaire pour peser dans la discussion.&lt;/p&gt;
-&lt;p&gt;Je continuerai à utiliser systemd sur mes machines de tous les jours parce que l&amp;rsquo;écosystème s&amp;rsquo;est construit autour, mais je regarde toujours avec un peu de nostalgie les distributions qui ont fait un autre choix.&lt;/p&gt;
-      </description>
-    </item>
-    
-  </channel>
-</rss>
+&lt;p&gt;Je continuerai à utiliser systemd sur mes machines de tous les jours parce que l&amp;rsquo;écosystème s&amp;rsquo;est construit autour, mais je regarde toujours avec un peu de nostalgie les distributions qui ont fait un autre choix.&lt;/p&gt;</description></item></channel></rss>

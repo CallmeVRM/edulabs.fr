@@ -1,146 +1,99 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Lotfi Hamadene – Utilisateurs &amp; permissions</title>
-    <link>http://localhost:1313/docs/administration/utilisateurs-permissions/</link>
-    <description>Recent content in Utilisateurs &amp; permissions on Lotfi Hamadene</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>fr-FR</language>
-    
-	  <atom:link href="http://localhost:1313/docs/administration/utilisateurs-permissions/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-      
-        
-      
-    
-    
-    <item>
-      <title>Créer et configurer un nouvel utilisateur</title>
-      <link>http://localhost:1313/docs/administration/utilisateurs-permissions/creer-un-utilisateur/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/docs/administration/utilisateurs-permissions/creer-un-utilisateur/</guid>
-      <description>
-        
-        
-        &lt;h2&gt;Objectif&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;objectif&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#objectif&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Cette procédure décrit la création d&amp;rsquo;un compte utilisateur local, l&amp;rsquo;attribution d&amp;rsquo;un mot de passe et son ajout à un ou plusieurs groupes existants, afin de lui donner un accès contrôlé au système.&lt;/p&gt;
-&lt;h2&gt;Prérequis&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;prérequis&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#pr%c3%a9requis&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lotfi Hamadene – Utilisateurs &amp; permissions</title><link>https://edulabs.fr/docs/administration/utilisateurs-permissions/</link><description>Recent content in Utilisateurs &amp; permissions on Lotfi Hamadene</description><generator>Hugo -- gohugo.io</generator><language>fr-FR</language><atom:link href="https://edulabs.fr/docs/administration/utilisateurs-permissions/index.xml" rel="self" type="application/rss+xml"/><item><title>Créer et configurer un nouvel utilisateur</title><link>https://edulabs.fr/docs/administration/utilisateurs-permissions/creer-un-utilisateur/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://edulabs.fr/docs/administration/utilisateurs-permissions/creer-un-utilisateur/</guid><description>
+&lt;h2&gt;Objectif&lt;span class="hx:absolute hx:-mt-20" id="objectif"&gt;&lt;/span&gt;
+&lt;a href="#objectif" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Cette procédure décrit la création d&amp;rsquo;un compte utilisateur local, l&amp;rsquo;attribution d&amp;rsquo;un mot de passe et son ajout à un ou plusieurs groupes existants, afin de lui donner un accès contrôlé au système.&lt;/p&gt;
+&lt;h2&gt;Prérequis&lt;span class="hx:absolute hx:-mt-20" id="prérequis"&gt;&lt;/span&gt;
+&lt;a href="#pr%c3%a9requis" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;Accès root ou droits &lt;code&gt;sudo&lt;/code&gt; sur la machine&lt;/li&gt;
 &lt;li&gt;Le paquet &lt;code&gt;shadow-utils&lt;/code&gt; (ou équivalent) installé, présent par défaut sur la quasi-totalité des distributions&lt;/li&gt;
 &lt;li&gt;Connaître le groupe secondaire souhaité (par exemple &lt;code&gt;sudo&lt;/code&gt;, &lt;code&gt;wheel&lt;/code&gt; ou &lt;code&gt;docker&lt;/code&gt;)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Étapes&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;étapes&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#%c3%a9tapes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
+&lt;h2&gt;Étapes&lt;span class="hx:absolute hx:-mt-20" id="étapes"&gt;&lt;/span&gt;
+&lt;a href="#%c3%a9tapes" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;Créer le compte avec un répertoire personnel et un shell par défaut.&lt;/li&gt;
 &lt;li&gt;Définir un mot de passe initial que l&amp;rsquo;utilisateur devra changer à la première connexion.&lt;/li&gt;
 &lt;li&gt;Ajouter le compte à un groupe secondaire si nécessaire.&lt;/li&gt;
 &lt;li&gt;Forcer l&amp;rsquo;expiration du mot de passe pour imposer un changement.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
-
-&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo useradd -m -s /bin/bash amartin
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo passwd amartin
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo usermod -aG sudo amartin
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo chage -d &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; amartin&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
-  &lt;button
-    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
-    title=&#34;Copier le code&#34;
-    aria-label=&#34;Copier le code&#34;
-    data-copied-label=&#34;Copié !&#34;
-  &gt;
-    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-  &lt;/button&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo useradd -m -s /bin/bash amartin
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo passwd amartin
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo usermod -aG sudo amartin
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo chage -d &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt; amartin&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copier le code"
+aria-label="Copier le code"
+data-copied-label="Copié !"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;Le drapeau &lt;code&gt;-m&lt;/code&gt; garantit la création du répertoire &lt;code&gt;/home/amartin&lt;/code&gt;, et &lt;code&gt;-s /bin/bash&lt;/code&gt; fixe le shell de connexion. L&amp;rsquo;ajout au groupe &lt;code&gt;sudo&lt;/code&gt; (ou &lt;code&gt;wheel&lt;/code&gt; sur les distributions basées sur RHEL) permet d&amp;rsquo;exécuter des commandes privilégiées sans passer par le compte root directement.&lt;/p&gt;
-&lt;h2&gt;Vérification&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;vérification&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#v%c3%a9rification&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Vérifiez que le compte existe, que son répertoire personnel a bien été créé et qu&amp;rsquo;il appartient au bon groupe :&lt;/p&gt;
-&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
-
-&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;id amartin
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;getent passwd amartin&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
-  &lt;button
-    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
-    title=&#34;Copier le code&#34;
-    aria-label=&#34;Copier le code&#34;
-    data-copied-label=&#34;Copié !&#34;
-  &gt;
-    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-  &lt;/button&gt;
+&lt;h2&gt;Vérification&lt;span class="hx:absolute hx:-mt-20" id="vérification"&gt;&lt;/span&gt;
+&lt;a href="#v%c3%a9rification" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Vérifiez que le compte existe, que son répertoire personnel a bien été créé et qu&amp;rsquo;il appartient au bon groupe :&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;id amartin
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;getent passwd amartin&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copier le code"
+aria-label="Copier le code"
+data-copied-label="Copié !"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;La commande &lt;code&gt;id&lt;/code&gt; doit lister le groupe secondaire attendu dans la sortie, et &lt;code&gt;getent passwd&lt;/code&gt; doit confirmer le chemin du répertoire personnel et le shell configuré.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Gérer les permissions avancées avec les ACL</title>
-      <link>http://localhost:1313/docs/administration/utilisateurs-permissions/gerer-les-permissions-acl/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/docs/administration/utilisateurs-permissions/gerer-les-permissions-acl/</guid>
-      <description>
-        
-        
-        &lt;h2&gt;Objectif&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;objectif&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#objectif&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Le modèle de permissions Unix classique (propriétaire/groupe/autres) devient rapidement limitant lorsque plusieurs utilisateurs ou groupes doivent accéder différemment à un même fichier. Les listes de contrôle d&amp;rsquo;accès (ACL) permettent d&amp;rsquo;attribuer des droits fins à des utilisateurs ou groupes spécifiques, en plus du modèle standard.&lt;/p&gt;
-&lt;h2&gt;Prérequis&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;prérequis&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#pr%c3%a9requis&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;p&gt;La commande &lt;code&gt;id&lt;/code&gt; doit lister le groupe secondaire attendu dans la sortie, et &lt;code&gt;getent passwd&lt;/code&gt; doit confirmer le chemin du répertoire personnel et le shell configuré.&lt;/p&gt;</description></item><item><title>Gérer les permissions avancées avec les ACL</title><link>https://edulabs.fr/docs/administration/utilisateurs-permissions/gerer-les-permissions-acl/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://edulabs.fr/docs/administration/utilisateurs-permissions/gerer-les-permissions-acl/</guid><description>
+&lt;h2&gt;Objectif&lt;span class="hx:absolute hx:-mt-20" id="objectif"&gt;&lt;/span&gt;
+&lt;a href="#objectif" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Le modèle de permissions Unix classique (propriétaire/groupe/autres) devient rapidement limitant lorsque plusieurs utilisateurs ou groupes doivent accéder différemment à un même fichier. Les listes de contrôle d&amp;rsquo;accès (ACL) permettent d&amp;rsquo;attribuer des droits fins à des utilisateurs ou groupes spécifiques, en plus du modèle standard.&lt;/p&gt;
+&lt;h2&gt;Prérequis&lt;span class="hx:absolute hx:-mt-20" id="prérequis"&gt;&lt;/span&gt;
+&lt;a href="#pr%c3%a9requis" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;Paquet &lt;code&gt;acl&lt;/code&gt; installé (&lt;code&gt;apt install acl&lt;/code&gt; ou &lt;code&gt;dnf install acl&lt;/code&gt;)&lt;/li&gt;
 &lt;li&gt;Système de fichiers monté avec l&amp;rsquo;option &lt;code&gt;acl&lt;/code&gt; (activée par défaut sous ext4 et XFS récents)&lt;/li&gt;
 &lt;li&gt;Droits suffisants sur le fichier ou répertoire cible&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Étapes&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;étapes&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#%c3%a9tapes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
+&lt;h2&gt;Étapes&lt;span class="hx:absolute hx:-mt-20" id="étapes"&gt;&lt;/span&gt;
+&lt;a href="#%c3%a9tapes" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;Vérifier les ACL déjà présentes sur un répertoire.&lt;/li&gt;
 &lt;li&gt;Accorder un droit de lecture/écriture à un utilisateur précis, sans modifier le propriétaire.&lt;/li&gt;
 &lt;li&gt;Définir une ACL par défaut pour que les nouveaux fichiers créés dans le répertoire héritent des mêmes droits.&lt;/li&gt;
 &lt;li&gt;Retirer une entrée ACL si elle n&amp;rsquo;est plus nécessaire.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
-
-&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;getfacl /srv/projets/partage
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;setfacl -m u:amartin:rwx /srv/projets/partage
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;setfacl -d -m u:amartin:rwx /srv/projets/partage
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;setfacl -x u:amartin /srv/projets/partage&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
-  &lt;button
-    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
-    title=&#34;Copier le code&#34;
-    aria-label=&#34;Copier le code&#34;
-    data-copied-label=&#34;Copié !&#34;
-  &gt;
-    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-  &lt;/button&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;getfacl /srv/projets/partage
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;setfacl -m u:amartin:rwx /srv/projets/partage
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;setfacl -d -m u:amartin:rwx /srv/projets/partage
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;setfacl -x u:amartin /srv/projets/partage&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copier le code"
+aria-label="Copier le code"
+data-copied-label="Copié !"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;L&amp;rsquo;option &lt;code&gt;-m&lt;/code&gt; modifie une entrée existante ou en ajoute une nouvelle, tandis que &lt;code&gt;-d&lt;/code&gt; définit une ACL par défaut appliquée aux futurs fichiers et sous-répertoires. Notez que l&amp;rsquo;ajout d&amp;rsquo;une ACL fait apparaître un &lt;code&gt;+&lt;/code&gt; à la fin de la ligne de permissions dans la sortie de &lt;code&gt;ls -l&lt;/code&gt;.&lt;/p&gt;
-&lt;h2&gt;Vérification&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;vérification&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#v%c3%a9rification&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Confirmez que l&amp;rsquo;entrée ACL est bien appliquée et visible dans les permissions :&lt;/p&gt;
-&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
-
-&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ls -ld /srv/projets/partage
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;getfacl /srv/projets/partage&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
-  &lt;button
-    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
-    title=&#34;Copier le code&#34;
-    aria-label=&#34;Copier le code&#34;
-    data-copied-label=&#34;Copié !&#34;
-  &gt;
-    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-  &lt;/button&gt;
+&lt;h2&gt;Vérification&lt;span class="hx:absolute hx:-mt-20" id="vérification"&gt;&lt;/span&gt;
+&lt;a href="#v%c3%a9rification" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Confirmez que l&amp;rsquo;entrée ACL est bien appliquée et visible dans les permissions :&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;ls -ld /srv/projets/partage
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;getfacl /srv/projets/partage&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copier le code"
+aria-label="Copier le code"
+data-copied-label="Copié !"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;La présence du signe &lt;code&gt;+&lt;/code&gt; après les droits classiques (&lt;code&gt;drwxrwxr-x+&lt;/code&gt;) indique qu&amp;rsquo;une ACL est active, et &lt;code&gt;getfacl&lt;/code&gt; doit lister l&amp;rsquo;entrée &lt;code&gt;user:amartin:rwx&lt;/code&gt; ajoutée précédemment.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-  </channel>
-</rss>
+&lt;p&gt;La présence du signe &lt;code&gt;+&lt;/code&gt; après les droits classiques (&lt;code&gt;drwxrwxr-x+&lt;/code&gt;) indique qu&amp;rsquo;une ACL est active, et &lt;code&gt;getfacl&lt;/code&gt; doit lister l&amp;rsquo;entrée &lt;code&gt;user:amartin:rwx&lt;/code&gt; ajoutée précédemment.&lt;/p&gt;</description></item></channel></rss>

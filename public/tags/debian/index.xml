@@ -1,35 +1,5 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Lotfi Hamadene – Debian</title>
-    <link>http://localhost:1313/tags/debian/</link>
-    <description>Recent content in Debian on Lotfi Hamadene</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>fr-FR</language>
-    <lastBuildDate>Sun, 22 Mar 2026 00:00:00 +0000</lastBuildDate>
-    
-	  <atom:link href="http://localhost:1313/tags/debian/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-      
-        
-      
-    
-    
-    <item>
-      <title>Pourquoi j&#39;ai quitté Ubuntu pour Debian</title>
-      <link>http://localhost:1313/opinions/pourquoi-jai-quitte-ubuntu-pour-debian/</link>
-      <pubDate>Sun, 22 Mar 2026 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/opinions/pourquoi-jai-quitte-ubuntu-pour-debian/</guid>
-      <description>
-        
-        
-        &lt;p&gt;Pendant longtemps, Ubuntu a été mon choix par défaut : bonne prise en charge du matériel, communauté immense, documentation abondante. Puis, petit à petit, quelque chose s&amp;rsquo;est cassé dans la relation.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lotfi Hamadene – Debian</title><link>https://edulabs.fr/tags/debian/</link><description>Recent content in Debian on Lotfi Hamadene</description><generator>Hugo -- gohugo.io</generator><language>fr-FR</language><lastBuildDate>Sun, 22 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://edulabs.fr/tags/debian/index.xml" rel="self" type="application/rss+xml"/><item><title>Pourquoi j'ai quitté Ubuntu pour Debian</title><link>https://edulabs.fr/opinions/pourquoi-jai-quitte-ubuntu-pour-debian/</link><pubDate>Sun, 22 Mar 2026 00:00:00 +0000</pubDate><guid>https://edulabs.fr/opinions/pourquoi-jai-quitte-ubuntu-pour-debian/</guid><description>
+&lt;p&gt;Pendant longtemps, Ubuntu a été mon choix par défaut : bonne prise en charge du matériel, communauté immense, documentation abondante. Puis, petit à petit, quelque chose s&amp;rsquo;est cassé dans la relation.&lt;/p&gt;
 &lt;p&gt;Le déclencheur n&amp;rsquo;a pas été un bug précis, mais une accumulation. Snap imposé pour des paquets qui n&amp;rsquo;avaient aucune raison d&amp;rsquo;y passer, des temps de démarrage d&amp;rsquo;application qui se sont allongés sans explication claire, et cette sensation croissante que les décisions produit passaient avant les besoins de l&amp;rsquo;utilisateur qui veut juste un système stable et prévisible.&lt;/p&gt;
 &lt;p&gt;Je suis revenu à Debian, la distribution sur laquelle Ubuntu s&amp;rsquo;appuie elle-même. Moins de surprises, un cycle de publication qui privilégie la stabilité plutôt que la nouveauté à tout prix, et un gestionnaire de paquets qui fait ce qu&amp;rsquo;on lui demande sans détour. La contrepartie est connue : des versions de logiciels parfois en retard, et il faut activer les dépôts &lt;code&gt;backports&lt;/code&gt; quand on veut un noyau ou un paquet plus récent.&lt;/p&gt;
-&lt;p&gt;Ce que je veux dire, ce n&amp;rsquo;est pas qu&amp;rsquo;Ubuntu est un mauvais choix — pour beaucoup d&amp;rsquo;usages, notamment sur poste de travail grand public, c&amp;rsquo;est encore l&amp;rsquo;option la plus confortable. Mais pour un serveur ou une machine sur laquelle je veux comprendre exactement ce qui s&amp;rsquo;y passe, je préfère la sobriété de Debian à l&amp;rsquo;ergonomie parfois trop opinionnée d&amp;rsquo;Ubuntu.&lt;/p&gt;
-      </description>
-    </item>
-    
-  </channel>
-</rss>
+&lt;p&gt;Ce que je veux dire, ce n&amp;rsquo;est pas qu&amp;rsquo;Ubuntu est un mauvais choix — pour beaucoup d&amp;rsquo;usages, notamment sur poste de travail grand public, c&amp;rsquo;est encore l&amp;rsquo;option la plus confortable. Mais pour un serveur ou une machine sur laquelle je veux comprendre exactement ce qui s&amp;rsquo;y passe, je préfère la sobriété de Debian à l&amp;rsquo;ergonomie parfois trop opinionnée d&amp;rsquo;Ubuntu.&lt;/p&gt;</description></item></channel></rss>

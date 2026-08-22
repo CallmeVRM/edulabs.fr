@@ -1,104 +1,59 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Lotfi Hamadene – DNS</title>
-    <link>http://localhost:1313/troubleshooting/reseau/dns/</link>
-    <description>Recent content in DNS on Lotfi Hamadene</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>fr-FR</language>
-    
-	  <atom:link href="http://localhost:1313/troubleshooting/reseau/dns/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-      
-        
-      
-    
-    
-    <item>
-      <title>Résolution DNS anormalement lente</title>
-      <link>http://localhost:1313/troubleshooting/reseau/dns/resolution-dns-lente/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/troubleshooting/reseau/dns/resolution-dns-lente/</guid>
-      <description>
-        
-        
-        &lt;h2&gt;Symptômes&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;symptômes&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#sympt%c3%b4mes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Sur plusieurs postes du même réseau, l&amp;rsquo;ouverture d&amp;rsquo;un site web ou une simple commande &lt;code&gt;ping vers-un-nom-de-domaine&lt;/code&gt; met entre 3 et 8 secondes avant d&amp;rsquo;obtenir une réponse, alors que le &lt;code&gt;ping&lt;/code&gt; vers une adresse IP directe est instantané. Le phénomène est intermittent : certaines requêtes passent en moins de 100 ms, d&amp;rsquo;autres traînent systématiquement. Les utilisateurs remontent des pages qui « chargent longtemps au début puis vont vite ».&lt;/p&gt;
-&lt;h2&gt;Cause probable&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;cause-probable&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#cause-probable&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Dans la grande majorité des cas, le résolveur configuré (souvent le premier serveur DNS de &lt;code&gt;/etc/resolv.conf&lt;/code&gt;) ne répond pas ou répond avec une latence importante, et le système attend le délai de timeout complet avant de basculer sur le serveur suivant. On retrouve aussi ce symptôme quand le service local &lt;code&gt;systemd-resolved&lt;/code&gt; ou un cache DNS applicatif tente d&amp;rsquo;abord une requête IPv6 (AAAA) qui échoue silencieusement avant de retomber sur IPv4 (A).&lt;/p&gt;
-&lt;h2&gt;Diagnostic&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;diagnostic&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#diagnostic&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
-
-&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dig +stats exemple.fr
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;resolvectl status
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;time getent hosts exemple.fr
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tcpdump -ni any port &lt;span style=&#34;color:#ae81ff&#34;&gt;53&lt;/span&gt; -c &lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
-  &lt;button
-    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
-    title=&#34;Copier le code&#34;
-    aria-label=&#34;Copier le code&#34;
-    data-copied-label=&#34;Copié !&#34;
-  &gt;
-    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-  &lt;/button&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lotfi Hamadene – DNS</title><link>https://edulabs.fr/troubleshooting/reseau/dns/</link><description>Recent content in DNS on Lotfi Hamadene</description><generator>Hugo -- gohugo.io</generator><language>fr-FR</language><atom:link href="https://edulabs.fr/troubleshooting/reseau/dns/index.xml" rel="self" type="application/rss+xml"/><item><title>Résolution DNS anormalement lente</title><link>https://edulabs.fr/troubleshooting/reseau/dns/resolution-dns-lente/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://edulabs.fr/troubleshooting/reseau/dns/resolution-dns-lente/</guid><description>
+&lt;h2&gt;Symptômes&lt;span class="hx:absolute hx:-mt-20" id="symptômes"&gt;&lt;/span&gt;
+&lt;a href="#sympt%c3%b4mes" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Sur plusieurs postes du même réseau, l&amp;rsquo;ouverture d&amp;rsquo;un site web ou une simple commande &lt;code&gt;ping vers-un-nom-de-domaine&lt;/code&gt; met entre 3 et 8 secondes avant d&amp;rsquo;obtenir une réponse, alors que le &lt;code&gt;ping&lt;/code&gt; vers une adresse IP directe est instantané. Le phénomène est intermittent : certaines requêtes passent en moins de 100 ms, d&amp;rsquo;autres traînent systématiquement. Les utilisateurs remontent des pages qui « chargent longtemps au début puis vont vite ».&lt;/p&gt;
+&lt;h2&gt;Cause probable&lt;span class="hx:absolute hx:-mt-20" id="cause-probable"&gt;&lt;/span&gt;
+&lt;a href="#cause-probable" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Dans la grande majorité des cas, le résolveur configuré (souvent le premier serveur DNS de &lt;code&gt;/etc/resolv.conf&lt;/code&gt;) ne répond pas ou répond avec une latence importante, et le système attend le délai de timeout complet avant de basculer sur le serveur suivant. On retrouve aussi ce symptôme quand le service local &lt;code&gt;systemd-resolved&lt;/code&gt; ou un cache DNS applicatif tente d&amp;rsquo;abord une requête IPv6 (AAAA) qui échoue silencieusement avant de retomber sur IPv4 (A).&lt;/p&gt;
+&lt;h2&gt;Diagnostic&lt;span class="hx:absolute hx:-mt-20" id="diagnostic"&gt;&lt;/span&gt;
+&lt;a href="#diagnostic" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;dig +stats exemple.fr
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;resolvectl status
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;time getent hosts exemple.fr
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;tcpdump -ni any port &lt;span style="color:#ae81ff"&gt;53&lt;/span&gt; -c &lt;span style="color:#ae81ff"&gt;20&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copier le code"
+aria-label="Copier le code"
+data-copied-label="Copié !"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;Le champ &lt;code&gt;Query time&lt;/code&gt; renvoyé par &lt;code&gt;dig&lt;/code&gt; donne la latence réelle côté serveur DNS interrogé. Si &lt;code&gt;resolvectl status&lt;/code&gt; montre plusieurs serveurs configurés et que le premier de la liste ne répond jamais dans &lt;code&gt;tcpdump&lt;/code&gt;, c&amp;rsquo;est probablement lui qui pénalise chaque requête avant le basculement.&lt;/p&gt;
-&lt;h2&gt;Résolution&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;résolution&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#r%c3%a9solution&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
+&lt;h2&gt;Résolution&lt;span class="hx:absolute hx:-mt-20" id="résolution"&gt;&lt;/span&gt;
+&lt;a href="#r%c3%a9solution" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;Vérifier la joignabilité de chaque serveur DNS listé avec &lt;code&gt;dig @&amp;lt;ip_serveur&amp;gt; exemple.fr&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;Retirer ou reclasser en dernière position tout serveur qui ne répond pas ou répond très lentement.&lt;/li&gt;
 &lt;li&gt;Réduire le délai d&amp;rsquo;attente avec l&amp;rsquo;option &lt;code&gt;timeout:1&lt;/code&gt; et &lt;code&gt;attempts:2&lt;/code&gt; dans &lt;code&gt;/etc/resolv.conf&lt;/code&gt; si la configuration n&amp;rsquo;est pas gérée automatiquement.&lt;/li&gt;
 &lt;li&gt;Envisager l&amp;rsquo;ajout d&amp;rsquo;un résolveur local en cache (&lt;code&gt;systemd-resolved&lt;/code&gt;, &lt;code&gt;dnsmasq&lt;/code&gt; ou &lt;code&gt;unbound&lt;/code&gt;) pour absorber la latence des requêtes répétées.&lt;/li&gt;
-&lt;/ol&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Cache DNS corrompu après une mise à jour</title>
-      <link>http://localhost:1313/troubleshooting/reseau/dns/cache-dns-corrompu/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/troubleshooting/reseau/dns/cache-dns-corrompu/</guid>
-      <description>
-        
-        
-        &lt;h2&gt;Symptômes&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;symptômes&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#sympt%c3%b4mes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Juste après une mise à jour système incluant &lt;code&gt;systemd&lt;/code&gt; ou le paquet &lt;code&gt;dnsmasq&lt;/code&gt;, un serveur continue de résoudre un nom de domaine vers une ancienne adresse IP qui n&amp;rsquo;existe plus, alors que &lt;code&gt;dig&lt;/code&gt; interrogé directement contre le DNS faisant autorité renvoie la bonne valeur. Le problème persiste même après redémarrage des applications concernées, et touche uniquement les résolutions passant par le cache local.&lt;/p&gt;
-&lt;h2&gt;Cause probable&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;cause-probable&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#cause-probable&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Le service de cache DNS local (&lt;code&gt;systemd-resolved&lt;/code&gt;, &lt;code&gt;nscd&lt;/code&gt; ou &lt;code&gt;dnsmasq&lt;/code&gt;) a conservé en mémoire une entrée avec un TTL anormalement long, ou n&amp;rsquo;a pas correctement invalidé son cache lors du redémarrage déclenché par la mise à jour du paquet. Il arrive aussi que la mise à jour ait modifié la configuration réseau sans relancer proprement le service de résolution, laissant tourner une instance avec un état obsolète.&lt;/p&gt;
-&lt;h2&gt;Diagnostic&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;diagnostic&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#diagnostic&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
-
-&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;resolvectl statistics
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;resolvectl query exemple.fr
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;systemctl status systemd-resolved
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;journalctl -u systemd-resolved --since &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;1 hour ago&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
-  &lt;button
-    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
-    title=&#34;Copier le code&#34;
-    aria-label=&#34;Copier le code&#34;
-    data-copied-label=&#34;Copié !&#34;
-  &gt;
-    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-  &lt;/button&gt;
+&lt;/ol&gt;</description></item><item><title>Cache DNS corrompu après une mise à jour</title><link>https://edulabs.fr/troubleshooting/reseau/dns/cache-dns-corrompu/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://edulabs.fr/troubleshooting/reseau/dns/cache-dns-corrompu/</guid><description>
+&lt;h2&gt;Symptômes&lt;span class="hx:absolute hx:-mt-20" id="symptômes"&gt;&lt;/span&gt;
+&lt;a href="#sympt%c3%b4mes" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Juste après une mise à jour système incluant &lt;code&gt;systemd&lt;/code&gt; ou le paquet &lt;code&gt;dnsmasq&lt;/code&gt;, un serveur continue de résoudre un nom de domaine vers une ancienne adresse IP qui n&amp;rsquo;existe plus, alors que &lt;code&gt;dig&lt;/code&gt; interrogé directement contre le DNS faisant autorité renvoie la bonne valeur. Le problème persiste même après redémarrage des applications concernées, et touche uniquement les résolutions passant par le cache local.&lt;/p&gt;
+&lt;h2&gt;Cause probable&lt;span class="hx:absolute hx:-mt-20" id="cause-probable"&gt;&lt;/span&gt;
+&lt;a href="#cause-probable" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Le service de cache DNS local (&lt;code&gt;systemd-resolved&lt;/code&gt;, &lt;code&gt;nscd&lt;/code&gt; ou &lt;code&gt;dnsmasq&lt;/code&gt;) a conservé en mémoire une entrée avec un TTL anormalement long, ou n&amp;rsquo;a pas correctement invalidé son cache lors du redémarrage déclenché par la mise à jour du paquet. Il arrive aussi que la mise à jour ait modifié la configuration réseau sans relancer proprement le service de résolution, laissant tourner une instance avec un état obsolète.&lt;/p&gt;
+&lt;h2&gt;Diagnostic&lt;span class="hx:absolute hx:-mt-20" id="diagnostic"&gt;&lt;/span&gt;
+&lt;a href="#diagnostic" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;resolvectl statistics
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;resolvectl query exemple.fr
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;systemctl status systemd-resolved
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;journalctl -u systemd-resolved --since &lt;span style="color:#e6db74"&gt;&amp;#34;1 hour ago&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copier le code"
+aria-label="Copier le code"
+data-copied-label="Copié !"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;&lt;code&gt;resolvectl statistics&lt;/code&gt; affiche le nombre d&amp;rsquo;entrées en cache et permet de confirmer qu&amp;rsquo;une entrée obsolète y est toujours présente. Le journal du service peut révéler des erreurs de rechargement de configuration survenues au moment de la mise à jour.&lt;/p&gt;
-&lt;h2&gt;Résolution&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;résolution&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#r%c3%a9solution&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
+&lt;h2&gt;Résolution&lt;span class="hx:absolute hx:-mt-20" id="résolution"&gt;&lt;/span&gt;
+&lt;a href="#r%c3%a9solution" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;Vider le cache DNS local avec &lt;code&gt;resolvectl flush-caches&lt;/code&gt; (ou &lt;code&gt;systemctl restart nscd&lt;/code&gt; selon le service utilisé).&lt;/li&gt;
 &lt;li&gt;Si le problème réapparaît, redémarrer complètement le service de résolution : &lt;code&gt;systemctl restart systemd-resolved&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;Vérifier que le TTL renvoyé par le serveur faisant autorité est cohérent (&lt;code&gt;dig +noall +answer exemple.fr&lt;/code&gt; côté serveur externe) et ajuster si un TTL trop long a été fixé par erreur côté zone.&lt;/li&gt;
 &lt;li&gt;Documenter l&amp;rsquo;incident : un redémarrage systématique du service de cache DNS après toute mise à jour touchant la pile réseau évite la récidive.&lt;/li&gt;
-&lt;/ol&gt;
-
-      </description>
-    </item>
-    
-  </channel>
-</rss>
+&lt;/ol&gt;</description></item></channel></rss>

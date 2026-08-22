@@ -1,104 +1,59 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Lotfi Hamadene – LVM &amp; RAID</title>
-    <link>http://localhost:1313/troubleshooting/stockage/lvm-raid/</link>
-    <description>Recent content in LVM &amp; RAID on Lotfi Hamadene</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>fr-FR</language>
-    
-	  <atom:link href="http://localhost:1313/troubleshooting/stockage/lvm-raid/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-      
-        
-      
-    
-    
-    <item>
-      <title>Un volume logique LVM n&#39;est plus détecté au démarrage</title>
-      <link>http://localhost:1313/troubleshooting/stockage/lvm-raid/volume-lvm-introuvable/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/troubleshooting/stockage/lvm-raid/volume-lvm-introuvable/</guid>
-      <description>
-        
-        
-        &lt;h2&gt;Symptômes&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;symptômes&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#sympt%c3%b4mes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Au démarrage, le système bascule en mode secours (emergency shell) car un point de montage attendu dans &lt;code&gt;/etc/fstab&lt;/code&gt; n&amp;rsquo;est pas trouvé. La commande &lt;code&gt;lvs&lt;/code&gt; ne renvoie aucun volume logique alors qu&amp;rsquo;il existait la veille, ou renvoie le volume avec un statut inactif.&lt;/p&gt;
-&lt;h2&gt;Cause probable&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;cause-probable&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#cause-probable&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Le plus souvent, un disque physique appartenant au groupe de volumes n&amp;rsquo;a pas été détecté à temps par le noyau avant que &lt;code&gt;lvm2&lt;/code&gt; ne tente d&amp;rsquo;activer les volumes (cas fréquent avec un disque USB ou un support lent), ou les métadonnées LVM ont été partiellement écrasées par une opération de partitionnement effectuée sur un autre disque du système. Un service &lt;code&gt;initramfs&lt;/code&gt; mal reconstruit après une mise à jour peut aussi omettre les modules nécessaires à la détection du groupe de volumes.&lt;/p&gt;
-&lt;h2&gt;Diagnostic&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;diagnostic&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#diagnostic&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
-
-&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pvs
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vgs
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;lvs -a -o+devices
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;journalctl -b | grep -i lvm&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
-  &lt;button
-    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
-    title=&#34;Copier le code&#34;
-    aria-label=&#34;Copier le code&#34;
-    data-copied-label=&#34;Copié !&#34;
-  &gt;
-    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-  &lt;/button&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lotfi Hamadene – LVM &amp; RAID</title><link>https://edulabs.fr/troubleshooting/stockage/lvm-raid/</link><description>Recent content in LVM &amp; RAID on Lotfi Hamadene</description><generator>Hugo -- gohugo.io</generator><language>fr-FR</language><atom:link href="https://edulabs.fr/troubleshooting/stockage/lvm-raid/index.xml" rel="self" type="application/rss+xml"/><item><title>Un volume logique LVM n'est plus détecté au démarrage</title><link>https://edulabs.fr/troubleshooting/stockage/lvm-raid/volume-lvm-introuvable/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://edulabs.fr/troubleshooting/stockage/lvm-raid/volume-lvm-introuvable/</guid><description>
+&lt;h2&gt;Symptômes&lt;span class="hx:absolute hx:-mt-20" id="symptômes"&gt;&lt;/span&gt;
+&lt;a href="#sympt%c3%b4mes" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Au démarrage, le système bascule en mode secours (emergency shell) car un point de montage attendu dans &lt;code&gt;/etc/fstab&lt;/code&gt; n&amp;rsquo;est pas trouvé. La commande &lt;code&gt;lvs&lt;/code&gt; ne renvoie aucun volume logique alors qu&amp;rsquo;il existait la veille, ou renvoie le volume avec un statut inactif.&lt;/p&gt;
+&lt;h2&gt;Cause probable&lt;span class="hx:absolute hx:-mt-20" id="cause-probable"&gt;&lt;/span&gt;
+&lt;a href="#cause-probable" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Le plus souvent, un disque physique appartenant au groupe de volumes n&amp;rsquo;a pas été détecté à temps par le noyau avant que &lt;code&gt;lvm2&lt;/code&gt; ne tente d&amp;rsquo;activer les volumes (cas fréquent avec un disque USB ou un support lent), ou les métadonnées LVM ont été partiellement écrasées par une opération de partitionnement effectuée sur un autre disque du système. Un service &lt;code&gt;initramfs&lt;/code&gt; mal reconstruit après une mise à jour peut aussi omettre les modules nécessaires à la détection du groupe de volumes.&lt;/p&gt;
+&lt;h2&gt;Diagnostic&lt;span class="hx:absolute hx:-mt-20" id="diagnostic"&gt;&lt;/span&gt;
+&lt;a href="#diagnostic" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;pvs
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;vgs
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;lvs -a -o+devices
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;journalctl -b | grep -i lvm&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copier le code"
+aria-label="Copier le code"
+data-copied-label="Copié !"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;Si &lt;code&gt;pvs&lt;/code&gt; ne liste pas le volume physique attendu alors qu&amp;rsquo;il apparaît dans &lt;code&gt;lsblk&lt;/code&gt;, le problème vient de la détection ou de l&amp;rsquo;activation LVM plutôt que d&amp;rsquo;une perte de disque. La colonne &lt;code&gt;devices&lt;/code&gt; de &lt;code&gt;lvs -a&lt;/code&gt; permet de vérifier sur quel support physique repose chaque extent logique.&lt;/p&gt;
-&lt;h2&gt;Résolution&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;résolution&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#r%c3%a9solution&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
+&lt;h2&gt;Résolution&lt;span class="hx:absolute hx:-mt-20" id="résolution"&gt;&lt;/span&gt;
+&lt;a href="#r%c3%a9solution" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;Vérifier que le disque physique est bien reconnu par le noyau avec &lt;code&gt;lsblk&lt;/code&gt; et &lt;code&gt;fdisk -l&lt;/code&gt; avant toute action sur LVM.&lt;/li&gt;
 &lt;li&gt;Réactiver manuellement le groupe de volumes avec &lt;code&gt;vgchange -ay nom_du_vg&lt;/code&gt; puis vérifier l&amp;rsquo;état avec &lt;code&gt;lvs&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;Si les métadonnées semblent corrompues, consulter les sauvegardes automatiques conservées par LVM dans &lt;code&gt;/etc/lvm/backup/&lt;/code&gt; et &lt;code&gt;/etc/lvm/archive/&lt;/code&gt; pour une restauration via &lt;code&gt;vgcfgrestore&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;Reconstruire l&amp;rsquo;initramfs (&lt;code&gt;update-initramfs -u&lt;/code&gt; ou équivalent) si le module LVM ou le pilote du contrôleur disque manquait à l&amp;rsquo;activation, puis redémarrer pour confirmer que le montage se fait automatiquement.&lt;/li&gt;
-&lt;/ol&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Tableau RAID logiciel bloqué en mode dégradé</title>
-      <link>http://localhost:1313/troubleshooting/stockage/lvm-raid/raid-en-mode-degrade/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/troubleshooting/stockage/lvm-raid/raid-en-mode-degrade/</guid>
-      <description>
-        
-        
-        &lt;h2&gt;Symptômes&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;symptômes&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#sympt%c3%b4mes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;La commande &lt;code&gt;cat /proc/mdstat&lt;/code&gt; affiche le tableau RAID avec un disque marqué &lt;code&gt;(F)&lt;/code&gt; (failed) ou absent, et l&amp;rsquo;état général indique &lt;code&gt;degraded&lt;/code&gt;. Les performances en écriture sont réduites et une alerte de supervision signale la perte de redondance. Le système continue de fonctionner normalement, mais une nouvelle panne de disque entraînerait alors une perte de données.&lt;/p&gt;
-&lt;h2&gt;Cause probable&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;cause-probable&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#cause-probable&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Un des disques membres du tableau RAID a été marqué défaillant, soit à cause d&amp;rsquo;une réelle panne matérielle détectée par le contrôleur ou le noyau, soit à la suite d&amp;rsquo;un simple faux positif provoqué par une erreur de câblage, une coupure d&amp;rsquo;alimentation transitoire, ou un timeout de commande trop court pour un disque par ailleurs sain.&lt;/p&gt;
-&lt;h2&gt;Diagnostic&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;diagnostic&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#diagnostic&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
-
-&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cat /proc/mdstat
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mdadm --detail /dev/md0
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;smartctl -a /dev/sdb
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;journalctl -k | grep -i md0&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
-  &lt;button
-    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
-    title=&#34;Copier le code&#34;
-    aria-label=&#34;Copier le code&#34;
-    data-copied-label=&#34;Copié !&#34;
-  &gt;
-    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-  &lt;/button&gt;
+&lt;/ol&gt;</description></item><item><title>Tableau RAID logiciel bloqué en mode dégradé</title><link>https://edulabs.fr/troubleshooting/stockage/lvm-raid/raid-en-mode-degrade/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://edulabs.fr/troubleshooting/stockage/lvm-raid/raid-en-mode-degrade/</guid><description>
+&lt;h2&gt;Symptômes&lt;span class="hx:absolute hx:-mt-20" id="symptômes"&gt;&lt;/span&gt;
+&lt;a href="#sympt%c3%b4mes" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;La commande &lt;code&gt;cat /proc/mdstat&lt;/code&gt; affiche le tableau RAID avec un disque marqué &lt;code&gt;(F)&lt;/code&gt; (failed) ou absent, et l&amp;rsquo;état général indique &lt;code&gt;degraded&lt;/code&gt;. Les performances en écriture sont réduites et une alerte de supervision signale la perte de redondance. Le système continue de fonctionner normalement, mais une nouvelle panne de disque entraînerait alors une perte de données.&lt;/p&gt;
+&lt;h2&gt;Cause probable&lt;span class="hx:absolute hx:-mt-20" id="cause-probable"&gt;&lt;/span&gt;
+&lt;a href="#cause-probable" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Un des disques membres du tableau RAID a été marqué défaillant, soit à cause d&amp;rsquo;une réelle panne matérielle détectée par le contrôleur ou le noyau, soit à la suite d&amp;rsquo;un simple faux positif provoqué par une erreur de câblage, une coupure d&amp;rsquo;alimentation transitoire, ou un timeout de commande trop court pour un disque par ailleurs sain.&lt;/p&gt;
+&lt;h2&gt;Diagnostic&lt;span class="hx:absolute hx:-mt-20" id="diagnostic"&gt;&lt;/span&gt;
+&lt;a href="#diagnostic" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;cat /proc/mdstat
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;mdadm --detail /dev/md0
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;smartctl -a /dev/sdb
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;journalctl -k | grep -i md0&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copier le code"
+aria-label="Copier le code"
+data-copied-label="Copié !"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;&lt;code&gt;mdadm --detail&lt;/code&gt; précise quel disque exact est en cause et depuis quand il est sorti du tableau. Croiser cette information avec les données SMART du disque permet de distinguer une panne réelle d&amp;rsquo;un incident ponctuel : un disque SMART sain retiré du tableau est un bon candidat pour une simple réintégration.&lt;/p&gt;
-&lt;h2&gt;Résolution&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;résolution&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#r%c3%a9solution&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
+&lt;h2&gt;Résolution&lt;span class="hx:absolute hx:-mt-20" id="résolution"&gt;&lt;/span&gt;
+&lt;a href="#r%c3%a9solution" class="subheading-anchor" aria-label="Lien permanent vers cette section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;Si le disque est toujours physiquement sain (SMART correct, pas d&amp;rsquo;erreurs I/O répétées), le retirer puis le réintégrer dans le tableau : &lt;code&gt;mdadm /dev/md0 --remove /dev/sdb1&lt;/code&gt; suivi de &lt;code&gt;mdadm /dev/md0 --add /dev/sdb1&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;Suivre la progression de la resynchronisation avec &lt;code&gt;watch cat /proc/mdstat&lt;/code&gt; jusqu&amp;rsquo;à ce que l&amp;rsquo;état repasse à &lt;code&gt;clean&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;Si le disque présente des erreurs SMART confirmées, le remplacer physiquement avant de lancer la même procédure d&amp;rsquo;ajout avec le nouveau disque.&lt;/li&gt;
 &lt;li&gt;Une fois le tableau reconstruit, vérifier qu&amp;rsquo;aucune alerte de supervision RAID ne subsiste et documenter la cause retenue (panne réelle ou faux positif) pour ajuster si besoin les timeouts de commande disque.&lt;/li&gt;
-&lt;/ol&gt;
-
-      </description>
-    </item>
-    
-  </channel>
-</rss>
+&lt;/ol&gt;</description></item></channel></rss>
