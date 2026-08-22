@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lotfi Hamadene – Btrfs</title>
-    <link>http://localhost:1319/research/systemes-fichiers/btrfs/</link>
+    <link>http://localhost:1320/research/systemes-fichiers/btrfs/</link>
     <description>Recent content in Btrfs on Lotfi Hamadene</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-FR</language>
     
-	  <atom:link href="http://localhost:1319/research/systemes-fichiers/btrfs/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:1320/research/systemes-fichiers/btrfs/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Snapshots Btrfs : granularité et coût réel</title>
-      <link>http://localhost:1319/research/systemes-fichiers/btrfs/snapshots-btrfs-en-pratique/</link>
+      <link>http://localhost:1320/research/systemes-fichiers/btrfs/snapshots-btrfs-en-pratique/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1319/research/systemes-fichiers/btrfs/snapshots-btrfs-en-pratique/</guid>
+      <guid>http://localhost:1320/research/systemes-fichiers/btrfs/snapshots-btrfs-en-pratique/</guid>
       <description>
         
         
@@ -62,10 +62,10 @@
     
     <item>
       <title>RAID natif Btrfs : promesses et limites actuelles</title>
-      <link>http://localhost:1319/research/systemes-fichiers/btrfs/raid-btrfs-natif/</link>
+      <link>http://localhost:1320/research/systemes-fichiers/btrfs/raid-btrfs-natif/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1319/research/systemes-fichiers/btrfs/raid-btrfs-natif/</guid>
+      <guid>http://localhost:1320/research/systemes-fichiers/btrfs/raid-btrfs-natif/</guid>
       <description>
         
         

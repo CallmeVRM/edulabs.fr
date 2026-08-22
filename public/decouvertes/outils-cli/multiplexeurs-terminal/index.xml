@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lotfi Hamadene – Multiplexeurs de terminal</title>
-    <link>http://localhost:1319/decouvertes/outils-cli/multiplexeurs-terminal/</link>
+    <link>http://localhost:1320/decouvertes/outils-cli/multiplexeurs-terminal/</link>
     <description>Recent content in Multiplexeurs de terminal on Lotfi Hamadene</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-FR</language>
     
-	  <atom:link href="http://localhost:1319/decouvertes/outils-cli/multiplexeurs-terminal/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:1320/decouvertes/outils-cli/multiplexeurs-terminal/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>tmux contre Zellij : deux approches du multiplexage</title>
-      <link>http://localhost:1319/decouvertes/outils-cli/multiplexeurs-terminal/tmux-vs-zellij/</link>
+      <link>http://localhost:1320/decouvertes/outils-cli/multiplexeurs-terminal/tmux-vs-zellij/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1319/decouvertes/outils-cli/multiplexeurs-terminal/tmux-vs-zellij/</guid>
+      <guid>http://localhost:1320/decouvertes/outils-cli/multiplexeurs-terminal/tmux-vs-zellij/</guid>
       <description>
         
         
@@ -57,10 +57,10 @@
     
     <item>
       <title>screen est-il encore utile en 2026 ?</title>
-      <link>http://localhost:1319/decouvertes/outils-cli/multiplexeurs-terminal/screen-toujours-utile/</link>
+      <link>http://localhost:1320/decouvertes/outils-cli/multiplexeurs-terminal/screen-toujours-utile/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1319/decouvertes/outils-cli/multiplexeurs-terminal/screen-toujours-utile/</guid>
+      <guid>http://localhost:1320/decouvertes/outils-cli/multiplexeurs-terminal/screen-toujours-utile/</guid>
       <description>
         
         

@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lotfi Hamadene – Arch-Linux</title>
-    <link>http://localhost:1319/tags/arch-linux/</link>
+    <link>http://localhost:1320/tags/arch-linux/</link>
     <description>Recent content in Arch-Linux on Lotfi Hamadene</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-FR</language>
     <lastBuildDate>Sat, 15 Aug 2026 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="http://localhost:1319/tags/arch-linux/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:1320/tags/arch-linux/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,10 +17,10 @@
     
     <item>
       <title>Arch Linux n&#39;est pas réservé aux élitistes</title>
-      <link>http://localhost:1319/opinions/arch-linux-nest-pas-que-pour-les-elitistes/</link>
+      <link>http://localhost:1320/opinions/arch-linux-nest-pas-que-pour-les-elitistes/</link>
       <pubDate>Sat, 15 Aug 2026 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1319/opinions/arch-linux-nest-pas-que-pour-les-elitistes/</guid>
+      <guid>http://localhost:1320/opinions/arch-linux-nest-pas-que-pour-les-elitistes/</guid>
       <description>
         
         
