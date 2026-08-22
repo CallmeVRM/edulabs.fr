@@ -418,21 +418,16 @@ main article {
   line-height: 1.55;
 }
 
-/* ---- Accueil : composition « 1 vedette + 4 » ----------------------------
-   5 sections tombent mal sur une grille régulière (3+2 ou 2+2+1 laissent
-   toujours une rangée orpheline). On assume le déséquilibre : la première
-   carte occupe toute la largeur, les 4 autres se rangent en 2x2. Résultat
-   plein, et la vedette accroche l'œil en haut de page. */
+/* ---- Accueil : grille 2 colonnes, 2-2-1 --------------------------------
+   5 sections sur 2 colonnes => 2 + 2 + 1, « Opinions » seule sur la
+   dernière rangée (elle est en dernier dans content/_index.md).
+   Toutes les cartes ont la même largeur : pas de vedette pleine largeur. */
 .home-cards .hextra-cards {
   display: grid !important;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   max-width: 60rem;
   margin-inline: auto;
   gap: 1rem;
-}
-
-.home-cards .hextra-card:first-child {
-  grid-column: 1 / -1;
 }
 
 /* Icône sortie du flux et passée en couleur d'accent. Le thème la met en
@@ -462,17 +457,7 @@ main article {
   padding-top: 1.125rem;
 }
 
-/* Vedette : titre un peu plus fort et fond légèrement teinté. */
-.home-cards .hextra-card:first-child .hextra-card-icon {
-  font-size: 1.1875rem;
-}
-
-.home-cards .hextra-card:first-child {
-  background-color: var(--c-surface);
-}
-
-/* Une colonne sous 640px : la vedette n'a plus de raison de se distinguer
-   par la largeur, seul le fond la démarque. */
+/* Une seule colonne sous 640px. */
 @media (max-width: 639px) {
   .home-cards .hextra-cards {
     grid-template-columns: 1fr;

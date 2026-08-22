@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" dir="ltr"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1323&amp;path=livereload" data-no-instant defer></script>
+<html lang="fr" dir="ltr"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1324&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="robots" content="noindex, nofollow" />
   <link rel="icon shortcut" href="/favicon.ico" sizes="32x32" />
@@ -10,7 +10,7 @@
 <link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
 <title>Impact du paramètre swappiness sur les performances – Lotfi Hamadene</title>
   <meta name="description" content="Contexte Le paramètre vm.swappiness est souvent modifié par réflexe (“on le met à 10, c’est mieux”) sans qu’on comprenne toujours ce qu’il contrôle réellement. Cette note reprend les mécanismes sous-jacents pour évaluer dans quels cas cette optimisation courante a un effet mesurable.
-Analyse technique swappiness ne détermine pas si le système va swapper, mais l’agressivité relative avec laquelle le noyau va préférer récupérer des pages de cache de fichiers (page cache) plutôt que des pages anonymes (mémoire de processus) lorsqu’il a besoin de libérer de la mémoire. La valeur va de 0 à 200 depuis les noyaux récents (elle était plafonnée à 100 auparavant), et sert de poids dans le calcul de pression fait par le réclamateur de pages (kswapd et la réclamation directe)." /><link rel="canonical" href="http://localhost:1323/research/noyau-linux/gestion-memoire/impact-swappiness/" itemprop="url" />
+Analyse technique swappiness ne détermine pas si le système va swapper, mais l’agressivité relative avec laquelle le noyau va préférer récupérer des pages de cache de fichiers (page cache) plutôt que des pages anonymes (mémoire de processus) lorsqu’il a besoin de libérer de la mémoire. La valeur va de 0 à 200 depuis les noyaux récents (elle était plafonnée à 100 auparavant), et sert de poids dans le calcul de pression fait par le réclamateur de pages (kswapd et la réclamation directe)." /><link rel="canonical" href="http://localhost:1324/research/noyau-linux/gestion-memoire/impact-swappiness/" itemprop="url" />
 
 <meta property="og:title" content="Impact du paramètre swappiness sur les performances">
 <meta
@@ -28,7 +28,7 @@ Analyse technique
   content="
     article
   ">
-<meta property="og:url" content="http://localhost:1323/research/noyau-linux/gestion-memoire/impact-swappiness/"><meta property="article:section" content="research">
+<meta property="og:url" content="http://localhost:1324/research/noyau-linux/gestion-memoire/impact-swappiness/"><meta property="article:section" content="research">
 
 
 

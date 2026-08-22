@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" dir="ltr"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1323&amp;path=livereload" data-no-instant defer></script>
+<html lang="fr" dir="ltr"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1324&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="robots" content="noindex, nofollow" />
   <link rel="icon shortcut" href="/favicon.ico" sizes="32x32" />
@@ -10,7 +10,7 @@
 <link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
 <title>Snapshots Btrfs : granularité et coût réel – Lotfi Hamadene</title>
   <meta name="description" content="Contexte Les snapshots Btrfs sont souvent présentés comme “quasi gratuits” grâce au copy-on-write, ce qui pousse certains à en créer à haute fréquence (toutes les cinq minutes via snapper par exemple). Cette note vérifie si cette gratuité tient réellement à l’échelle, et jusqu’où on peut pousser la granularité sans effet de bord.
-Analyse technique Un snapshot Btrfs est une copie légère d’un sous-volume : il ne duplique aucune donnée à la création, seulement les métadonnées de l’arbre B qui décrivent la structure du système de fichiers. Les blocs de données restent partagés jusqu’à ce qu’une écriture ultérieure déclenche le mécanisme de copy-on-write, qui alloue alors un nouveau bloc plutôt que de modifier l’ancien." /><link rel="canonical" href="http://localhost:1323/research/systemes-fichiers/btrfs/snapshots-btrfs-en-pratique/" itemprop="url" />
+Analyse technique Un snapshot Btrfs est une copie légère d’un sous-volume : il ne duplique aucune donnée à la création, seulement les métadonnées de l’arbre B qui décrivent la structure du système de fichiers. Les blocs de données restent partagés jusqu’à ce qu’une écriture ultérieure déclenche le mécanisme de copy-on-write, qui alloue alors un nouveau bloc plutôt que de modifier l’ancien." /><link rel="canonical" href="http://localhost:1324/research/systemes-fichiers/btrfs/snapshots-btrfs-en-pratique/" itemprop="url" />
 
 <meta property="og:title" content="Snapshots Btrfs : granularité et coût réel">
 <meta
@@ -28,7 +28,7 @@ Analyse technique
   content="
     article
   ">
-<meta property="og:url" content="http://localhost:1323/research/systemes-fichiers/btrfs/snapshots-btrfs-en-pratique/"><meta property="article:section" content="research">
+<meta property="og:url" content="http://localhost:1324/research/systemes-fichiers/btrfs/snapshots-btrfs-en-pratique/"><meta property="article:section" content="research">
 
 
 
