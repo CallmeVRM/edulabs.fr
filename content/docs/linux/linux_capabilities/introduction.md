@@ -150,3 +150,30 @@ Bit	Capability
 - Il est impossible de l’**étroiter** à un objet précis (ce processus, ce fichier, ce port). On borne son effet autrement : namespaces, LSM, utilisateur dédié, `sudo` avec commande figée.
 - C’est pourquoi on choisit la capability la plus fine possible, et pourquoi certaines (`SYS_ADMIN`, `DAC_OVERRIDE`, `SETUID`) sont dangereuses : leur catégorie est trop vaste.
 - Si une documentation vous demande l’une de ces capabilities, vous allez simplement donnez root mais sous un autre nom : `CAP_SYS_ADMIN` (fourre-tout), `CAP_SETUID`/`CAP_SETGID`, `CAP_DAC_OVERRIDE`, `CAP_SYS_MODULE`, `CAP_SYS_PTRACE`, `CAP_DAC_READ_SEARCH` (lecture de tout).
+
+## 4. Les cinq ensemble d'un Thread :
+
+Chaque thread possède cinq ensembles de capabilities (`CapEff`, `CapPrm`, `CapInh`, `CapBnd`, `CapAmb`), visibles dans `/proc/<PID>/status`. De leur côté, les fichiers exécutables sur le disque ne possèdent que deux ensembles (`Permitted` et `Inheritable`) accompagnés d'un simple bit booléen (`Effective`), configurables via `setcap`.
+
+Pour comprendre l'interaction entre ces ensembles, il faut distinguer deux moments dans le cycle de vie d'un processus :
+
+1. **Pendant que le programme s'exécute :** comment le noyau contrôle les privilèges à un instant $T$ et comment le processus gère ses propres droits en mémoire.
+2. **Lorsqu'un programme en lance un autre (**`execve`**) :** comment les droits sont recalculés, transmis ou supprimés au chargement d'un nouveau binaire.
+
+#### A. Pendant l'exécution du programme (`Effective` et `Permitted`)
+
+- **Effective (**`CapEff`**) — Les droits actifs :** C'est le **seul** ensemble que le noyau vérifie lorsqu'un processus effectue un appel système privilégié (ex: ouvrir un socket brut ou monter une partition). Si la capability requise n'est pas dans `CapEff` à cet instant précis, le noyau renvoie `EPERM` équivalent du permission denied.
+- **Permitted (**`CapPrm`**) — La réserve maximale du processus :** Cet ensemble définit le plafond des capabilities que le processus a le droit d'activer dans `CapEff`. Une fois lancé, un processus (et même un administrateur à chaud) ne peut **jamais** ajouter de nouvelles capabilities dans `CapPrm` : ce capital est fixé au démarrage lors du `execve()`. En revanche, le processus peut utiliser l'appel système `capset()` pour basculer un droit de `CapPrm` vers `CapEff`, ou pour retirer définitivement un droit de `CapPrm`.
+  - *Cas concret :* Un démon « capability-aware » (comme `tcpdump` ou `chronyd`) démarre avec une capability dans `CapPrm`, la retire de `CapEff` pendant qu'il traite des données non fiables, l'active dans `CapEff` uniquement le temps d'un appel système critique (ouverture de socket ou réglage d'horloge), puis vide définitivement `CapEff` et `CapPrm` dès qu'il n'en a plus besoin.
+
+#### B. Lors du lancement d'un nouveau programme via `execve()` (`Inheritable`, `Ambient` et `Bounding`)
+
+Lorsqu'un processus exécute un nouveau binaire avec `execve()`, le noyau remet `CapPrm` et `CapEff` à zéro, puis recalcule les nouveaux droits à partir des trois ensembles suivants et des attributs du fichier cible :
+
+- **Inheritable (**`CapInh`**) — La transmission par double consentement :** Cet ensemble indique quelles capabilities le processus parent accepte de transmettre à l'exécutable qu'il lance. Cependant, `CapInh` seul ne donne aucun privilège : le fichier binaire exécuté doit **lui aussi** posséder cette même capability dans son ensemble `Inheritable` sur le disque (`F(I)`). Le noyau effectue un `ET` logique (`CapInh & F(I)`) pour déterminer ce qui entrera dans le nouveau `CapPrm`.
+  - *Cas concret :* Restreindre l'usage d'un binaire privilégié à certains utilisateurs (via `pam_cap.so`) en posant uniquement le flag `i` sur l'exécutable (`setcap cap_net_raw=ie binaire`), afin que seuls les utilisateurs ayant `CAP_NET_RAW` dans leur `CapInh` de session puissent l'exécuter avec ce privilège.
+- **Ambient (**`CapAmb`**) — L'héritage automatique vers les binaires standards :** Introduit pour pallier la lourdeur d'`Inheritable`, `CapAmb` permet de transmettre des capabilities à des binaires standards (scripts Python, binaires Go/Node.js) qui n'ont aucun attribut `setcap` sur le disque. Toute capability présente dans `CapAmb` survit au `execve()` et est directement injectée dans le `CapPrm` et le `CapEff` du processus enfant (sauf si le binaire cible est `setuid` ou possède déjà des capabilities sur le disque, auquel cas `CapAmb` est vidé par sécurité).
+  - *Invariant strict :* Une capability ne peut être placée dans `CapAmb` que si le processus la possède déjà à la fois dans `CapPrm` **et** dans `CapInh`. La retirer de `CapPrm` ou de `CapInh` la supprime immédiatement de `CapAmb`.
+  - *Cas concret :* Un service `systemd` configuré avec `User=www-data` et `AmbientCapabilities=CAP_NET_BIND_SERVICE` permet à un serveur web non privilégié d'écouter sur le port 443 sans modifier le fichier exécutable sur le disque.
+- **Bounding (**`CapBnd`**) — Le masque de restriction irréversible :** Cet ensemble agit comme un filtre de sécurité (plafond absolu) pour le processus et toute sa descendance. Il masque les capabilities qu'un fichier binaire sur le disque peut octroyer lors d'un `execve()` (`F(P) & CapBnd`). On ne peut que retirer des bits de `CapBnd`, jamais en rajouter, et cette limite s'impose **même à** `root` **(UID 0)** et aux binaires `setuid root`.
+  - *Cas concret :* Les runtimes de conteneurs (`runc`, Docker, Kubernetes) ou `systemd` (`CapabilityBoundingSet=`) retirent des capabilities critiques comme `CAP_SYS_MODULE` ou `CAP_SYS_TIME` de `CapBnd` afin d'empêcher un processus — même exécuté en `root` dans le conteneur — de charger un module noyau ou de modifier l'horloge de l'hôte.
