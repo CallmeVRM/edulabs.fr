@@ -12,18 +12,12 @@ Résultat : pour un simple utilitaire comme ping, qui a seulement besoin d'ouvri
 
 Pour y remédier, on a découper les appels privilégiés en catégories fonctionnelles (une partie pour les mounts, le réseau, etc.), et ne donner au processus que celles dont il a besoin (principe du moindre privilège), ping ne reçoit plus que CAP_NET_RAW. **Aujourd'hui on passe par une autre mécanique pour ping, mais pour garder le raisonnement j'ai continuer avec l'exemple.**
 
-
-
 ## 2. Les idées a retenir :
 
-- **Un processus normal a zéro capability.** mais il accède bien à la mémoire et au disque, surprenant n'est ce pas ? Eh bien cet accès est garanti parcequ'il passe par les permissions de fichiers classiques. Les capabilities ne servent qu'aux tâches dites "Système" (mounts, réseau, etc.)
-
+- **Un processus normal a zéro capability.** mais il accède bien à la mémoire et au disque, surprenant n'est ce pas ? Eh bien cet accès est garanti parcequ'il passe par les permissions de fichiers classiques. Les capabilities ne servent généralement qu'aux tâches dites "Système" (mounts, réseau, etc.)
 - **Elles s'attachent aux threads, pas aux utilisateurs.** Un thread est créé par `clone`, un nouveau programme est chargé par `execve`. Les capabilities intervienent aux deux étapes, et c'est toute la compléxité vient de la deuxième : Que devient mon jeu de capabilities quand je lance un autre programme ?
-
 - **Les fichiers peuvent aussi en porter.** A condition que le sytème de fichier support le `xattr`, via l'attribue etendu `security.capability`
-
 - **Elles s'ajoutent aux permission classiques, sans les remplacer.** `CAP_NET_ADMIN` ne permet pas de lire `/etc/shadow`. Seules `CAP_DAC_OVERRIDE` et `CAP_DAC_READ_SEARCH` contournent les permissions de fichiers. Donc attention attention !
-
 
 ## 3. Le découpage :
 
@@ -39,14 +33,69 @@ Il y a deux façons de penser un droit :
 
 - Une dispense de règle : Bob est exemptée de la règle qui limite qui peut envoyer un signale réseau. Le droit n'est pas attaché à un objet, il supprimer le contrôle pour une certaine catégorie d'opérations. Une capabality Linux est toujours de ce type.
 
-Sans capability, quand un processus envoie un signal, le noyau applique une règle simple : l’UID réel ou effectif de l’expéditeur doit correspondre à l’UID réel ou sauvegardé de la cible. Autrement dit, vous ne pouvez tuer que vos propres processus. C’est pourquoi alice ne peut pas tuer un processus de bob ni un processus de root.
+> Sans capability, quand un processus envoie un signal, le noyau applique une règle simple : l’UID réel ou effectif de l’expéditeur doit correspondre à l’UID réel ou sauvegardé de la cible. Autrement dit, vous ne pouvez tuer que vos propres processus. C’est pourquoi alice ne peut pas tuer un processus de bob ni un processus de root.
+>
+> `CAP_KILL` ne dit pas « tu peux tuer le processus 1234 ». Elle dit : « ce test d’UID ne s’applique plus à toi ». Le noyau ne regarde plus à qui appartient la cible, ce qui vaut pour tous les processus visibles, ceux de root compris.
 
-CAP_KILL ne dit pas « tu peux tuer le processus 1234 ». Elle dit : « ce test d’UID ne s’applique plus à toi ». Le noyau ne regarde plus à qui appartient la cible, ce qui vaut pour tous les processus visibles, ceux de root compris.
+Conséquence directe : on ne peut pas donner `CAP_KILL` pour un seul processus. Il n’existe pas de « `CAP_KILL` sur le PID 1234 ». C’est tout ou rien sur la catégorie « envoyer un signal à n’importe qui ».
 
+Avec une nuance, cette capability ne vaut que pour les processus visibles depuis PID namespace. Dans un conteneur CAP_KILL ne permet pas d'atteindre les processus de l'hôte, parce qu'ils n'y aparaissent pas ! Ou que d'autres mécanismes restent actifs, comme SELinux, AppArmor, qui peuvent encore bloquer le signal.
 
+Le même raisonnement s’applique à toutes les capabilities :
 
+- `CAP_NET_BIND_SERVICE` : non pas « écouter sur le port 80 », mais « ignorer la limite des ports inférieurs à 1024 », donc **n’importe quel** port bas.
+- `CAP_CHOWN` : non pas « changer le propriétaire de ce fichier », mais « changer le propriétaire de **n’importe quel** fichier ».
+- `CAP_DAC_READ_SEARCH` : « lire tout », pas « lire `/var/backups` ».
 
-- **Une capability n'est pas un droit sur un objet *précis*.**
+> #### **Une capability n'est pas un droit sur un objet *précis*.** 
+>
+> Avec `CAP_KILL` par exemple, elle ne dit pas tu peux tuer le processus 1234, mais donne le droit de tuer n'iumporte quel processus, même si l'UID ne correspond pas !
+>
+> #### **Une capability ne donne que ce que son nom promet (théoriquement).** 
+>
+> `CAP_NET_ADMIN` configure le réseau, elle ne permet pas de lire `/etc/shadow`. Il faut pour cela une capability de la famille << fichier >>.
+
+### Hands-on Lab :
+
+Un petit Lab pour renforcer la théorie :
+
+```bash
+# 1. Un processus appartenant à root
+sudo systemd-run --unit=victim sleep 300
+PID=$(systemctl show -p MainPID --value victim)
+ps -o user,pid,cmd -p "$PID"
+
+# 2. Sans capability : refusé (l'UID ne correspond pas)
+kill "$PID"                       # Operation not permitted
+
+# 3. Avec CAP_KILL uniquement (ambient, voir Lab 4)
+sudo setpriv --reuid="$(id -u)" --regid="$(id -g)" --init-groups \
+  --inh-caps=+kill --ambient-caps=+kill \
+  /bin/kill "$PID"
+systemctl is-active victim        # inactive ou failed : le processus root a bien été tué
+
+sudo systemctl reset-failed victim 2>/dev/null
+```
+
+#### **Exercice 1.**
+
+Décodez à la main, puis vérifiez avec `capsh --decode` :
+	a) `0000000000000400`
+	b) `0000000000003000`
+	c) `0000000000000024`
+	d) `0000000000200000`
+	e) `0000000000002400`
+
+#### **Exercice 2.**
+
+Encodez : `CAP_CHOWN` + `CAP_SETUID` + `CAP_SETGID`. Donnez le masque, puis vérifiez avec `capsh --decode`.
+
+#### **Exercice 3.**
+
+Sur votre machine :
+
+a) quel est le masque `CapBnd` de votre shell ? Combien de capabilities contient-il ?
+	b) décodez le `CapEff` du PID 1, puis d’un service durci (`systemd-resolved`).
 
 Voici un tableau des capability et leur numéro
 
@@ -95,3 +144,9 @@ Bit	Capability
 40	CAP_CHECKPOINT_RESTORE (noyau ≥ 5.9)
 ```
 
+### Ce qu’il faut retenir
+
+- Une capability est une **dispense de contrôle pour toute une catégorie d’opérations**, pas une clé pour un objet.
+- Il est impossible de l’**étroiter** à un objet précis (ce processus, ce fichier, ce port). On borne son effet autrement : namespaces, LSM, utilisateur dédié, `sudo` avec commande figée.
+- C’est pourquoi on choisit la capability la plus fine possible, et pourquoi certaines (`SYS_ADMIN`, `DAC_OVERRIDE`, `SETUID`) sont dangereuses : leur catégorie est trop vaste.
+- Si une documentation vous demande l’une de ces capabilities, vous allez simplement donnez root mais sous un autre nom : `CAP_SYS_ADMIN` (fourre-tout), `CAP_SETUID`/`CAP_SETGID`, `CAP_DAC_OVERRIDE`, `CAP_SYS_MODULE`, `CAP_SYS_PTRACE`, `CAP_DAC_READ_SEARCH` (lecture de tout).
