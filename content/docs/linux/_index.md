@@ -8,5 +8,5 @@ Deux approches complémentaires pour isoler des applications sur une même machi
 {{< cards >}}
   {{< card link="selinux" title="SELinux" >}}
   {{< card link="systemd" title="systemd" >}}
-  {{< card link="Linux_capabilities" title="Linux capabilities" >}}
+  {{< card link="linux_capabilities" title="Linux capabilities" >}}
 {{< /cards >}}

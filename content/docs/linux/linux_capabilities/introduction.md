@@ -1,5 +1,5 @@
 ---
-title: "Introduction"
+title: "introduction"
 weight: 1
 ---
 
@@ -164,3 +164,6 @@ Lorsqu'un `Thread` exécute un nouveau binaire, le noyau remet `CapPrm` et `CapE
   - *Cas concret :* Un service `systemd` configuré avec `User=www-data` et `AmbientCapabilities=CAP_NET_BIND_SERVICE` permet à un serveur web non privilégié d'écouter sur le port 443 sans modifier le fichier exécutable sur le disque.
 - **Bounding (**`CapBnd`**) : Le masque de restriction irréversible :** Cet ensemble agit comme un filtre de sécurité (plafond absolu) pour le  et toute sa descendance. Il masque les capabilities qu'un fichier binaire sur le disque peut octroyer lors d'un `execve()` (`F(P) & CapBnd`). On ne peut que retirer des bits de `CapBnd`, jamais en rajouter, et cette limite s'impose **même à** `root` **(UID 0)** et aux binaires `setuid root`.
   - *Cas concret :* Les runtimes de conteneurs (`runc`, Docker, Kubernetes) ou `systemd` (`CapabilityBoundingSet=`) retirent des capabilities critiques comme `CAP_SYS_MODULE` ou `CAP_SYS_TIME` de `CapBnd` afin d'empêcher un processus — même exécuté en `root` dans le conteneur — de charger un module noyau ou de modifier l'horloge de l'hôte.
+
+
+## 
