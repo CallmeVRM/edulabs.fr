@@ -1,5 +1,5 @@
 ---
-title: "Linux Capabilities - Introduction"
+title: "Introduction"
 weight: 1
 ---
 
