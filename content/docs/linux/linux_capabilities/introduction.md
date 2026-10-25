@@ -15,8 +15,8 @@ Pour y remédier, on a découper les appels privilégiés en catégories fonctio
 
 ## 2. Les idées a retenir :
 
-- **Un processus normal a zéro capability.** mais il accède bien à la mémoire et au disque, surprenant n'est ce pas ? Eh bien cet accès est garanti parcequ'il passe par les permissions de fichiers classiques. Les capabilities ne servent généralement qu'aux tâches dites "Système" (mounts, réseau, etc.)
-- **Elles s'attachent aux threads, pas aux utilisateurs.** Un thread est créé par `clone`, un nouveau programme est chargé par `execve`. Les capabilities intervienent aux deux étapes, et c'est toute la compléxité vient de la deuxième : Que devient mon jeu de capabilities quand je lance un autre programme ?
+- **Un processus normal a zéro capability,** mais il accède bien à la mémoire et au disque, surprenant n'est ce pas ? Eh bien cet accès est garanti parcequ'il passe par les permissions de fichiers classiques. Les capabilities ne servent généralement qu'aux tâches dites "Système" (mounts, réseau, etc.)
+- **Elles s'attachent aux threads, pas aux utilisateurs.** Un thread est créé par `clone`, un nouveau programme est chargé par `execve`. Les capabilities intervienent aux deux étapes, et toute la compléxité vient de la deuxième : Que devient mon jeu de capabilities quand je lance un autre programme ?
 - **Les fichiers peuvent aussi en porter.** A condition que le sytème de fichier support le `xattr`, via l'attribue etendu `security.capability`
 - **Elles s'ajoutent aux permission classiques, sans les remplacer.** `CAP_NET_ADMIN` ne permet pas de lire `/etc/shadow`. Seules `CAP_DAC_OVERRIDE` et `CAP_DAC_READ_SEARCH` contournent les permissions de fichiers. Donc attention attention !
 
