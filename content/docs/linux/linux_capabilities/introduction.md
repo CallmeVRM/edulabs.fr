@@ -21,7 +21,7 @@ Pour y remédier, on a découper les appels privilégiés en catégories fonctio
 - **Elles s'ajoutent aux permission classiques, sans les remplacer.** `CAP_NET_ADMIN` ne permet pas de lire `/etc/shadow`. Seules `CAP_DAC_OVERRIDE` et `CAP_DAC_READ_SEARCH` contournent les permissions de fichiers. Donc attention attention !
 
 > [!IMPORTANT]
-> Un `processus` est un simple contenant (thread group) qui peut regrouper plusieurs `threads`, lesquels partagent mémoire et ressources mais possèdent chacun leurs propres capabilities (c'est le `thread` appelant qui est vérifié par le noyau). Donc dans le contexte des **capabilities**, l'unité qui compte est le `thread`, et « processus » n'est qu'un raccourci valable techniquement que pour les programmes mono-thread. Je me permet parfois d'utiliser le terme de `processus`, c'est un abus de langage pour les besoins pédagogiques : dans ce contexte, c'est bien le thread qui est visé.
+> Un `processus` est un simple contenant (thread group) qui peut regrouper plusieurs `threads`, lesquels partagent mémoire et ressources mais possèdent chacun leurs propres capabilities (c'est le `thread` appelant qui est vérifié par le noyau). Donc dans le contexte des **capabilities**, l'unité qui compte est le `thread`, et « processus » n'est qu'un raccourci valable techniquement que pour les programmes mono-thread. Je me permet parfois d'utiliser le terme de `processus`, par abus de langage pour les besoins pédagogiques : dans ce contexte, c'est bien le `thread` qui est visé.
 
 ## 3. Le découpage :
 
@@ -165,5 +165,237 @@ Lorsqu'un `Thread` exécute un nouveau binaire, le noyau remet `CapPrm` et `CapE
 - **Bounding (**`CapBnd`**) : Le masque de restriction irréversible :** Cet ensemble agit comme un filtre de sécurité (plafond absolu) pour le  et toute sa descendance. Il masque les capabilities qu'un fichier binaire sur le disque peut octroyer lors d'un `execve()` (`F(P) & CapBnd`). On ne peut que retirer des bits de `CapBnd`, jamais en rajouter, et cette limite s'impose **même à** `root` **(UID 0)** et aux binaires `setuid root`.
   - *Cas concret :* Les runtimes de conteneurs (`runc`, Docker, Kubernetes) ou `systemd` (`CapabilityBoundingSet=`) retirent des capabilities critiques comme `CAP_SYS_MODULE` ou `CAP_SYS_TIME` de `CapBnd` afin d'empêcher un processus — même exécuté en `root` dans le conteneur — de charger un module noyau ou de modifier l'horloge de l'hôte.
 
+<table>
+  <tr><th>Ensemble</th><th>Question à laquelle il répond</th><th>Évolution possible</th></tr>
+  <tr><td>Effective</td><td>Qu’ai-je en main maintenant ?</td><td>activer/désactiver depuis P</td></tr>
+  <tr><td>Permitted</td><td>Qu’ai-je le droit de prendre ?</td><td>retrait seulement</td></tr>
+  <tr><td>Inheritable</td><td>Que suis-je d’accord pour transmettre ?</td><td>ajout limité à ce qui est dans P (ou B avec CAP_SETPCAP)</td></tr>
+  <tr><td>Ambient</td><td>Qu’est-ce qui suit automatiquement à l’exec ?</td><td>ajout si dans P et I ; disparaît si l’un des deux le perd</td></tr>
+  <tr><td>Bounding</td><td>Qu’est-ce qui peut encore exister dans mon arbre de processus ?</td><td>retrait seulement, irréversible</td></tr>
+</table>
 
-## 
+#### Lire un masque hexadécimal
+
+`/proc/PID/status` affiche des masques de 64 bits : chaque chiffre hexa code 4 capabilities, et la capability n° *n* correspond au bit *n*. Quelques numéros utiles : `CAP_NET_BIND_SERVICE` = 10, `CAP_NET_ADMIN` = 12, `CAP_NET_RAW` = 13, `CAP_SYS_ADMIN` = 21.
+
+Exemple : `0000000000000400`. Or 0x400 = 1 << 10, donc c’est **bit 10 =** `CAP_NET_BIND_SERVICE`, seule capability présente. On peut décoder avec `capsh --decode=0000000000000400`.
+
+### 4 Bis. Un fichier peut porter des capabilities
+
+Les `file capabilities` remplacent le bit `setuid` : on les stocke dans l’attribut étendu `security.capability` du fichier. Un fichier porte trois informations : **F(P)** (permitted), **F(I)** (inheritable) et **un seul bit effective** F(E).
+
+Notation de `setcap` : `cap_net_raw=ep` signifie « permitted + effective ».
+
+<table>
+  <tr><th>Notation</th><th>Sens</th><th>Pour quel programme</th></tr>
+  <tr><td>=ep</td><td>la clé est déjà en main au démarrage</td><td>programmes classiques (nginx, tcpdump…)</td></tr>
+  <tr><td>=p</td><td>la clé est en poche, le programme doit la sortir</td><td>programmes conçus pour (libcap)</td></tr>
+  <tr><td>=i</td><td>transmissible si l’appelant l’a aussi</td><td>rare</td></tr>
+</table>
+
+Point d’attention : F(P) reste **toujours filtré par B** (le Bounding du processus appelant).
+
+### 5. Que devient un programme qui en lance un autre ? (règle d’`execve`)
+
+Quand vous tapez `./monprogramme` dans un shell, il se passe ceci :
+
+1. Votre shell crée un nouveau processus enfant (via `fork()`).
+2. Ce processus enfant charge `./monprogramme` via`execve()`.
+
+La question de cette section : **à cet instant précis, quelles capabilities le nouveau programme reçoit-il ?** Il y a trois acteurs :
+
+<table>
+  <tr><th>Acteur</th><th>Notation</th><th>Exemple</th></tr>
+  <tr><td>Le processus avant l’exec (celui qui lance)</td><td>P</td><td>votre shell</td></tr>
+  <tr><td>Le fichier qu’on lance</td><td>F</td><td>./monprogramme</td></tr>
+  <tr><td>Le processus après l’exec (le programme qui tourne)</td><td>P’</td><td>monprogramme en cours d’exécution</td></tr>
+</table>
+
+Note : après `execve()`, le PID n'est pas perdu, c'est le même processus avec un nouveau code en mémoire
+
+#### La règle de base : par défaut, rien ne passe
+
+C’est le point le plus important, et celui qui surprend :
+
+> **Un programme qui démarre n’emporte PAS les capabilities de son parent.**
+
+Même si votre shell avait des capabilities, un programme ordinaire lancé depuis ce shell démarre avec zéro. Autrement, un simple `ls` lancé par un processus privilégié hériterait de tous ses pouvoirs, ce qui serait dangereux.
+
+Pour qu’une capability arrive dans le nouveau programme, il faut qu’une des **trois portes** s’ouvre.
+
+```plaintext
+        Le parent lance un programme (execve)
+                        │
+   ┌────────────────────┼─────────────────────────┐
+   │                    │                         │
+ Porte 1             Porte 2                  Porte 3
+ Le FICHIER          L'AMBIENT du parent      L'INHERITABLE du parent
+ porte lui-même      (suit automatiquement)   ET celui du fichier
+ des capabilities                             (double accord)
+   │                    │                         │
+ (filtré par           │                         │
+  le Bounding)         │                         │
+   └────────────────────┴─────────────────────────┘
+                        │
+              = ce que le nouveau programme
+                a « en poche » (Permitted)
+                        │
+              Interrupteur : sont-elles aussi
+              « en main » (Effective) ?
+
+```
+
+Voyons chaque porte, puis l’interrupteur.
+
+#### 5.1 Porte 1 : le fichier porte des capabilities
+
+Le fichier a était marqué avant le lancement avec `setcap :`
+
+```plaintext
+sudo setcap cap_net_raw=ep ./monprogramme
+```
+
+Le `setcap` est le remplaçant du vieux `SUID`, il permet d'accorder une capability précise au lieu de tout `root`.
+
+N'importe quel utilisateur qui lance `./monprogramme` l'utilisera avec la capability `CAP_NET_RAW` sans être root.
+
+Mais attention, le `Bounding` est là, et fait office de garde fou, si une capability à été retirée du `Bounding` du parent, elle ne passera pas, même si le fichier la porte en lui même. Le `Bounding` parent est le plafond absolu.
+
+#### 5.2 Porte 2 : l'ambient du parent
+
+Le parent a placé des capabilities dans son `CapAmb` (via `prctl(PR_CAP_AMBIENT_RAISE)`). Celles-ci suivent automatiquement le nouveau programme : elles sont injectées directement dans `CapPrm` et dans `CapEff`.
+
+Avantage : le fichier n'a besoin d'aucun marquage `setcap`. C'est la porte idéale pour les binaires non préparés (scripts Python, binaires Go/Node.js).
+
+Deux réserves de sécurité :
+
+- `CapAmb` doit satisfaire l'invariant : chaque capability doit être à la fois dans `CapPrm` et `CapInh`.
+- `CapAmb` est vidé si le binaire cible est `setuid`/`setgid` ou possède déjà des capabilities sur le disque.
+
+#### 5.3 Porte 3 : le double accord Inheritable
+
+Il faut ici deux consentements :
+
+- le parent a la capability dans son `CapInh` (il accepte de la transmettre) ;
+- le fichier l'a dans son Inheritable, noté `F(I)` (il accepte de la recevoir).
+
+Si les deux sont d'accord, leur intersection entre dans le `CapPrm` du nouveau programme :
+
+```plaintext
+CapInh & F(I)
+```
+
+C'est la porte la plus contraignante, et la raison pour laquelle l'ambient (porte 2) a été inventée : elle évite d'avoir à marquer le fichier.
+
+#### 5.4 L'interrupteur : « en poche » vs « en main »
+
+Les trois portes remplissent le `CapPrm`, c'est-à-dire ce que le programme a en poche. Mais on l'a vu au tout début : le noyau ne vérifie que `CapEff`, ce que le programme a en main.
+
+Deux façons d'avoir une capability aussi dans `CapEff` dès le démarrage :
+
+- Le fichier a le bit Effectif (le `e` du `setcap`) : alors toutes les capabilities nouvellement Permitted deviennent également Effectives.
+- La capability vient de l'ambient : elle est Effective automatiquement.
+
+Sinon, le programme démarre avec la capability en poche mais pas en main, et devra l'activer lui-même via `capset()` le temps de l'usage.
+
+#### 5.4 La formule (résumé)
+
+Maintenant que les trois portes et l'interrupteur sont compris, la formule officielle n'est plus qu'une façon compacte de redire la même chose.
+
+| Symbole | Signification                                                      |
+| ------- | ------------------------------------------------------------------ |
+| `P`     | les capabilities du parent **avant** l'`execve`                    |
+| `F`     | les capabilities du **fichier** lancé (celles posées par `setcap`) |
+| `P'`    | les capabilities du **nouveau programme** après l'`execve`         |
+| `&`     | ET logique (intersection : il faut les deux)                       |
+| `\|`    | OU logique (union : une seule porte suffit)                        |
+
+#### La formule
+
+```text
+P'(permitted) =   ( P(inheritable) & F(inheritable) ) | ( F(permitted) & P(bounding) ) | P'(ambient)
+
+P'(effective) = F(effective) ? P'(permitted) : P'(ambient)
+
+```
+
+#### Comment la lire
+
+La première ligne dit simplement : **le nouveau Permitted est la réunion (**`|`**) de trois contributions**, une par porte.
+
+| Terme                             | Porte | Traduction en français                                          |
+| --------------------------------- | ----- | --------------------------------------------------------------- |
+| `P(inheritable) & F(inheritable)` | 3     | le double accord : le parent **et** le fichier doivent accepter |
+| `F(permitted) & P(bounding)`      | 1     | les caps du fichier, **filtrées** par le Bounding du parent     |
+| `P'(ambient)`                     | 2     | l'ambient du parent, qui suit automatiquement                   |
+
+La deuxième ligne est **l'interrupteur** :
+
+- `F(effective) ?` → « si le fichier a le bit Effectif » (le `e` du `setcap`) :
+  - **oui** → tout ce qui vient d'entrer dans le Permitted devient aussi **Effectif** ;
+  - **non** → on ne met en Effectif que ce qui vient de l'**ambient** (qui est actif automatiquement).
+
+Autrement dit : les portes remplissent la **poche** (`Permitted`), et l'interrupteur décide ce qui passe en **main** (`Effective`).
+
+#### 5.5 Le cas particulier de root
+
+Pour un processus d’UID 0 (root), le noyau applique un raccourci : il traite **tous les fichiers comme s’ils portaient toutes les capabilities, avec le bit effective à 1**. Résultat : un programme lancé par root reçoit **tout ce que son Bounding permet**, et directement en main.
+
+C’est ce qui rend root « tout-puissant ». Mais cela veut dire aussi que **si on retire une capability du Bounding, root la perd** (le plafond s’applique toujours).
+
+#### 5.6  Le piège du Bounding
+
+Regardez la formule : le Bounding n'apparaît que sur une seule ligne, celle de la porte 1 (`F(permitted) & Bounding`). Il n'apparaît pas sur la porte 3 (`P(inheritable) & F(inheritable)`).
+
+Je cite le man page sur Linux :
+
+> « the bounding set masks the file permitted capabilities, but not the inheritable capabilities. If a thread maintains a  
+> capability in its inheritable set that is not in its bounding set, then it can still gain that capability in its │ permitted set by executing a file that has the capability in its inheritable set. »
+
+Traduction : retirer une capability du Bounding bloque bien les étiquettes de fichier (porte 1), mais pas un double accord Inheritable (porte 3) déjà en place. Une capability présente à la fois dans l'Inheritable du processus et dans celui du fichier arrivera donc « en poche » après l'`execve`, même si elle a été retirée du Bounding.
+
+Nuance importante : depuis Linux 2.6.25, on ne peut pas ajouter une capability absente du Bounding dans son Inheritable via `capset()`. Le piège ne joue donc que pour une capability déjà présente dans l'Inheritable avant le retrait du Bounding (ou héritée telle quelle).
+
+Le piège ne se produit donc que dans un cas précis :
+
+> La capability a été rangée dans l'Inheritable avant le retrait du Bounding (ou elle a été héritée telle quelle d'un │ parent)
+
+Conseil pratique : quand vous durcissez un service, retirez du Bounding ce qui n'est pas nécessaire, et vérifiez que les ensembles non bornés sont vides ou minimaux dans `/proc/PID/status` :
+
+- `CapInh` (Inheritable) : le vecteur du piège ci-dessus ;
+- `CapAmb` (Ambient) : lui non plus n'est pas filtré par le Bounding à l'`execve`.
+
+#### 5.6 La remise à zéro : fichier « privilégié » = ambient vidé
+
+Une dernière règle de sécurité. Quand le fichier lancé est **privilégié** (il a le bit setuid/setgid, ou des file capabilities), **l’ambient est remis à zéro** pour ce nouveau programme.
+
+Pourquoi ? Pour éviter qu’un programme déjà privilégié ne soit détourné en lui injectant, via l’ambient, des pouvoirs en plus. Un programme à étiquette ne reçoit que ce que son étiquette dit.
+
+#### 5.7 La logique en cinq questions :
+
+Pour savoir ce qu’un programme obtiendra, posez ces questions dans l’ordre :
+
+1. **Le processus qui lance est-il root (UID 0) ?** Si oui : il reçoit tout son `Bounding`, en main. Fin de la discussion.
+2. **Le fichier porte-t-il des capabilities (F(P)) ?** Si oui, elles arrivent en poche, filtrées par le Bounding (porte 1).
+3. **Le parent a-t-il de l’ambient, et le fichier est-il non privilégié ?** Si oui, l’ambient arrive en poche **et** en main (porte 2). Si le fichier est privilégié : l’ambient est perdu.
+4. **Le parent et le fichier ont-ils tous deux la capability en Inheritable ?** Si oui, elle arrive en poche (porte 3).
+5. **Le fichier a-t-il le bit effective ?** Si oui, tout ce qui est en poche passe en main. Sinon, seul ce qui vient de l’ambient est en main.
+
+Ce qui reste inchangé : le **Inheritable** et le **Bounding** du nouveau programme sont ceux de son parent.
+
+#### 5.8 Exemples concrets, un par un
+
+Notation : `B` = Bounding. Dans tous les cas le parent est un utilisateur normal, sauf indication contraire.
+
+<table>
+  <tr><th>#</th><th>Situation</th><th>Résultat</th><th>Explication</th></tr>
+  <tr><td>1</td><td>Fichier avec cap_net_raw=ep. Parent sans rien.</td><td>Poche = {net_raw} ; main = {net_raw}</td><td>Porte 1, bit E à 1 : active dès le départ</td></tr>
+  <tr><td>2</td><td>Fichier avec cap_net_raw=p (sans E). Parent sans rien.</td><td>Poche = {net_raw} ; main = ∅</td><td>Porte 1, mais pas de bit E : le programme doit l’activer lui-même</td></tr>
+  <tr><td>3</td><td>Fichier ordinaire. Parent avec net_bind_service en ambient.</td><td>Poche = {bind} ; main = {bind} ; ambient = {bind}</td><td>Porte 2 : l’ambient suit</td></tr>
+  <tr><td>4</td><td>Fichier ordinaire. Parent avec net_raw en Inheritable seulement.</td><td>Poche = ∅ ; main = ∅</td><td>Le fichier n’a pas donné son accord (Inheritable côté fichier)</td></tr>
+  <tr><td>5</td><td>Fichier avec net_raw=ei. Parent avec net_raw en Inheritable.</td><td>Poche = {net_raw} ; main = {net_raw}</td><td>Porte 3 : double accord ; bit E à 1 donc en main</td></tr>
+  <tr><td>6</td><td>Fichier avec net_raw=p. Parent avec bind en ambient.</td><td>Poche = {net_raw} ; main = ∅ ; ambient = ∅</td><td>Fichier privilégié : l’ambient est perdu (§5.8)</td></tr>
+  <tr><td>7</td><td>Fichier avec net_raw=ep. Parent dont le Bounding n’a pas net_raw.</td><td>Poche = ∅ ; main = ∅</td><td>Le plafond filtre la porte 1</td></tr>
+  <tr><td>8</td><td>Parent root, fichier ordinaire, Bounding complet.</td><td>Poche = main = Bounding complet</td><td>Raccourci root</td></tr>
+  <tr><td>9</td><td>Parent root, fichier ordinaire, Bounding sans net_raw.</td><td>Poche = main = tout sauf net_raw</td><td></td></tr>
+</table>
